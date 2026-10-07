@@ -798,6 +798,53 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 /* Future destinations linked from the approved home shortcuts. */
 .utility-placeholder-screen{min-height:100svh;background:#03070c;padding-bottom:76px}.utility-placeholder-shell{min-height:100svh;background:radial-gradient(circle at 70% 0,rgba(97,25,178,.22),transparent 26rem),#05080d}.utility-placeholder-head{height:66px;display:grid;grid-template-columns:54px 1fr 54px;align-items:center;border-bottom:1px solid #21344a;padding:0 10px;background:#06101a}.utility-placeholder-head button{height:42px;border:1px solid #36516b;border-radius:9px;background:#07131f;color:#fff;font-size:30px}.utility-placeholder-head strong{text-align:center;font-size:18px}.utility-placeholder-shell main{padding:70px 18px}.utility-placeholder-card{max-width:520px;margin:auto;text-align:center;border:1px solid #2d4962;border-radius:14px;padding:34px 22px;background:#07111b}.utility-placeholder-icon{font-size:56px;color:#36b8ff}.utility-placeholder-card h1{font-size:25px;margin:12px 0}.utility-placeholder-card p{color:#aebdcc;font-size:13px;line-height:1.8}
 
+
+/* v1.21 — approved horizontal member layout; original artwork remains unchanged. */
+#member-screen .member-table-head{grid-template-columns:8% 22% minmax(0,1fr)}
+#member-screen .member-table-head>div:last-child{padding:0 3px;font-size:clamp(8px,2.2vw,11px);white-space:nowrap}
+#member-screen .member-card{min-height:0}
+#member-screen .member-no{font-size:32px}
+#member-screen .member-char-list{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;align-items:stretch}
+#member-screen .member-char-row{grid-template-columns:minmax(0,1fr) 30%;grid-template-rows:auto auto;align-content:start;align-items:center;gap:3px 0;min-height:0;padding:4px 3px;border-bottom:0;border-right:1px solid rgba(123,169,216,.18)}
+#member-screen .member-char-row:last-child{border-right:0}
+#member-screen .member-char{position:relative;display:block;grid-column:1/-1;min-width:0;height:auto}
+#member-screen .member-char-art-wrap{width:100%;height:auto!important;aspect-ratio:3/1;margin:0!important;border:1px solid color-mix(in srgb,var(--accent) 45%,#172434)!important;background:#000!important}
+#member-screen .member-char-art{object-fit:contain!important;object-position:center!important}
+#member-screen .member-char-name{position:absolute;right:2px;bottom:3px;padding:0!important;max-width:72%;font-size:clamp(8px,2vw,12px);line-height:1;letter-spacing:0;text-shadow:0 1px 2px #000,1px 0 2px #000,-1px 0 2px #000;overflow:visible;text-overflow:clip;pointer-events:none}
+#member-screen .member-rank{grid-column:1;display:flex;justify-content:center;align-items:center;min-width:0;height:clamp(27px,8.3vw,48px);padding:0 2px;border:0;gap:0}
+#member-screen .member-rank::before{content:none!important;display:none}
+#member-screen .member-rank-img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;transform:none;filter:none}
+#member-screen .member-combo{grid-column:2;align-self:stretch;min-width:0;height:auto;font-size:clamp(14px,4vw,23px);border-left:1px solid rgba(123,169,216,.18)}
+#member-screen .member-char-slot-empty{display:flex;align-items:center;justify-content:center;min-height:65px;color:#47617b;font-size:18px;grid-template-columns:none;grid-template-rows:none}
+@media(max-width:420px){#member-screen .member-no{font-size:28px}#member-screen .member-char-row{padding:3px 2px;gap:2px 0}#member-screen .member-char-name{right:1px;bottom:2px;font-size:8px}}
+
+#combo-create-screen{color:#fff;background:#030a12;min-height:100svh;padding-bottom:100px}
+.combo-shell{max-width:620px;margin:auto;padding:0 10px 18px}
+.combo-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 0;background:linear-gradient(115deg,#6c0523,transparent 50%,#220b40);font:italic 900 15px Impact,'Arial Black',sans-serif}
+.combo-head button{border:0;background:none;color:white;font-size:24px}.combo-head h1{font-size:19px;margin:0}
+.cb-panel{border:1px solid #227a91;border-radius:9px;background:linear-gradient(120deg,#06121d,#020b13);padding:10px;margin:9px 0}
+.cb-title{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:17px;font-weight:900}
+.cb-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:30px;background:linear-gradient(130deg,#e80645,#660728);border-radius:5px;font:italic 900 27px Impact,'Arial Black',sans-serif}
+#combo-create-screen select,#combo-create-screen input{min-width:0;width:100%;height:39px;border:1px solid #506880;border-radius:6px;background:#07121f;color:#fff;font:700 13px system-ui;padding:0 9px}
+.cb-char{display:grid;grid-template-columns:29% minmax(0,1fr);gap:8px;align-items:center}.cb-char img{width:100%;aspect-ratio:3/1;object-fit:contain;background:#000}
+.cb-types{display:grid;grid-template-columns:1fr 1fr;gap:8px}.cb-type{height:42px;border:1px solid #52647c;border-radius:7px;background:#08121f;display:flex;align-items:center;justify-content:center;overflow:hidden}.cb-type.active{border:2px solid #ff2456;background:linear-gradient(110deg,#9b0034,#37071a);box-shadow:0 0 9px #ff205540}
+.cb-mark{height:29px;width:139px;overflow:hidden;position:relative;mix-blend-mode:screen}.cb-mark img{position:absolute;width:480.5px;height:90px;max-width:none;top:-25px;left:-63px}.cb-mark.modern img{left:-292px}.cb-help{font-size:10px;color:#a8bdcf;margin:7px 0 0;line-height:1.5}
+.cb-scenes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.cb-scenes button{height:33px;background:#0a1422;border:1px solid #50647d;color:#fff;border-radius:6px;font-size:12px;font-weight:800}.cb-scenes button.active{border:2px solid #ff2456;background:#65082c}.cb-scenes button[data-scene="中央"].active{border-color:#b445ff;background:#390c65}
+.cb-input-head{display:flex;align-items:center;justify-content:space-between;gap:4px}.cb-input-head .cb-title{gap:6px;font-size:16px}.cb-toggle{background:#081421;border:1px solid #65798f;border-radius:18px;color:white;font-size:10px;padding:6px 8px;white-space:nowrap}.cb-mode{color:#a8bdcf;font-size:10px;margin-left:4px}
+.cb-row{display:grid;grid-template-columns:36px minmax(0,1fr) 26px;gap:3px;align-items:center}.cb-row select{font-size:12px!important;padding-left:8px!important}.cb-step-num{height:37px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:#b70032;font:italic 900 28px Impact,'Arial Black',sans-serif}.cb-row.common .cb-step-num{background:#007cd5}.cb-row.sa .cb-step-num{background:#860acb}.cb-delete{color:#bed0e4;border:1px solid #59718c;background:#08111e;border-radius:50%;width:25px;height:25px;font-size:18px;line-height:18px;padding:0}
+.cb-link-wrap{height:19px;display:flex;align-items:center;padding-left:47px}.cb-link{border:1px solid white;border-radius:12px;background:#030910;color:white;font:700 9px system-ui;min-width:24px;padding:1px 6px;line-height:12px}.cb-end{margin-left:47px;margin-top:4px}
+.cb-add{display:block;margin:10px auto;border:1px solid #667e99;border-radius:7px;background:#081421;color:white;padding:8px 24px;font-weight:800}.cb-legend{border-top:1px solid #546679;padding-top:9px;display:flex;align-items:center;justify-content:space-between;gap:4px;font-size:8px}.cb-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#ec003d;vertical-align:middle;margin-right:3px}.cb-dot.blue{background:#0086ec}.cb-dot.purple{background:#9b05e4}
+.cb-setting{display:flex;align-items:center;justify-content:space-between;gap:6px;border:1px solid #33485e;border-radius:6px;margin-top:6px;padding:7px 8px;font-weight:700;font-size:11px}.cb-setting input{width:88px!important;height:32px!important;text-align:right;font-size:20px!important}.cb-gauge-group{display:flex;align-items:center;gap:5px;min-width:0}.cb-gauge{display:flex;gap:3px}.cb-segment{width:19px;height:18px;border:1px solid #3c5266;border-radius:3px;background:#192a3b;padding:0}.cb-segment.active{background:#00d957;border-color:#0cec68;box-shadow:0 0 4px #00d95760}.cb-gauge.sa .cb-segment{width:29px}.cb-gauge.sa .cb-segment.active{background:#ad22eb;border-color:#c555fc}.cb-gauge-count{font:900 13px Impact,'Arial Black',sans-serif;white-space:nowrap;min-width:29px}
+.cb-modal-backdrop{display:none;position:fixed;inset:0;z-index:120;background:#000b;align-items:center;justify-content:center;padding:14px}.cb-modal-backdrop.open{display:flex}.cb-dialog{width:100%;max-width:430px;background:#05111d;border:1px solid #1da7be;border-radius:12px;color:white;padding:16px;box-shadow:0 10px 40px #000;max-height:90svh;overflow:auto}.cb-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:7px}.cb-dialog h2{font-size:20px;margin:0}.cb-dialog-close{width:30px;height:30px;border:1px solid #60758c;border-radius:50%;background:#08111e;color:white;font-size:21px}.cb-dialog p{font-size:12px;color:#b1c7dd;line-height:1.6}.cb-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.cb-links button{background:#0a1726;color:white;border:1px solid #647891;border-radius:7px;padding:13px 3px;font-size:20px;font-weight:900}.cb-links button small{display:block;font-size:12px}.cb-links button.active{border:2px solid #ff2456;background:#65082b;box-shadow:0 0 8px #ff245550}.cb-confirm{width:100%;margin-top:4px;padding:10px;border:1px solid #ff2d58;border-radius:7px;background:linear-gradient(110deg,#b40038,#710721);color:white;font-weight:900;font-size:21px}
+@media(max-width:350px){.combo-shell{padding:0 6px 18px}.cb-panel{padding:8px}.cb-mark{transform:scale(.88)}.cb-setting{font-size:10px;padding:6px 5px}.cb-segment{width:15px}.cb-gauge.sa .cb-segment{width:25px}.cb-legend{font-size:7px}}
+
+.cb-mark img{width:139px;height:29px;top:0;left:0}.cb-mark.modern img{left:0}
+</style>
+<style>.archive-tabs{display:flex;gap:7px;margin:12px 0}.archive-tabs button,.ar-button{background:#0a1524;color:white;border:1px solid #546c86;border-radius:7px;padding:9px 12px;font-weight:800}.archive-tabs button{flex:1}.archive-tabs button.active{background:#65052c;border-color:#ff2256}.archive-tools{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.archive-tools select,.archive-tools input{min-width:0;flex:1 1 95px;background:#07121f;border:1px solid #4b6279;color:#fff;border-radius:6px;padding:8px;font-size:11px}.archive-tools input{flex-basis:100%}.ar-notice{font-size:11px;line-height:1.6;color:#b1c4d7;margin:8px 0}.ar-list{display:grid;gap:9px}.ar-card{border:1px solid #314d65;border-radius:8px;background:linear-gradient(115deg,#071726,#030a12);padding:11px;color:white}.ar-card-head{display:flex;align-items:center;gap:8px}.ar-card h3{font-size:15px;margin:0;overflow-wrap:anywhere;flex:1}.ar-title-link{color:inherit;text-decoration:none}.ar-title-link:after{content:' ›';color:#a8bfd3}.ar-type{display:block;width:95px;height:20px;object-fit:contain;flex-shrink:0}.ar-author{display:inline-block;color:#42dce7;font-size:11px;margin:7px 0;text-decoration:none}.ar-tags{display:flex;flex-wrap:wrap;gap:4px;font-size:10px}.ar-tags span{background:#122036;border:1px solid #445772;border-radius:5px;padding:2px 7px}.ar-tags .sample{border-color:#886c40;color:#e5c48c}.ar-stats{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-top:9px;font-size:10px}.ar-damage{font-size:23px;color:#ff3167;font-weight:900}.ar-gauge{display:inline-flex;gap:2px;vertical-align:middle;margin-right:4px}.ar-gauge i{display:inline-block;width:9px;height:12px;border:1px solid #334d60;border-radius:2px;background:#172c3c}.ar-gauge i.on{background:#00d95b;border-color:#00d95b}.ar-gauge.sa i.on{background:#b027e6;border-color:#b027e6}.ar-empty{padding:22px 8px;color:#adbdcd;text-align:center;font-size:13px}.ar-card-char{width:90px;aspect-ratio:3/1;object-fit:contain;background:#000}.ar-char-name{font-size:10px;color:#bfcbda}.archive-detail{max-width:620px;margin:auto;padding:0 10px 100px;color:white}.archive-detail h1{font-size:23px;overflow-wrap:anywhere}.ar-detail-char{display:flex;align-items:center;gap:12px}.ar-detail-char img:first-child{width:43%;aspect-ratio:3/1;object-fit:contain;background:#000}.ar-detail-title{display:flex;align-items:center;justify-content:space-between;gap:6px}.ar-detail-title h2{font-size:17px}.ar-step-text{height:auto;min-height:37px;display:flex;align-items:center;overflow-wrap:anywhere;border:1px solid #506880;border-radius:6px;background:#07121f;padding:7px 8px;font-size:13px}.ar-read-row{grid-template-columns:36px minmax(0,1fr)}.ar-registration{border:1px solid #3c5871;border-radius:8px;margin:10px 0;padding:10px;font-size:12px}.ar-registration select{margin:7px 0}.ar-registration .ar-button{width:100%;background:#89052f;border-color:#ff2456}.ar-actions{display:flex;gap:7px;margin-top:10px}.ar-actions button{flex:1}#archive-list-screen{background:#030a12;min-height:100svh}#archive-detail-screen{background:#030a12;min-height:100svh}.home-combo-card-v119 .ar-type{width:80px;height:17px;margin:4px 0}.home-combo-card-v119 a{color:inherit;text-decoration:none}.home-combo-card-v119 .ar-author{color:#45d7e3}.ar-home-note{font-size:10px;color:#a8bacb;margin:3px 0}.ar-home-empty{font-size:12px;color:#b3c5d7}.home-combo-info-v119 strong{overflow-wrap:anywhere}.ar-show-sample{font-size:10px;color:#b1c4d7;margin-left:6px}#frame-screen .control-tab{overflow:hidden}#frame-screen .control-tab .ar-type{width:135px;height:28px}.ar-filters-title{display:flex;align-items:center;justify-content:space-between;gap:8px}.ar-filters-title h2{font-size:18px;margin:7px 0}#archive-list-screen .ar-detail-char{padding:8px 0}.ar-setting-gauge{display:flex;align-items:center;gap:6px}.ar-setting-gauge .ar-gauge i{width:18px;height:18px}.ar-setting-gauge .ar-gauge.sa i{width:28px}.ar-setting-gauge .ar-count{white-space:nowrap}.ar-detail-meta{color:#aabfd2;font-size:11px}
+@media(max-width:350px){.ar-type{width:80px;height:17px}.ar-card h3{font-size:13px}.ar-stats{font-size:9px}.ar-gauge i{width:7px}.ar-setting-gauge .ar-gauge i{width:14px}.ar-setting-gauge .ar-gauge.sa i{width:24px}.ar-card-char{width:70px}}
+</style>
+<style>#login-screen{background:#030a12;color:#fff;min-height:100svh;padding-bottom:30px}.login-panel{margin-top:25px;padding:18px}.login-panel h2{font-size:22px}.login-panel p{font-size:12px;line-height:1.7;color:#b8c8dc}.login-panel form>label:not(.login-remember){display:block;font-size:13px;font-weight:800;margin:15px 0 6px}.login-panel select,.login-panel input[type=password],.login-panel input[type=text]{width:100%;min-width:0;height:43px;border:1px solid #506880;border-radius:7px;background:#07121f;color:#fff;padding:0 10px;font:700 16px system-ui}.login-password-wrap{display:flex;gap:7px}.login-password-wrap input{flex:1}.login-password-wrap button{border:1px solid #506880;border-radius:7px;background:#081421;color:white;width:52px;flex-shrink:0}.login-remember{display:flex;align-items:center;gap:6px;font-size:12px;margin-top:13px}.login-panel #fgcLoginSubmit{width:100%;background:#88082d;border-color:#ff2256;padding:12px}.login-panel #fgcLoginSubmit:disabled{opacity:.5}.login-panel #fgcLoginStatus{min-height:22px}.login-panel #fgcLoginStatus.error{color:#ff9db6}.login-help{margin:20px 0 0;font-size:11px!important}.home-hero-v119{position:relative}.fgc-account-entry{position:absolute;top:8px;right:8px;max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#080e1ee6;border:1px solid #63718c;border-radius:6px;color:#fff;font-weight:700;font-size:11px;padding:7px 9px}.login-panel [hidden]{display:none!important}
+#login-screen .combo-head{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:6px}#login-screen .combo-head span{font-size:clamp(10px,3.3vw,14px);white-space:nowrap;letter-spacing:0}#login-screen .combo-head h1{font-size:17px;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -806,7 +853,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
       <img class="site-banner" src="assets/home-banner-v119.png" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.20</span>
+      <span class="version-mark">v1.24</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
@@ -822,8 +869,8 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
     </nav>
 
     <section class="home-block-v119">
-      <div class="home-heading-v119"><span>新着コンボ</span><button type="button" onclick="showToast('コンボ一覧ページは後続実装予定です')">すべて見る ›</button></div>
-      <div class="home-combo-strip-v119" aria-label="新着コンボ">
+      <div class="home-heading-v119"><span>新着コンボ</span><button type="button" data-route="combos">すべて見る ›</button></div>
+      <p id="archiveHomeNotice" class="ar-home-note"></p><div class="home-combo-strip-v119" aria-label="新着コンボ">
         <article class="home-combo-card-v119">
           <div class="home-combo-image-v119"><img src="assets/member-icons/ryu.webp?v=119" alt="RYU"><b>NEW</b></div>
           <div class="home-combo-info-v119"><strong>中足始動 高火力コンボ</strong><span>RYU</span><small>Shogo・3分前</small><div><em>3820</em><i>DMG</i><em class="drive">2</em><i>DR</i><em class="sa">3</em><i>SA</i></div></div>
@@ -847,7 +894,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
       <div class="home-heading-v119"><span>注目コンテンツ</span></div>
       <div class="home-focus-grid-v119">
         <button type="button" onclick="showToast('人気コンボ一覧は後続実装予定です')"><span>♛</span><strong>人気コンボ</strong></button>
-        <button type="button" onclick="showToast('新着コンボ一覧は後続実装予定です')"><span>♦</span><strong>新着コンボ</strong></button>
+        <button type="button" data-route="combos"><span>♦</span><strong>新着コンボ</strong></button>
         <button type="button" onclick="showToast('おすすめ機能は後続実装予定です')"><span>★</span><strong>おすすめ</strong></button>
       </div>
     </section>
@@ -862,15 +909,23 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   </div>
 </section>
 
-<section id="combo-create-screen" class="screen utility-placeholder-screen">
-  <div class="site-shell utility-placeholder-shell">
-    <header class="utility-placeholder-head"><button type="button" onclick="appBack()">‹</button><strong>コンボ作成</strong><span></span></header>
-    <main><div class="utility-placeholder-card"><div class="utility-placeholder-icon">⇄</div><h1>コンボ作成ページ</h1><p>このページは次工程で、技リストから1手ずつ設定できるコンボ作成ツールとして実装します。</p></div></main>
-    <nav class="bottom-nav home-bottom-nav-v119" aria-label="下部ナビゲーション">
+<section id="combo-create-screen" class="screen">
+ <div class="combo-shell"><header class="combo-head"><button type="button" onclick="appBack()" aria-label="戻る">‹</button><span>FGC COMBO ARCHIVE</span><h1>コンボ作成</h1></header>
+ <main>
+ <section class="cb-panel"><h2 class="cb-title"><span class="cb-num">1</span>キャラクター選択</h2><div class="cb-char"><img id="cbPortrait" src="assets/member-icons/ryu.webp?v=119" alt="RYU"><select id="cbCharacter" aria-label="キャラクター選択"></select></div></section>
+ <section class="cb-panel"><h2 class="cb-title"><span class="cb-num">2</span>操作タイプ</h2><div class="cb-types"><button type="button" class="cb-type active" data-cb-type="classic" aria-label="Classic" aria-pressed="true"><span class="cb-mark"><img src="assets/combo/classic.svg" alt="CLASSIC"></span></button><button type="button" class="cb-type" data-cb-type="modern" aria-label="Modern" aria-pressed="false"><span class="cb-mark modern"><img src="assets/combo/modern.svg" alt="MODERN"></span></button></div><p id="cbDataNote" class="cb-help"></p></section>
+ <section class="cb-panel"><h2 class="cb-title"><span class="cb-num">3</span>コンボタイトル</h2><input id="cbTitle" maxlength="100" placeholder="コンボタイトルを入力" aria-label="コンボタイトル"></section>
+ <section class="cb-panel"><h2 class="cb-title"><span class="cb-num">4</span>シーン選択</h2><div id="cbScenes" class="cb-scenes"></div><p class="cb-help">該当するシーンを選択</p></section>
+ <section class="cb-panel"><div class="cb-input-head"><h2 class="cb-title"><span class="cb-num">5</span>コンボ入力<span id="cbMode" class="cb-mode">技名表示</span></h2><button id="cbToggle" type="button" class="cb-toggle">⇄ コマンド表示</button></div><div id="cbSteps"></div><button id="cbAdd" type="button" class="cb-add">＋ 技を追加</button><div class="cb-legend"><span><i class="cb-dot"></i>通常技・特殊技・必殺技</span><span><i class="cb-dot blue"></i>全キャラ共通技</span><span><i class="cb-dot purple"></i>SA</span></div></section>
+ <section class="cb-panel"><h2 class="cb-title"><span class="cb-num">6</span>詳細設定</h2><label class="cb-setting">ダメージ<input id="cbDamage" type="number" min="0" max="99999" step="1" inputmode="numeric" placeholder="0"></label><div class="cb-setting"><span>ドライブゲージ使用</span><div class="cb-gauge-group"><div id="cbDrive" class="cb-gauge" role="group" aria-label="ドライブゲージ使用量"></div><span id="cbDriveCount" class="cb-gauge-count"></span></div></div><div class="cb-setting"><span>SAゲージ使用</span><div class="cb-gauge-group"><div id="cbSA" class="cb-gauge sa" role="group" aria-label="SAゲージ使用量"></div><span id="cbSACount" class="cb-gauge-count"></span></div></div><p class="cb-help">タップして使用量を選択</p></section>
+ <section class="ar-registration"><label for="arLocalAuthor">コンボの登録ユーザー</label><select id="arLocalAuthor" aria-label="登録先のユーザー"></select><p class="ar-notice">このブラウザに保存します。パスワード認証対応。共有公開はまだ接続されていません。</p><div class="ar-actions"><button id="arSaveDraft" class="ar-button" type="button">下書き保存</button><button id="arRegister" class="ar-button" type="button">この端末に登録</button></div></section>
+ </main></div>
+ <nav class="bottom-nav home-bottom-nav-v119" aria-label="下部ナビゲーション">
       <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button><button type="button" data-route="members"><span class="ico">♟</span><span>メンバー</span></button><button type="button" data-route="characters"><span class="ico">♞</span><span>キャラ</span></button><button type="button" data-route="combo-create"><span class="ico">⇄</span><span>コンボ</span></button><button type="button" data-route="frame-compare"><span class="ico">▤</span><span>フレーム</span></button>
     </nav>
-  </div>
 </section>
+<div id="cbLinkModal" class="cb-modal-backdrop" aria-hidden="true"><div class="cb-dialog" role="dialog" aria-modal="true" aria-labelledby="cbLinkTitle"><div class="cb-dialog-head"><h2 id="cbLinkTitle">次の技へのつなぎ方</h2><button id="cbClose" class="cb-dialog-close" type="button" aria-label="閉じる">×</button></div><p>技を選択しました。つなぎ方を選んでください。</p><div id="cbLinkChoices" class="cb-links"></div><p>選択した内容を技と技の間に表示</p><button id="cbConfirm" class="cb-confirm" type="button">決定</button></div></div>
+
 
 <section id="frame-compare-screen" class="screen utility-placeholder-screen">
   <div class="site-shell utility-placeholder-shell">
@@ -887,7 +942,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
     
 <header class="site-header">
   <img class="site-banner" src="assets/fgc-header.webp" alt="FGC COMBO ARCHIVE">
-  <span class="version-mark">v1.20</span>
+  <span class="version-mark">v1.24</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
   <nav class="top-tabs" aria-label="上部ナビゲーション">
     <button type="button" data-route="home">TOP</button>
     <button type="button" data-route="characters">CHARACTER</button>
@@ -963,79 +1018,79 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
       <div class="member-title-jp">メンバー一覧</div>
     </header>
     <div class="member-table-head" aria-hidden="true">
-      <div>#</div><div>ユーザー名</div><div>使用キャラ</div><div>ランク</div><div>コンボ数</div>
+      <div>No.</div><div>ユーザー</div><div>使用キャラ（ランク/コンボ登録数）</div>
     </div>
     <main id="memberList" class="member-list" aria-label="登録メンバー一覧">
 
       <article class="member-card" style="--accent:#ff1748" data-member-id="takuya" role="button" tabindex="0" onclick="navigate('member/takuya')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/takuya')">
         <div class="member-no">1</div><div class="member-user"><div class="member-user-jp">たくや</div><div class="member-user-romaji">TAKUYA</div></div>
         <div class="member-char-list">
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ryu.webp?v=119" alt="RYU"></div><span class="member-char-name">RYU</span></div><div class="member-rank rank-master">MASTER</div><div class="member-combo">124</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ken.webp?v=119" alt="KEN"></div><span class="member-char-name">KEN</span></div><div class="member-rank rank-diamond">DIAMOND</div><div class="member-combo">98</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/juri.webp?v=119" alt="JURI"></div><span class="member-char-name">JURI</span></div><div class="member-rank rank-platinum">PLATINUM</div><div class="member-combo">76</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ryu.webp?v=119" alt="RYU"></div><span class="member-char-name">RYU</span></div><div class="member-rank rank-master"><img class="member-rank-img" src="assets/ranks/master.png?v=121" alt="MASTER"></div><div class="member-combo">124</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ken.webp?v=119" alt="KEN"></div><span class="member-char-name">KEN</span></div><div class="member-rank rank-diamond"><img class="member-rank-img" src="assets/ranks/diamond.png?v=121" alt="DIAMOND"></div><div class="member-combo">98</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/juri.webp?v=119" alt="JURI"></div><span class="member-char-name">JURI</span></div><div class="member-rank rank-platinum"><img class="member-rank-img" src="assets/ranks/platinum.png?v=121" alt="PLATINUM"></div><div class="member-combo">76</div></div>
         </div>
       </article>
 
       <article class="member-card" style="--accent:#098cff" data-member-id="yui" role="button" tabindex="0" onclick="navigate('member/yui')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/yui')">
         <div class="member-no">2</div><div class="member-user"><div class="member-user-jp">ゆい</div><div class="member-user-romaji">YUI</div></div>
         <div class="member-char-list">
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/aki.webp?v=119" alt="A.K.I."></div><span class="member-char-name">A.K.I.</span></div><div class="member-rank rank-diamond">DIAMOND</div><div class="member-combo">98</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/mai.webp?v=119" alt="MAI"></div><span class="member-char-name">MAI</span></div><div class="member-rank rank-platinum">PLATINUM</div><div class="member-combo">71</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/chun-li.webp?v=119" alt="CHUN-LI"></div><span class="member-char-name">CHUN-LI</span></div><div class="member-rank rank-gold">GOLD</div><div class="member-combo">42</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/aki.webp?v=119" alt="A.K.I."></div><span class="member-char-name">A.K.I.</span></div><div class="member-rank rank-diamond"><img class="member-rank-img" src="assets/ranks/diamond.png?v=121" alt="DIAMOND"></div><div class="member-combo">98</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/mai.webp?v=119" alt="MAI"></div><span class="member-char-name">MAI</span></div><div class="member-rank rank-platinum"><img class="member-rank-img" src="assets/ranks/platinum.png?v=121" alt="PLATINUM"></div><div class="member-combo">71</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/chun-li.webp?v=119" alt="CHUN-LI"></div><span class="member-char-name">CHUN-LI</span></div><div class="member-rank rank-gold"><img class="member-rank-img" src="assets/ranks/gold.png?v=121" alt="GOLD"></div><div class="member-combo">42</div></div>
         </div>
       </article>
 
       <article class="member-card" style="--accent:#00e6df" data-member-id="shota" role="button" tabindex="0" onclick="navigate('member/shota')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/shota')">
         <div class="member-no">3</div><div class="member-user"><div class="member-user-jp">しょうた</div><div class="member-user-romaji">SHOTA</div></div>
         <div class="member-char-list">
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/luke.webp?v=119" alt="LUKE"></div><span class="member-char-name">LUKE</span></div><div class="member-rank rank-platinum">PLATINUM</div><div class="member-combo">76</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ed.webp?v=119" alt="ED"></div><span class="member-char-name">ED</span></div><div class="member-rank rank-gold">GOLD</div><div class="member-combo">63</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/cammy.webp?v=119" alt="CAMMY"></div><span class="member-char-name">CAMMY</span></div><div class="member-rank rank-silver">SILVER</div><div class="member-combo">28</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/luke.webp?v=119" alt="LUKE"></div><span class="member-char-name">LUKE</span></div><div class="member-rank rank-platinum"><img class="member-rank-img" src="assets/ranks/platinum.png?v=121" alt="PLATINUM"></div><div class="member-combo">76</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ed.webp?v=119" alt="ED"></div><span class="member-char-name">ED</span></div><div class="member-rank rank-gold"><img class="member-rank-img" src="assets/ranks/gold.png?v=121" alt="GOLD"></div><div class="member-combo">63</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/cammy.webp?v=119" alt="CAMMY"></div><span class="member-char-name">CAMMY</span></div><div class="member-rank rank-silver"><img class="member-rank-img" src="assets/ranks/silver.png?v=121" alt="SILVER"></div><div class="member-combo">28</div></div>
         </div>
       </article>
 
       <article class="member-card" style="--accent:#ffd21e" data-member-id="ayaka" role="button" tabindex="0" onclick="navigate('member/ayaka')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/ayaka')">
         <div class="member-no">4</div><div class="member-user"><div class="member-user-jp">あやか</div><div class="member-user-romaji">AYAKA</div></div>
         <div class="member-char-list">
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/chun-li.webp?v=119" alt="CHUN-LI"></div><span class="member-char-name">CHUN-LI</span></div><div class="member-rank rank-gold">GOLD</div><div class="member-combo">63</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/juri.webp?v=119" alt="JURI"></div><span class="member-char-name">JURI</span></div><div class="member-rank rank-silver">SILVER</div><div class="member-combo">41</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/elena.webp?v=119" alt="ELENA"></div><span class="member-char-name">ELENA</span></div><div class="member-rank rank-platinum">PLATINUM</div><div class="member-combo">71</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/chun-li.webp?v=119" alt="CHUN-LI"></div><span class="member-char-name">CHUN-LI</span></div><div class="member-rank rank-gold"><img class="member-rank-img" src="assets/ranks/gold.png?v=121" alt="GOLD"></div><div class="member-combo">63</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/juri.webp?v=119" alt="JURI"></div><span class="member-char-name">JURI</span></div><div class="member-rank rank-silver"><img class="member-rank-img" src="assets/ranks/silver.png?v=121" alt="SILVER"></div><div class="member-combo">41</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/elena.webp?v=119" alt="ELENA"></div><span class="member-char-name">ELENA</span></div><div class="member-rank rank-platinum"><img class="member-rank-img" src="assets/ranks/platinum.png?v=121" alt="PLATINUM"></div><div class="member-combo">71</div></div>
         </div>
       </article>
 
       <article class="member-card" style="--accent:#bc32ff" data-member-id="kenta" role="button" tabindex="0" onclick="navigate('member/kenta')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/kenta')">
         <div class="member-no">5</div><div class="member-user"><div class="member-user-jp">けんた</div><div class="member-user-romaji">KENTA</div></div>
         <div class="member-char-list">
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/blanka.webp?v=119" alt="BLANKA"></div><span class="member-char-name">BLANKA</span></div><div class="member-rank rank-silver">SILVER</div><div class="member-combo">45</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/guile.webp?v=119" alt="GUILE"></div><span class="member-char-name">GUILE</span></div><div class="member-rank rank-platinum">PLATINUM</div><div class="member-combo">68</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/jp.webp?v=119" alt="JP"></div><span class="member-char-name">JP</span></div><div class="member-rank rank-gold">GOLD</div><div class="member-combo">32</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/blanka.webp?v=119" alt="BLANKA"></div><span class="member-char-name">BLANKA</span></div><div class="member-rank rank-silver"><img class="member-rank-img" src="assets/ranks/silver.png?v=121" alt="SILVER"></div><div class="member-combo">45</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/guile.webp?v=119" alt="GUILE"></div><span class="member-char-name">GUILE</span></div><div class="member-rank rank-platinum"><img class="member-rank-img" src="assets/ranks/platinum.png?v=121" alt="PLATINUM"></div><div class="member-combo">68</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/jp.webp?v=119" alt="JP"></div><span class="member-char-name">JP</span></div><div class="member-rank rank-gold"><img class="member-rank-img" src="assets/ranks/gold.png?v=121" alt="GOLD"></div><div class="member-combo">32</div></div>
         </div>
       </article>
 
       <article class="member-card" style="--accent:#9fb4d3" data-member-id="rina" role="button" tabindex="0" onclick="navigate('member/rina')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/rina')">
         <div class="member-no">6</div><div class="member-user"><div class="member-user-jp">りな</div><div class="member-user-romaji">RINA</div></div>
         <div class="member-char-list">
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/elena.webp?v=119" alt="ELENA"></div><span class="member-char-name">ELENA</span></div><div class="member-rank rank-platinum">PLATINUM</div><div class="member-combo">71</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/jp.webp?v=119" alt="JP"></div><span class="member-char-name">JP</span></div><div class="member-rank rank-diamond">DIAMOND</div><div class="member-combo">58</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/mai.webp?v=119" alt="MAI"></div><span class="member-char-name">MAI</span></div><div class="member-rank rank-silver">SILVER</div><div class="member-combo">36</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/elena.webp?v=119" alt="ELENA"></div><span class="member-char-name">ELENA</span></div><div class="member-rank rank-platinum"><img class="member-rank-img" src="assets/ranks/platinum.png?v=121" alt="PLATINUM"></div><div class="member-combo">71</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/jp.webp?v=119" alt="JP"></div><span class="member-char-name">JP</span></div><div class="member-rank rank-diamond"><img class="member-rank-img" src="assets/ranks/diamond.png?v=121" alt="DIAMOND"></div><div class="member-combo">58</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/mai.webp?v=119" alt="MAI"></div><span class="member-char-name">MAI</span></div><div class="member-rank rank-silver"><img class="member-rank-img" src="assets/ranks/silver.png?v=121" alt="SILVER"></div><div class="member-combo">36</div></div>
         </div>
       </article>
 
       <article class="member-card" style="--accent:#ff1748" data-member-id="masato" role="button" tabindex="0" onclick="navigate('member/masato')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/masato')">
         <div class="member-no">7</div><div class="member-user"><div class="member-user-jp">まさと</div><div class="member-user-romaji">MASATO</div></div>
         <div class="member-char-list">
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ehonda.webp?v=119" alt="E.HONDA"></div><span class="member-char-name">E.HONDA</span></div><div class="member-rank rank-diamond">DIAMOND</div><div class="member-combo">58</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/marisa.webp?v=119" alt="MARISA"></div><span class="member-char-name">MARISA</span></div><div class="member-rank rank-gold">GOLD</div><div class="member-combo">37</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ken.webp?v=119" alt="KEN"></div><span class="member-char-name">KEN</span></div><div class="member-rank rank-silver">SILVER</div><div class="member-combo">25</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ehonda.webp?v=119" alt="E.HONDA"></div><span class="member-char-name">E.HONDA</span></div><div class="member-rank rank-diamond"><img class="member-rank-img" src="assets/ranks/diamond.png?v=121" alt="DIAMOND"></div><div class="member-combo">58</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/marisa.webp?v=119" alt="MARISA"></div><span class="member-char-name">MARISA</span></div><div class="member-rank rank-gold"><img class="member-rank-img" src="assets/ranks/gold.png?v=121" alt="GOLD"></div><div class="member-combo">37</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ken.webp?v=119" alt="KEN"></div><span class="member-char-name">KEN</span></div><div class="member-rank rank-silver"><img class="member-rank-img" src="assets/ranks/silver.png?v=121" alt="SILVER"></div><div class="member-combo">25</div></div>
         </div>
       </article>
 
       <article class="member-card" style="--accent:#09a6ff" data-member-id="haruki" role="button" tabindex="0" onclick="navigate('member/haruki')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/haruki')">
         <div class="member-no">8</div><div class="member-user"><div class="member-user-jp">はるき</div><div class="member-user-romaji">HARUKI</div></div>
         <div class="member-char-list">
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/cammy.webp?v=119" alt="CAMMY"></div><span class="member-char-name">CAMMY</span></div><div class="member-rank rank-gold">GOLD</div><div class="member-combo">37</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/cviper.webp?v=119" alt="C.VIPER"></div><span class="member-char-name">C.VIPER</span></div><div class="member-rank rank-silver">SILVER</div><div class="member-combo">32</div></div>
-          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ryu.webp?v=119" alt="RYU"></div><span class="member-char-name">RYU</span></div><div class="member-rank rank-platinum">PLATINUM</div><div class="member-combo">26</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/cammy.webp?v=119" alt="CAMMY"></div><span class="member-char-name">CAMMY</span></div><div class="member-rank rank-gold"><img class="member-rank-img" src="assets/ranks/gold.png?v=121" alt="GOLD"></div><div class="member-combo">37</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/cviper.webp?v=119" alt="C.VIPER"></div><span class="member-char-name">C.VIPER</span></div><div class="member-rank rank-silver"><img class="member-rank-img" src="assets/ranks/silver.png?v=121" alt="SILVER"></div><div class="member-combo">32</div></div>
+          <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ryu.webp?v=119" alt="RYU"></div><span class="member-char-name">RYU</span></div><div class="member-rank rank-platinum"><img class="member-rank-img" src="assets/ranks/platinum.png?v=121" alt="PLATINUM"></div><div class="member-combo">26</div></div>
         </div>
       </article>
     </main>
@@ -1085,7 +1140,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 
     <section id="memberTabCombos" class="member-detail-panel" hidden>
       <div class="member-detail-section-title"><span>投稿コンボ</span><small id="memberComboSummary"></small></div>
-      <div class="member-empty-panel">このメンバーが作成したコンボをここに表示します。<br>コンボ作成ツールは次工程で接続します。<br><button type="button" onclick="showToast('コンボ作成ツールは次工程で実装します')">＋ コンボを作成</button></div>
+      <div id="memberArchive"></div>
     </section>
 
     <section id="memberTabFavorites" class="member-detail-panel" hidden>
@@ -1168,7 +1223,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
     
 <header class="site-header">
   <img class="site-banner" src="assets/fgc-header.webp" alt="FGC COMBO ARCHIVE">
-  <span class="version-mark">v1.20</span>
+  <span class="version-mark">v1.24</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
   <nav class="top-tabs" aria-label="上部ナビゲーション">
     <button type="button" data-route="home">TOP</button>
     <button type="button" data-route="characters">CHARACTER</button>
@@ -1187,16 +1242,16 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
     <section id="frameControls" class="frame-controls">
       <div class="control-tabs" role="tablist" aria-label="操作タイプ">
         <button id="classicTab" type="button" class="control-tab active" data-control-type="classic">
-          <span class="control-badge classic-badge">C</span> CLASSIC
+          <img class="ar-type" src="assets/combo/classic.svg" alt="CLASSIC">
         </button>
         <button id="modernTab" type="button" class="control-tab" data-control-type="modern">
-          <span class="control-badge modern-badge">M</span> MODERN
+          <img class="ar-type" src="assets/combo/modern.svg" alt="MODERN">
         </button>
       </div>
       <div class="health-box">体力 <strong id="healthValue">10000</strong></div>
     </section>
 
-    <h1 class="frame-title">技／フレームデータ</h1>
+    <nav id="archiveFrameTabs" class="archive-tabs" aria-label="キャラクター情報"><button type="button" class="active" data-ar-tab="frame">技／フレームデータ</button><button type="button" data-ar-tab="combos">コンボ一覧</button></nav><div id="frameComboPanel" hidden></div><h1 class="frame-title">技／フレームデータ</h1>
     <div class="frame-table-wrap">
       <table class="frame-table frame-table-v101">
         <thead><tr>
@@ -1318,6 +1373,12 @@ function memberCharName(slug){return (MEMBER_CHARACTERS.find(x=>x[0]===slug)||[s
 function memberArt(slug){return `assets/member-icons/${slug}.webp?v=119`}
 function memberIcon(slug){return `assets/member-icons/${slug}.webp?v=119`}
 function rankClass(rank){return 'rank-'+String(rank||'').toLowerCase()}
+function memberRankImage(rank){
+  const slug=String(rank||'').toLowerCase();
+  if(!MEMBER_RANKS.includes(String(rank||'')))return escapeHtml(rank||'未登録');
+  return `<img class="member-rank-img" src="assets/ranks/${slug}.png?v=121" alt="${escapeHtml(rank)}" loading="lazy" decoding="async">`;
+}
+
 function romanizeMemberName(name,fallback){return fallback||String(name||'USER').toUpperCase()}
 function getMemberProfile(id){return memberProfiles[id]||null}
 function escapeHtml(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
@@ -1365,8 +1426,13 @@ function renderMemberList(){
   const count=document.querySelector('#member-screen .member-count strong');if(count)count.textContent=`${ids.length}人`;
   list.innerHTML=ids.map((id,index)=>{
     const p=memberProfiles[id];const accent=MEMBER_ACCENTS[index%MEMBER_ACCENTS.length];
-    const rows=(p.chars||[]).slice(0,3).map(c=>`<div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="${memberIcon(c.slug)}" alt="${escapeHtml(memberCharName(c.slug))}"></div><span class="member-char-name">${escapeHtml(memberCharName(c.slug))}</span></div><div class="member-rank ${rankClass(c.rank)}">${escapeHtml(c.rank)}</div><div class="member-combo">${Number(c.combo)||0}</div></div>`).join('');
-    return `<article class="member-card" style="--accent:${accent}" data-member-id="${escapeHtml(id)}" role="button" tabindex="0" onclick="navigate('member/${encodeURIComponent(id)}')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/${encodeURIComponent(id)}')"><div class="member-no">${index+1}</div><div class="member-user"><div class="member-user-jp">${escapeHtml(p.name)}</div></div><div class="member-char-list">${rows||'<div class="member-char-empty">使用キャラ未登録</div>'}</div></article>`;
+    const visibleChars=(p.chars||[]).slice(0,3);
+    const rows=Array.from({length:3},(_,slot)=>{
+      const c=visibleChars[slot];
+      if(!c)return '<div class="member-char-row member-char-slot-empty" aria-label="使用キャラ未登録"><span aria-hidden="true">—</span></div>';
+      return `<div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="${memberIcon(c.slug)}" alt="${escapeHtml(memberCharName(c.slug))}"></div><span class="member-char-name">${escapeHtml(memberCharName(c.slug))}</span></div><div class="member-rank ${rankClass(c.rank)}">${memberRankImage(c.rank)}</div><div class="member-combo" aria-label="コンボ登録数 ${arRegisteredCount(id,c.slug)}">${arRegisteredCount(id,c.slug)}</div></div>`;
+    }).join('');
+    return `<article class="member-card" style="--accent:${accent}" data-member-id="${escapeHtml(id)}" role="button" tabindex="0" onclick="navigate('member/${encodeURIComponent(id)}')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/${encodeURIComponent(id)}')"><div class="member-no">${index+1}</div><div class="member-user"><div class="member-user-jp">${escapeHtml(p.name)}</div></div><div class="member-char-list">${rows}</div></article>`;
   }).join('') || '<div class="member-empty-panel">メンバーが登録されていません。</div>';
   requestAnimationFrame(fitMemberNames);
 }
@@ -1381,10 +1447,10 @@ function renderMemberDetail(id){
   name.textContent=p.name;roman.textContent=p.roman||romanizeMemberName(p.name);
   if(bannerEntry){art.src=memberArt(bannerEntry.slug);art.alt=memberCharName(bannerEntry.slug);rank.textContent=bannerEntry.rank;rank.className='member-profile-rank '+rankClass(bannerEntry.rank);const accent=MEMBER_ACCENTS[Math.max(0,p.chars.findIndex(c=>c.slug===bannerEntry.slug))%MEMBER_ACCENTS.length];banner.style.setProperty('--accent',accent);art.style.display='block';rank.style.display='inline-flex'}else{art.style.display='none';rank.style.display='none'}
   const list=document.getElementById('memberUseList');list.innerHTML='';
-  p.chars.forEach((c,i)=>{const card=document.createElement('article');card.className='member-use-card';card.style.setProperty('--accent',MEMBER_ACCENTS[i%MEMBER_ACCENTS.length]);card.innerHTML=`<div class="member-use-order">${i+1}</div><div class="member-use-visual"><img src="${memberIcon(c.slug)}" alt="${escapeHtml(memberCharName(c.slug))}"><div class="member-use-name">${escapeHtml(memberCharName(c.slug))}</div></div><div class="member-use-controls"><label>RANK</label><select data-rank-index="${i}">${MEMBER_RANKS.map(r=>`<option ${r===c.rank?'selected':''}>${r}</option>`).join('')}</select><div class="member-use-combo"><span>コンボ数</span><strong>${Number(c.combo)||0}</strong></div></div>`;list.appendChild(card)});
+  p.chars.forEach((c,i)=>{const card=document.createElement('article');card.className='member-use-card';card.style.setProperty('--accent',MEMBER_ACCENTS[i%MEMBER_ACCENTS.length]);card.innerHTML=`<div class="member-use-order">${i+1}</div><div class="member-use-visual"><img src="${memberIcon(c.slug)}" alt="${escapeHtml(memberCharName(c.slug))}"><div class="member-use-name">${escapeHtml(memberCharName(c.slug))}</div></div><div class="member-use-controls"><label>RANK</label><select data-rank-index="${i}">${MEMBER_RANKS.map(r=>`<option ${r===c.rank?'selected':''}>${r}</option>`).join('')}</select><div class="member-use-combo"><span>コンボ数</span><strong>${arRegisteredCount(currentMemberId,c.slug)}</strong></div></div>`;list.appendChild(card)});
   if(!p.chars.length)list.innerHTML='<div class="member-empty-panel">使用キャラが未登録です。「使用キャラを管理」から追加できます。</div>';
   list.querySelectorAll('select[data-rank-index]').forEach(sel=>sel.addEventListener('change',e=>{const idx=Number(e.target.dataset.rankIndex);p.chars[idx].rank=e.target.value;saveMemberProfiles();renderMemberList();renderMemberDetail(currentMemberId);showToast('ランクを更新しました')}));
-  document.getElementById('memberComboSummary').textContent=`合計 ${p.chars.reduce((a,c)=>a+(Number(c.combo)||0),0)} コンボ`;
+  document.getElementById('memberComboSummary').textContent=`合計 ${p.chars.reduce((a,c)=>a+(arRegisteredCount(currentMemberId,c.slug)),0)} コンボ`;
   document.getElementById('memberAddCharacter').onclick=openMemberManageModal;document.getElementById('memberProfileEdit').onclick=openMemberEditModal;saveMemberProfiles();renderMemberList();
 }
 function syncMemberListCard(){renderMemberList()}
@@ -1480,6 +1546,7 @@ function showRoute(route){
     document.body.classList.add('combo-create-page');
     document.getElementById('combo-create-screen').classList.add('active');
     document.title='コンボ作成 | FGC COMBO ARCHIVE';
+    queueMicrotask(initComboEditor);
   }else if(route==='frame-compare'){
     document.body.classList.add('frame-compare-page');
     document.getElementById('frame-compare-screen').classList.add('active');
@@ -1792,8 +1859,143 @@ showRoute = function(route){
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
   else init();
 })();
+/* Approved combo editor: browser-local drafts and archive; no server writes. */
+let cbReady=false,cbDraft=null,cbPending=-1,cbChoice='ー',cbFocus=null;
+const CB_LINKS=['C','D','最速','微歩','ー','終了'];
+const CB_SCENES=['地上','しゃがみ','ジャンプ','カウンター','パニッシュ','端','中央','起き攻め','その他'];
+function cbLoad(){
+ const base={char:'ryu',type:'classic',title:'',scenes:[],damage:'',drive:0,sa:0,mode:'name',contexts:{}};
+ try{const v=JSON.parse(localStorage.getItem('fgcComboDraftV1')||'null');if(v&&typeof v==='object'){Object.assign(base,v);if(!MEMBER_CHARACTERS.some(c=>c[0]===base.char))base.char='ryu';if(!['classic','modern'].includes(base.type))base.type='classic';if(!base.contexts||typeof base.contexts!=='object')base.contexts={};if(!Array.isArray(base.scenes))base.scenes=[];base.drive=Math.max(0,Math.min(6,Number(base.drive)||0));base.sa=Math.max(0,Math.min(3,Number(base.sa)||0));}}
+ catch(e){}return base;
+}
+function cbSave(){try{localStorage.setItem('fgcComboDraftV1',JSON.stringify(cbDraft))}catch(e){showToast('入力内容を保存できませんでした')}}
+function cbRows(){const key=cbDraft.char+'/'+cbDraft.type;if(!Array.isArray(cbDraft.contexts[key]))cbDraft.contexts[key]=[{move:'',link:''}];return cbDraft.contexts[key]}
+function cbMoves(){
+ const info=FRAME_DATA_V101[cbDraft.char],fallback=!info;
+ const source=(info||FRAME_DATA_V101.ryu)[cbDraft.type]||[];
+ let section='';const out=[];let throwIndex=0;
+ source.forEach((r,i)=>{if(!Array.isArray(r)){section=r.section||'';return}
+ const kind=/投げ|共通/.test(section)?'common':/スーパー|アーツ/.test(section)?'sa':'normal';
+ if(fallback&&kind!=='common')return;
+ let name=r[0];if(fallback&&/投げ/.test(section))name=throwIndex++===0?'前投げ':'後ろ投げ';
+ out.push({id:String(i),name,command:r[1]||r[0],section,kind});});
+ return out;
+}
+function initComboEditor(){
+ if(cbReady){cbRender();return}cbReady=true;cbDraft=cbLoad();
+ const sel=document.getElementById('cbCharacter');sel.innerHTML=MEMBER_CHARACTERS.map(([slug,name])=>`<option value="${slug}">${escapeHtml(name)}${FRAME_DATA_V101[slug]?.jp?' / '+escapeHtml(FRAME_DATA_V101[slug].jp):''}</option>`).join('');
+ sel.addEventListener('change',()=>{cbDraft.char=sel.value;cbSave();cbRender()});
+ document.querySelectorAll('[data-cb-type]').forEach(b=>b.addEventListener('click',()=>{cbDraft.type=b.dataset.cbType;cbSave();cbRender()}));
+ document.getElementById('cbTitle').addEventListener('input',e=>{cbDraft.title=e.target.value;cbSave()});
+ document.getElementById('cbDamage').addEventListener('input',e=>{cbDraft.damage=e.target.value===''?'':Math.max(0,Math.min(99999,Math.floor(Number(e.target.value)||0)));cbSave()});
+ document.getElementById('cbToggle').addEventListener('click',()=>{cbDraft.mode=cbDraft.mode==='command'?'name':'command';cbSave();cbRenderSteps()});
+ document.getElementById('cbAdd').addEventListener('click',()=>{const rows=cbRows(),last=rows.at(-1);if(last&&!last.move){document.querySelector('#cbSteps select:last-of-type')?.focus();return}if(last){cbOpen(rows.length-1);return}rows.push({move:'',link:''});cbSave();cbRenderSteps()});
+ document.getElementById('cbClose').addEventListener('click',cbClose);
+ document.getElementById('cbConfirm').addEventListener('click',()=>{const rows=cbRows();if(cbPending<0||!rows[cbPending])return;rows[cbPending].link=cbChoice;if(cbChoice==='終了'){rows.splice(cbPending+1)}else if(cbPending===rows.length-1){rows.push({move:'',link:''})}cbSave();cbClose();cbRenderSteps()});
+ document.getElementById('cbLinkModal').addEventListener('click',e=>{if(e.target.id==='cbLinkModal')cbClose()});
+ document.getElementById('cbLinkModal').addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();cbClose()}if(e.key==='Tab'){const all=[...e.currentTarget.querySelectorAll('button')],first=all[0],last=all.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+ cbRender();
+}
+function cbRender(){
+ document.getElementById('cbCharacter').value=cbDraft.char;const art=document.getElementById('cbPortrait');art.src=memberIcon(cbDraft.char);art.alt=memberCharName(cbDraft.char);
+ document.querySelectorAll('[data-cb-type]').forEach(b=>{const on=b.dataset.cbType===cbDraft.type;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
+ document.getElementById('cbDataNote').textContent=FRAME_DATA_V101[cbDraft.char]?`${cbDraft.type==='classic'?'Classic':'Modern'}の技一覧から選択`:'固有技のデータ準備中（共通技を選択できます）';
+ document.getElementById('cbTitle').value=cbDraft.title;document.getElementById('cbDamage').value=cbDraft.damage;
+ const box=document.getElementById('cbScenes');box.innerHTML='';CB_SCENES.forEach(scene=>{const b=document.createElement('button');b.type='button';b.textContent=scene;b.dataset.scene=scene;const on=cbDraft.scenes.includes(scene);b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));b.onclick=()=>{if(on)cbDraft.scenes=cbDraft.scenes.filter(s=>s!==scene);else{const group=['地上','しゃがみ','ジャンプ'].includes(scene)?['地上','しゃがみ','ジャンプ']:['端','中央'].includes(scene)?['端','中央']:['カウンター','パニッシュ'].includes(scene)?['カウンター','パニッシュ']:[];cbDraft.scenes=cbDraft.scenes.filter(s=>!group.includes(s));cbDraft.scenes.push(scene)}cbSave();cbRender()};box.appendChild(b)});
+ cbGauge('cbDrive','cbDriveCount','drive',6);cbGauge('cbSA','cbSACount','sa',3);cbRenderSteps();
+}
+function cbGauge(id,count,key,total){const box=document.getElementById(id);box.innerHTML='';for(let i=1;i<=total;i++){const b=document.createElement('button');b.type='button';b.className='cb-segment'+(i<=cbDraft[key]?' active':'');b.setAttribute('aria-label',`${i}本使用`);b.setAttribute('aria-pressed',String(i<=cbDraft[key]));b.onclick=()=>{cbDraft[key]=cbDraft[key]===i?0:i;cbSave();cbGauge(id,count,key,total)};box.appendChild(b)}document.getElementById(count).textContent=`${cbDraft[key]} / ${total}`}
+function cbRenderSteps(){
+ const moves=cbMoves(),rows=cbRows(),box=document.getElementById('cbSteps');box.innerHTML='';
+ document.getElementById('cbMode').textContent=cbDraft.mode==='command'?'コマンド表示':'技名表示';document.getElementById('cbToggle').textContent=cbDraft.mode==='command'?'⇄ 技名表示':'⇄ コマンド表示';
+ rows.forEach((step,i)=>{
+ const m=moves.find(m=>m.id===step.move),row=document.createElement('div');row.className='cb-row '+(m?.kind||'normal');
+ const num=document.createElement('span');num.className='cb-step-num';num.textContent=i+1;row.appendChild(num);
+ const select=document.createElement('select');select.setAttribute('aria-label',`${i+1}番目の技`);select.innerHTML='<option value="">技を選択</option>';let group=null,section='';
+ moves.forEach(m=>{if(m.section!==section){group=document.createElement('optgroup');section=m.section;group.label=section;select.appendChild(group)}const opt=document.createElement('option');opt.value=m.id;opt.textContent=cbDraft.mode==='command'?m.command:m.name;group.appendChild(opt)});select.value=step.move;
+ select.onchange=()=>{step.move=select.value;if(!step.move)step.link='';cbSave();cbRenderSteps();if(step.move)cbOpen(i)};row.appendChild(select);
+ const del=document.createElement('button');del.type='button';del.className='cb-delete';del.textContent='×';del.setAttribute('aria-label',`${i+1}番目の技を削除`);del.onclick=()=>{rows.splice(i,1);if(!rows.length)rows.push({move:'',link:''});cbSave();cbRenderSteps()};row.appendChild(del);box.appendChild(row);
+ if(step.move&&step.link){const wrap=document.createElement('div');wrap.className=step.link==='終了'?'cb-end':'cb-link-wrap';const b=document.createElement('button');b.type='button';b.className='cb-link';b.textContent=step.link;b.setAttribute('aria-label',`${i+1}番目の技のつなぎ方を変更`);b.onclick=()=>cbOpen(i);wrap.appendChild(b);box.appendChild(wrap)}
+ });
+}
+function cbOpen(index){cbPending=index;cbFocus=document.activeElement;cbChoice=cbRows()[index].link||'ー';const modal=document.getElementById('cbLinkModal');const box=document.getElementById('cbLinkChoices');box.innerHTML='';CB_LINKS.forEach(link=>{const b=document.createElement('button');b.type='button';b.dataset.link=link;b.innerHTML=link==='C'?'C<small>（キャンセル）</small>':link==='D'?'D<small>（ディレイ）</small>':link;b.classList.toggle('active',link===cbChoice);b.setAttribute('aria-pressed',String(link===cbChoice));b.onclick=()=>{cbChoice=link;box.querySelectorAll('button').forEach(x=>{x.classList.toggle('active',x.dataset.link===link);x.setAttribute('aria-pressed',String(x.dataset.link===link))})};box.appendChild(b)});modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';box.querySelector('.active')?.focus()}
+function cbClose(){const modal=document.getElementById('cbLinkModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';cbPending=-1;cbFocus?.focus()}
+
+
+window.addEventListener('hashchange',()=>{if(document.getElementById('cbLinkModal')?.classList.contains('open'))cbClose()});
 </script>
 
 
+<section id="archive-list-screen" class="screen"><div class="archive-detail"><header class="combo-head"><button type="button" onclick="appBack()" aria-label="戻る">‹</button><span>FGC COMBO ARCHIVE</span><h1>新着コンボ</h1></header><div id="archiveGlobal"></div></div></section>
+<section id="archive-detail-screen" class="screen"><div class="archive-detail"><header class="combo-head"><button type="button" onclick="appBack()" aria-label="戻る">‹</button><span>FGC COMBO ARCHIVE</span><h1>コンボ詳細</h1></header><main id="archiveDetail"></main></div></section>
+
+<script>/* v1.24: one combo record powers character, author, home and detail views.
+   This release uses a browser-local repository, not a public shared database. */
+const AR_KEY='fgcComboArchiveV1';
+let arRecords=[];let arSamples=true;let arDetailCommand=false;let arLastSubmission='';
+const arFilters={};
+try{const saved=JSON.parse(localStorage.getItem(AR_KEY)||'[]');if(Array.isArray(saved))arRecords=saved.filter(arValid)}catch(e){}
+function arValid(p){return p&&typeof p.id==='string'&&typeof p.title==='string'&&MEMBER_CHARACTERS.some(c=>c[0]===p.char)&&['classic','modern'].includes(p.type)&&typeof p.authorId==='string'&&Array.isArray(p.steps)&&p.steps.length>0&&p.steps.every(s=>s&&typeof s.name==='string'&&typeof s.command==='string'&&['normal','common','sa'].includes(s.kind)&&CB_LINKS.includes(s.link))&&Array.isArray(p.scenes)&&p.scenes.every(s=>CB_SCENES.includes(s))&&Number.isFinite(p.createdAt)&&Number.isInteger(p.damage)&&p.damage>=0&&p.damage<=99999&&Number.isInteger(p.drive)&&p.drive>=0&&p.drive<=6&&Number.isInteger(p.sa)&&p.sa>=0&&p.sa<=3}
+function arSnapshot(slug,type,pattern,link){let section='';const rows=FRAME_DATA_V101[slug]?.[type]||[];for(const r of rows){if(!Array.isArray(r)){section=r.section;continue}if(pattern.test(r[0]))return {name:r[0],command:r[1]||r[0],kind:/投げ|共通/.test(section)?'common':/スーパー|アーツ/.test(section)?'sa':'normal',link}}return null}
+const arExampleSteps=[arSnapshot('ryu','classic',/^しゃがみ中P/,'C'),arSnapshot('ryu','classic',/^キャンセルドライブラッシュ/,'最速'),arSnapshot('ryu','classic',/^立ち強P/,'C'),arSnapshot('ryu','classic',/^強 昇龍拳/,'C'),arSnapshot('ryu','classic',/^SA3/,'終了')].filter(Boolean);
+const AR_DEMOS=[
+ {id:'sample-ryu-dr',char:'ryu',type:'classic',title:'中央・DRからSA3',authorId:'takuya',scenes:['地上','中央'],damage:3240,drive:3,sa:3,steps:arExampleSteps,createdAt:5,sample:true},
+ {id:'sample-ryu-edge',char:'ryu',type:'modern',title:'端・ゲージ節約コンボ',authorId:'yui',scenes:['地上','端'],damage:2480,drive:1,sa:0,steps:[arSnapshot('ryu','modern',/^しゃがみ中/,'ー'),arSnapshot('ryu','modern',/波動拳/,'終了')].filter(Boolean),createdAt:4,sample:true},
+ {id:'sample-juri',char:'juri',type:'modern',title:'中央・ノーゲージ',authorId:'takuya',scenes:['地上','中央'],damage:2100,drive:0,sa:0,steps:[arSnapshot('juri','modern',/^立ち中/,'C'),arSnapshot('juri','modern',/風破刃/,'終了')].filter(Boolean),createdAt:3,sample:true},
+ {id:'sample-marisa',char:'marisa',type:'classic',title:'端・起き攻め重視',authorId:'takuya',scenes:['端','起き攻め'],damage:2680,drive:2,sa:0,steps:[arSnapshot('marisa','classic',/^立ち中P/,'C'),arSnapshot('marisa','classic',/グラディウス/,'終了')].filter(Boolean),createdAt:2,sample:true},
+ {id:'sample-ryu-counter',char:'ryu',type:'classic',title:'カウンター始動コンボ',authorId:'shota',scenes:['中央','カウンター'],damage:2860,drive:2,sa:1,steps:[arSnapshot('ryu','classic',/^立ち強P/,'C'),arSnapshot('ryu','classic',/^SA1/,'終了')].filter(Boolean),createdAt:1,sample:true}
+];
+function arAll(){return [...arRecords,...(arSamples?AR_DEMOS:[])]}
+function arAuthor(p){return memberProfiles[p.authorId]?.name||p.authorName||'未登録ユーザー'}
+function arLogo(type){return `<img class="ar-type" src="assets/combo/${type==='modern'?'modern':'classic'}.svg" alt="${type==='modern'?'MODERN':'CLASSIC'}">`}
+function arGauge(n,total,sa=false){return `<span class="ar-gauge ${sa?'sa':''}" aria-label="${sa?'SA':'ドライブ'} ${n}/${total}">${Array.from({length:total},(_,i)=>`<i class="${i<n?'on':''}"></i>`).join('')}</span>`}
+function arTags(p){return `<div class="ar-tags">${p.sample?'<span class="sample">サンプル</span>':'<span>端末内保存</span>'}${p.scenes.map(s=>`<span>${escapeHtml(s)}</span>`).join('')}</div>`}
+function arCard(p,withChar=false){return `<article class="ar-card"><div class="ar-card-head">${withChar?`<div><img class="ar-card-char" src="${memberIcon(p.char)}" alt="${escapeHtml(memberCharName(p.char))}"><div class="ar-char-name">${escapeHtml(memberCharName(p.char))}</div></div>`:''}<h3><a class="ar-title-link" data-route="combo/${escapeHtml(p.id)}" href="#combo/${escapeHtml(p.id)}">${escapeHtml(p.title)}</a></h3>${arLogo(p.type)}</div><a class="ar-author" href="#member/${escapeHtml(p.authorId)}" data-route="member/${escapeHtml(p.authorId)}">投稿者：${escapeHtml(arAuthor(p))}</a>${arTags(p)}<div class="ar-stats"><span><b class="ar-damage">${p.damage}</b> DMG</span><span>${arGauge(p.drive,6)} ${p.drive}/6</span><span>${arGauge(p.sa,3,true)} ${p.sa}/3</span></div></article>`}
+function arFilter(scope){return arFilters[scope]||(arFilters[scope]={char:'',type:'',scene:'',cost:'',sort:'new',q:''})}
+function arPanel(host,scope,base,heading,withChar){if(!host)return;const f=arFilter(scope);const choose=(key,value,label)=>`<option value="${value}" ${f[key]===value?'selected':''}>${label}</option>`;let rows=base.filter(p=>(!f.char||p.char===f.char)&&(!f.type||p.type===f.type)&&(!f.scene||p.scenes.includes(f.scene))&&(!f.cost||(f.cost==='none'?p.drive===0&&p.sa===0:f.cost==='sa0'?p.sa===0:p.drive<=3))&&(!f.q||[p.title,arAuthor(p),memberCharName(p.char),...p.steps.map(s=>s.name)].join(' ').toLowerCase().includes(f.q.toLowerCase())));
+ rows.sort(f.sort==='damage'?(a,b)=>b.damage-a.damage:f.sort==='cost'?(a,b)=>a.drive-b.drive||a.sa-b.sa:(a,b)=>b.createdAt-a.createdAt);
+ host.innerHTML=`<div class="ar-filters-title">${scope==='member'?'':`<h2>${escapeHtml(heading)}</h2>`}<button type="button" class="ar-button" data-ar-create="${scope}">＋ 作成</button></div><p class="ar-notice">端末内保存 ${base.filter(p=>!p.sample).length}件${arSamples?' ／ サンプル表示あり':''}。共有公開は未接続です。<label class="ar-show-sample"><input type="checkbox" data-ar-samples ${arSamples?'checked':''}>サンプルを表示</label></p><div class="archive-tools">${withChar?`<select aria-label="キャラクター絞り込み" data-ar-filter="char">${choose('char','','キャラ：すべて')}${MEMBER_CHARACTERS.map(([id,name])=>choose('char',id,escapeHtml(name))).join('')}</select>`:''}<select aria-label="操作タイプ絞り込み" data-ar-filter="type">${choose('type','','タイプ：すべて')}${choose('type','classic','Classic')}${choose('type','modern','Modern')}</select><select aria-label="シーン絞り込み" data-ar-filter="scene">${choose('scene','','シーン：すべて')}${CB_SCENES.map(s=>choose('scene',s,s)).join('')}</select><select aria-label="ゲージ絞り込み" data-ar-filter="cost">${choose('cost','','ゲージ：すべて')}${choose('cost','none','ゲージ不使用')}${choose('cost','sa0','SA不使用')}${choose('cost','drive3','ドライブ3以下')}</select><select aria-label="並び順" data-ar-filter="sort">${choose('sort','new','新着順')}${choose('sort','damage','ダメージ順')}${choose('sort','cost','ゲージ節約順')}</select><input aria-label="コンボ検索" data-ar-filter="q" placeholder="タイトル・技名・投稿者で検索" value="${escapeHtml(f.q)}"></div><div class="ar-list">${rows.map(p=>arCard(p,withChar)).join('')||'<div class="ar-empty">該当するコンボはありません。</div>'}</div>`;
+ host.querySelectorAll('[data-ar-filter]').forEach(el=>el.onchange=()=>{f[el.dataset.arFilter]=el.value;arPanel(host,scope,base,heading,withChar)});host.querySelector('[data-ar-samples]').onchange=e=>{arSamples=e.target.checked;arRefresh()};host.querySelector('[data-ar-create]').onclick=()=>{if(scope==='frame'){initComboEditor();cbDraft.char=currentFrameSlug;cbSave()}if(scope==='member')localStorage.setItem('fgcComboLocalAuthor',currentMemberId);navigate('combo-create')};
+}
+function arFrame(){arPanel(document.getElementById('frameComboPanel'),'frame',arAll().filter(p=>p.char===currentFrameSlug),memberCharName(currentFrameSlug)+' コンボ一覧',false)}
+function arMember(){arPanel(document.getElementById('memberArchive'),'member',arAll().filter(p=>p.authorId===currentMemberId),'投稿コンボ',true);const n=arRecords.filter(p=>p.authorId===currentMemberId).length;document.getElementById('memberComboSummary').textContent=`端末内保存 ${n}件`}
+function arHome(){const strip=document.querySelector('.home-combo-strip-v119');strip.innerHTML=arAll().sort((a,b)=>b.createdAt-a.createdAt).slice(0,4).map(p=>`<article class="home-combo-card-v119"><a href="#combo/${escapeHtml(p.id)}" data-route="combo/${escapeHtml(p.id)}"><div class="home-combo-image-v119"><img src="${memberIcon(p.char)}" alt="${escapeHtml(memberCharName(p.char))}"><b>${p.sample?'SAMPLE':'NEW'}</b></div><div class="home-combo-info-v119"><strong>${escapeHtml(p.title)}</strong><span>${escapeHtml(memberCharName(p.char))}</span>${arLogo(p.type)}</div></a><div class="home-combo-info-v119"><a class="ar-author" href="#member/${escapeHtml(p.authorId)}" data-route="member/${escapeHtml(p.authorId)}">${escapeHtml(arAuthor(p))}</a><small>${p.sample?'表示例':new Date(p.createdAt).toLocaleDateString('ja-JP')}</small><div><em>${p.damage}</em><i>DMG</i><em class="drive">${p.drive}</em><i>DR</i><em class="sa">${p.sa}</em><i>SA</i></div></div></article>`).join('')||'<p class="ar-home-empty">コンボはまだありません。</p>';document.getElementById('archiveHomeNotice').textContent='端末内保存の新着 ／ SAMPLEは表示例';}
+function arDetail(id){const host=document.getElementById('archiveDetail'),p=[...arRecords,...AR_DEMOS].find(p=>p.id===id);if(!p){host.innerHTML='<p class="ar-empty">このコンボは見つかりません。端末内保存のコンボは作成したブラウザで確認してください。</p><button class="ar-button" data-route="combos">コンボ一覧へ</button>';return}document.title=p.title+' | FGC COMBO ARCHIVE';host.innerHTML=`<section class="cb-panel"><div class="ar-detail-char"><img src="${memberIcon(p.char)}" alt="${escapeHtml(memberCharName(p.char))}"><b>${escapeHtml(memberCharName(p.char))}</b>${arLogo(p.type)}</div><h1>${escapeHtml(p.title)}</h1><a class="ar-author" href="#member/${escapeHtml(p.authorId)}" data-route="member/${escapeHtml(p.authorId)}">投稿者：${escapeHtml(arAuthor(p))}</a><div class="ar-detail-meta">${p.sample?'サンプル：技順・ダメージは表示例です。':'端末内保存：全ユーザーへの公開はまだ行われていません。'}</div>${arTags(p)}</section><section class="cb-panel"><h2 class="cb-title">コンボ概要</h2><div class="cb-setting"><span>ダメージ</span><b class="ar-damage">${p.damage}</b></div><div class="cb-setting"><span>ドライブゲージ使用</span><span class="ar-setting-gauge">${arGauge(p.drive,6)}<span class="ar-count">${p.drive} / 6</span></span></div><div class="cb-setting"><span>SAゲージ使用</span><span class="ar-setting-gauge">${arGauge(p.sa,3,true)}<span class="ar-count">${p.sa} / 3</span></span></div></section><section class="cb-panel"><div class="ar-detail-title"><h2>コンボ手順 <small>${arDetailCommand?'コマンド':'技名'}表示</small></h2><button class="cb-toggle" id="arDetailToggle">⇄ ${arDetailCommand?'技名':'コマンド'}表示</button></div>${p.steps.map((s,i)=>`<div class="cb-row ar-read-row ${s.kind}"><span class="cb-step-num">${i+1}</span><span class="ar-step-text">${escapeHtml(arDetailCommand?s.command:s.name)}</span></div><div class="${s.link==='終了'?'cb-end':'cb-link-wrap'}"><span class="cb-link">${escapeHtml(s.link)}</span></div>`).join('')}</section><button class="ar-button" data-route="combos/${p.char}">${escapeHtml(memberCharName(p.char))}のコンボ一覧へ</button>`;document.getElementById('arDetailToggle').onclick=()=>{arDetailCommand=!arDetailCommand;arDetail(id)}}
+function arRefresh(){arHome();if(currentRoute.startsWith('frame/')||currentRoute.startsWith('combos/'))arFrame();if(currentRoute.startsWith('member/'))arMember();if(currentRoute==='combos')arPanel(document.getElementById('archiveGlobal'),'global',arAll(),'新着コンボ',true)}
+function arRegister(){initComboEditor();const title=cbDraft.title.trim(),rows=cbRows(),moves=cbMoves(),authorId=document.getElementById('arLocalAuthor').value;if(!memberProfiles[authorId]){showToast('登録先のユーザーを選択してください');return}if(!title){showToast('コンボタイトルを入力してください');document.getElementById('cbTitle').focus();return}if(!rows.length||rows.some(s=>!moves.some(m=>m.id===s.move))){showToast('すべての技を選択してください');return}if(rows.some((s,i)=>!CB_LINKS.includes(s.link)||(i<rows.length-1&&s.link==='終了'))||rows.at(-1).link!=='終了'){showToast('最後の技のつなぎ方を「終了」にしてください');return}if(cbDraft.damage===''||!Number.isFinite(Number(cbDraft.damage))){showToast('ダメージを入力してください');document.getElementById('cbDamage').focus();return}const p={id:crypto.randomUUID?crypto.randomUUID():'local-'+Date.now(),title,char:cbDraft.char,type:cbDraft.type,authorId,authorName:memberProfiles[authorId].name,scenes:[...cbDraft.scenes],damage:Number(cbDraft.damage),drive:cbDraft.drive,sa:cbDraft.sa,createdAt:Date.now(),steps:rows.map(s=>{const m=moves.find(m=>m.id===s.move);return {name:m.name,command:m.command,kind:m.kind,link:s.link}})};if(!arValid(p)){showToast('入力内容を確認してください');return}const signature=JSON.stringify({...p,id:'',createdAt:0});if(signature===arLastSubmission){showToast('同じコンボは登録済みです');return}try{localStorage.setItem(AR_KEY,JSON.stringify([...arRecords,p]))}catch(e){showToast('容量不足などにより保存できませんでした。下書きは保持しています');return}arRecords.push(p);arLastSubmission=signature;try{localStorage.setItem('fgcComboLocalAuthor',authorId)}catch(e){}renderMemberList();arDetailCommand=false;showToast('この端末に登録しました');navigate('combo/'+p.id)}
+function arSetupEditor(){const sel=document.getElementById('arLocalAuthor');const value=sel.value||localStorage.getItem('fgcComboLocalAuthor')||currentMemberId;sel.innerHTML=Object.keys(memberProfiles).map(id=>`<option value="${escapeHtml(id)}">${escapeHtml(memberProfiles[id].name)}</option>`).join('');if(memberProfiles[value])sel.value=value;document.getElementById('arRegister').onclick=arRegister;document.getElementById('arSaveDraft').onclick=()=>{cbSave();showToast('下書きをこの端末に保存しました')}}
+const arOldParse=parseHash;parseHash=function(){const raw=(location.hash||'').slice(1);return raw==='combos'||raw.startsWith('combos/')||raw.startsWith('combo/')?raw:arOldParse()};
+const arOldFrame=renderFrameData;renderFrameData=function(slug,type){arOldFrame(slug,type);document.querySelectorAll('#archiveFrameTabs button').forEach(b=>b.classList.toggle('active',b.dataset.arTab==='frame'));document.querySelector('#frame-screen .frame-title').hidden=false;document.querySelector('#frame-screen .frame-table-wrap').hidden=false;document.getElementById('frameComboPanel').hidden=true;arFrame();if(currentRoute.startsWith('combos/'))arSelectFrameTab('combos')};
+function arSelectFrameTab(tab){const combo=tab==='combos';document.querySelectorAll('#archiveFrameTabs button').forEach(b=>b.classList.toggle('active',b.dataset.arTab===tab));document.querySelector('#frame-screen .frame-title').hidden=combo;document.querySelector('#frame-screen .frame-table-wrap').hidden=combo;document.getElementById('frameComboPanel').hidden=!combo;if(combo)arFrame()}
+const arOldMember=renderMemberDetail;renderMemberDetail=function(id){arOldMember(id);arMember()};
+const arOldRoute=showRoute;showRoute=function(route){if(route==='combos'||route.startsWith('combo/')){currentRoute=route;document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.body.className='combo-archive-page';document.getElementById(route==='combos'?'archive-list-screen':'archive-detail-screen').classList.add('active');if(route==='combos'){document.title='新着コンボ | FGC COMBO ARCHIVE';arRefresh()}else{arDetailCommand=false;arDetail(route.slice(6))}setActiveNav(route);window.scrollTo(0,0);return}if(route.startsWith('combos/')){arOldRoute('frame/'+route.slice(7));currentRoute=route;arSelectFrameTab('combos');return}arOldRoute(route);if(route==='home')arHome();if(route==='combo-create')queueMicrotask(arSetupEditor)};
+const arOldSearch=homeSearch;homeSearch=function(){const q=document.getElementById('homeSearch').value.trim();if(!q)return arOldSearch();const hit=CHARS.find(([name])=>name.includes(q.toUpperCase()));if(hit){navigate('combos/'+hit[1]);return}arFilter('global').q=q;navigate('combos')};
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('#archiveFrameTabs button').forEach(b=>b.onclick=()=>navigate((b.dataset.arTab==='combos'?'combos/':'frame/')+currentFrameSlug));arHome()});
+
+function arRegisteredCount(authorId,slug){return arRecords.filter(p=>p.authorId===authorId&&p.char===slug).length}
+</script>
+<section id="login-screen" class="screen"><div class="combo-shell"><header class="combo-head"><button type="button" onclick="navigate('home')" aria-label="ホームへ戻る">‹</button><span>FGC COMBO ARCHIVE</span><h1>ログイン</h1></header><section class="cb-panel login-panel"><h2 class="cb-title">ユーザーログイン</h2><p>ユーザーを選択して、その人のパスワードを入力してください。</p><form id="fgcLoginForm"><label for="fgcLoginMember">ユーザー</label><select id="fgcLoginMember" autocomplete="username" required></select><label for="fgcLoginPassword">パスワード</label><div class="login-password-wrap"><input id="fgcLoginPassword" type="password" autocomplete="current-password" required maxlength="4096"><button id="fgcShowPassword" type="button" aria-label="パスワードを表示" aria-pressed="false">表示</button></div><label class="login-remember"><input id="fgcRememberLogin" type="checkbox" checked>このブラウザでログイン状態を保持</label><p id="fgcLoginStatus" role="status" aria-live="polite"></p><button id="fgcLoginSubmit" class="ar-button" type="submit">ログイン</button></form><div id="fgcLoginAccount" hidden><p id="fgcLoginName"></p><div class="ar-actions"><button id="fgcLoginContinue" type="button" class="ar-button">サイトへ進む</button><button id="fgcLogout" type="button" class="ar-button">ログアウト</button></div></div><p class="login-help">パスワードを忘れた場合は、サイト管理者に連絡してください。</p></section></div></section>
+
+<script>/* Firebase owns password verification. No password is persisted by this app.
+   All admitted users may edit: this UI does not impose per-author ownership. */
+let fgcAuth=null,fgcAuthApi=null,fgcSession=null,fgcAuthReady=false,fgcAuthFailure='',fgcReturnRoute='home',fgcLoginBusy=false;
+const FGC_AUTH_DOMAIN='users.sf6-combo-archive.web.app';
+function fgcLoginEmail(id){return /^[a-z0-9_-]+$/.test(id)?id.toLowerCase()+'@'+FGC_AUTH_DOMAIN:''}
+function fgcAuthMember(user){if(!user||!user.email||user.isAnonymous)return null;return Object.keys(memberProfiles).find(id=>fgcLoginEmail(id)===user.email.toLowerCase())||null}
+function fgcStatus(message,error=false){const el=document.getElementById('fgcLoginStatus');el.textContent=message;el.classList.toggle('error',error)}
+function fgcAccountUI(){const sel=document.getElementById('fgcLoginMember'),selected=sel.value||fgcSession?.memberId||'';sel.innerHTML='<option value="">ユーザーを選択</option>'+Object.keys(memberProfiles).filter(id=>fgcLoginEmail(id)).map(id=>`<option value="${escapeHtml(id)}">${escapeHtml(memberProfiles[id].name)}</option>`).join('');if(memberProfiles[selected])sel.value=selected;const logged=!!fgcSession;document.getElementById('fgcLoginForm').hidden=logged;document.getElementById('fgcLoginAccount').hidden=!logged;document.getElementById('fgcLoginName').textContent=logged?`${memberProfiles[fgcSession.memberId]?.name||fgcSession.memberId} としてログイン中`:'';document.getElementById('fgcAccountEntry').textContent=logged?`${memberProfiles[fgcSession.memberId]?.name||fgcSession.memberId}：ログイン中`:'ログイン';document.getElementById('fgcLoginSubmit').disabled=!fgcAuthReady||fgcLoginBusy||!fgcAuthApi;if(!logged&&!fgcLoginBusy)fgcStatus(fgcAuthFailure||(fgcAuthReady?'':'認証サービスに接続しています…'),!!fgcAuthFailure)}
+async function fgcStartAuth(){try{const response=await fetch('/__/firebase/init.json',{cache:'no-store'});if(!response.ok)throw Error('config');const config=await response.json();if(config.projectId!=='sf6-combo-archive'||!config.apiKey)throw Error('config');const [appApi,authApi]=await Promise.all([import('https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js'),import('https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js')]);fgcAuthApi=authApi;fgcAuth=authApi.getAuth(appApi.initializeApp(config,'fgc-login-v124'));authApi.onAuthStateChanged(fgcAuth,user=>{const id=fgcAuthMember(user);fgcSession=id?{uid:user.uid,memberId:id}:null;fgcAuthReady=true;fgcAccountUI();if(!fgcSession&&currentRoute==='combo-create'){fgcReturnRoute=currentRoute;navigate('login')}},()=>{fgcAuthFailure='ログイン状態を確認できません。通信を確認して再読み込みしてください。';fgcAuthReady=true;fgcAccountUI()})}catch(e){fgcAuthFailure='認証サービスに接続できません。公開サイトで通信を確認して再読み込みしてください。';fgcAuthReady=true;fgcAccountUI()}}
+function fgcLoginError(e){switch(e?.code){case 'auth/operation-not-allowed':return 'Firebase側でメール／パスワード認証が有効になっていません。管理者に連絡してください。';case 'auth/too-many-requests':return 'ログイン試行が多いため、一時的に制限されています。時間をおいてお試しください。';case 'auth/network-request-failed':return '通信できません。接続を確認してお試しください。';case 'auth/invalid-credential':case 'auth/wrong-password':case 'auth/user-not-found':case 'auth/invalid-email':case 'auth/user-disabled':return 'ユーザーまたはパスワードを確認してください。未登録の場合は管理者に連絡してください。';default:return 'ログインできませんでした。管理者に連絡してください。'}}
+async function fgcLogin(event){event.preventDefault();if(fgcLoginBusy)return;if(!fgcAuthReady||!fgcAuthApi){fgcStatus(fgcAuthFailure||'接続が完了するまでお待ちください。',true);return}const id=document.getElementById('fgcLoginMember').value,password=document.getElementById('fgcLoginPassword').value;if(!memberProfiles[id]||!fgcLoginEmail(id)){fgcStatus('ユーザーを選択してください。',true);return}if(!password){fgcStatus('パスワードを入力してください。',true);return}fgcLoginBusy=true;document.getElementById('fgcLoginSubmit').disabled=true;fgcStatus('確認しています…');try{await fgcAuthApi.setPersistence(fgcAuth,document.getElementById('fgcRememberLogin').checked?fgcAuthApi.browserLocalPersistence:fgcAuthApi.browserSessionPersistence);const credential=await fgcAuthApi.signInWithEmailAndPassword(fgcAuth,fgcLoginEmail(id),password);if(fgcAuthMember(credential.user)!==id){await fgcAuthApi.signOut(fgcAuth);throw Error('unmapped')}fgcSession={uid:credential.user.uid,memberId:id};fgcAccountUI();document.getElementById('fgcLoginPassword').value='';document.getElementById('fgcLoginPassword').type='password';showToast('ログインしました');navigate(fgcReturnRoute||'home')}catch(e){document.getElementById('fgcLoginPassword').value='';fgcStatus(fgcLoginError(e),true)}finally{fgcLoginBusy=false;document.getElementById('fgcLoginSubmit').disabled=!fgcAuthApi||!fgcAuthReady}}
+function fgcNeedLogin(route){if(fgcSession)return true;fgcReturnRoute=route||currentRoute||'home';navigate('login');if(fgcAuthReady&&!fgcAuthFailure)fgcStatus('編集・コンボ作成にはログインしてください。');return false}
+const fgcParseBefore=parseHash;parseHash=function(){return location.hash==='#login'?'login':fgcParseBefore()};
+const fgcRouteBefore=showRoute;showRoute=function(route){if(route==='login'){currentRoute='login';document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('login-screen').classList.add('active');document.body.className='login-page';document.title='ログイン | FGC COMBO ARCHIVE';fgcAccountUI();window.scrollTo(0,0);return}if(route==='combo-create'&&!fgcSession){fgcReturnRoute=route;navigate('login');return}fgcRouteBefore(route)};
+const fgcRegisterBefore=arRegister;arRegister=function(){if(fgcNeedLogin('combo-create'))fgcRegisterBefore()};
+const fgcEditorBefore=arSetupEditor;arSetupEditor=function(){fgcEditorBefore();if(fgcSession){const sel=document.getElementById('arLocalAuthor');if(memberProfiles[fgcSession.memberId])sel.value=fgcSession.memberId}};
+const fgcMutations='#memberProfileEdit,#memberAddCharacter,#memberListAddBtn,#memberListDeleteBtn,#memberEditSave,#memberManageSave,#memberManageAddBtn,#memberListAddSave,#memberListDeleteSave,[data-rank-index],[data-up],[data-down],[data-remove]';
+document.addEventListener('click',e=>{if(e.target.closest(fgcMutations)&&!fgcSession){e.preventDefault();e.stopImmediatePropagation();fgcNeedLogin(currentRoute)}},true);
+document.addEventListener('change',e=>{if(e.target.matches('[data-rank-index]')&&!fgcSession){e.preventDefault();e.stopImmediatePropagation();fgcNeedLogin(currentRoute)}},true);
+document.addEventListener('DOMContentLoaded',()=>{document.getElementById('fgcLoginForm').addEventListener('submit',fgcLogin);document.getElementById('fgcShowPassword').onclick=()=>{const input=document.getElementById('fgcLoginPassword'),show=input.type==='password';input.type=show?'text':'password';document.getElementById('fgcShowPassword').textContent=show?'隠す':'表示';document.getElementById('fgcShowPassword').setAttribute('aria-pressed',String(show))};document.getElementById('fgcLogout').onclick=async()=>{if(!fgcAuthApi)return;try{await fgcAuthApi.signOut(fgcAuth);fgcSession=null;document.getElementById('fgcLoginPassword').value='';showToast('ログアウトしました');navigate('login')}catch(e){fgcStatus('ログアウトできませんでした。通信を確認してください。',true)}};document.getElementById('fgcLoginContinue').onclick=()=>navigate(fgcReturnRoute||'home');fgcAccountUI();fgcStartAuth()});
+</script>
 </body>
 </html>
