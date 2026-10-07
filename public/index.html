@@ -97,7 +97,7 @@ a{color:inherit;text-decoration:none}button,input{font:inherit}img{max-width:100
 
 
 /* =========================================================
-   FGC COMBO ARCHIVE v1.13
+   FGC COMBO ARCHIVE v1.14
    Single-HTML screen system
    ========================================================= */
 .screen{display:none}
@@ -143,7 +143,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 
 
 /* =========================================================
-   v1.13 FRAME DATA: CLASSIC / MODERN + HEALTH + CANCEL
+   v1.14 FRAME DATA: CLASSIC / MODERN + HEALTH + CANCEL
    ========================================================= */
 .frame-controls{
   padding:16px 14px 14px;
@@ -246,7 +246,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 
 
 /* =========================================================
-   v1.13 mobile rendering fixes
+   v1.14 mobile rendering fixes
    - Character cards: render image directly on each card background
      (avoids iOS Safari duplicate/repaint and blank child-layer issues)
    - Frame page: remove upper artwork banner
@@ -363,7 +363,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 
 
 /* =========================================================
-   v1.13 CHARACTER ROSTER REBUILD
+   v1.14 CHARACTER ROSTER REBUILD
    - official lower-roster inspired 4-column diagonal cards
    - color art comes from the user's previously supplied character images
    - real <img> elements are used: no background repeat / no duplicate tiles
@@ -461,7 +461,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 
 
 /* =========================================================
-   v1.13 APPROVED ROSTER MASTER
+   v1.14 APPROVED ROSTER MASTER
    IMPORTANT: The approved generated roster image is the visual master.
    Do not crop, zoom, recolor, redraw, or recompose character portraits.
    Transparent hit areas provide navigation only.
@@ -536,7 +536,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 
 
 /* =========================================================
-   v1.13 MEMBER LIST — approved dark layout
+   v1.14 MEMBER LIST — approved dark layout
    Existing screens/layouts are intentionally untouched.
    ========================================================= */
 #member-screen{padding-bottom:86px;background:#03070c;min-height:100svh;color:#fff}
@@ -588,6 +588,46 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   .member-char-row{grid-template-columns:minmax(0,1fr) 31% 18%;min-height:37px}.member-char{grid-template-columns:48% 52%}.member-char-art-wrap{height:28px;margin-left:2px}.member-char-name{font-size:9.5px;padding-left:3px}.member-rank{font-size:9px;gap:2px}.member-rank:before{font-size:11px}.member-combo{font-size:17px}
 }
 
+
+/* =========================================================
+   v1.14 MEMBER DETAIL — approved neon layout
+   IMPORTANT: member-list layout and approved character icon assets are unchanged.
+========================================================= */
+#member-detail-screen{min-height:100svh;background:#03070c;color:#fff;padding-bottom:86px}
+.member-detail-shell{min-height:100svh;background:radial-gradient(circle at 85% 2%,rgba(80,21,130,.22),transparent 25rem),linear-gradient(180deg,#050811,#03070c 58%,#02050a)}
+.member-detail-topbar{height:58px;display:grid;grid-template-columns:46px 1fr 46px;align-items:center;padding:0 10px;border-bottom:1px solid #1d2b3b;background:rgba(3,7,13,.96);position:sticky;top:0;z-index:30}
+.member-detail-topbar button{height:38px;border:1px solid #29425d;background:#07111d;color:#fff;border-radius:10px;font-size:23px;font-weight:900}
+.member-detail-brand{text-align:center;font:italic 900 18px/1 Impact,"Arial Black",sans-serif;letter-spacing:.04em}.member-detail-brand b{color:#ff1748}
+.member-profile-banner{--accent:#ff1748;position:relative;min-height:210px;overflow:hidden;border-bottom:1px solid color-mix(in srgb,var(--accent) 60%,#172334);background:#10060b}
+.member-profile-banner .banner-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:saturate(1.06) contrast(1.05)}
+.member-profile-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,8,.94) 0%,rgba(8,7,11,.68) 35%,rgba(8,8,12,.12) 72%,rgba(7,7,10,.22)),linear-gradient(0deg,rgba(2,5,10,.88),transparent 56%)}
+.member-profile-info{position:relative;z-index:2;min-height:210px;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 64px 18px 18px}
+.member-profile-name{font-family:"Arial Black","Noto Sans JP",sans-serif;font-style:italic;font-size:30px;font-weight:950;line-height:1;text-shadow:0 2px 0 #000,0 0 14px rgba(255,255,255,.1)}
+.member-profile-roman{margin-top:5px;color:var(--accent);font:italic 900 11px/1 Arial,sans-serif;letter-spacing:.18em}
+.member-profile-rank{margin-top:13px;display:inline-flex;align-items:center;gap:8px;width:max-content;max-width:100%;padding:8px 13px;border:1px solid color-mix(in srgb,var(--accent) 60%,#496);background:rgba(3,8,15,.78);font:900 14px/1 "Arial Black",sans-serif;box-shadow:0 0 15px color-mix(in srgb,var(--accent) 22%,transparent)}
+.member-profile-rank:before{content:"◆";font-size:18px;filter:drop-shadow(0 0 5px currentColor)}
+.member-profile-edit{position:absolute;z-index:4;right:15px;bottom:18px;width:42px;height:42px;border-radius:10px;border:1px solid #6a7d91;background:rgba(4,10,18,.84);color:#fff;font-size:20px;font-weight:900}
+.member-detail-tabs{display:grid;grid-template-columns:repeat(3,1fr);height:53px;border-bottom:1px solid #24374d;background:#07101a;position:sticky;top:58px;z-index:26}
+.member-detail-tabs button{border:0;border-right:1px solid #24374d;background:transparent;color:#aeb8c5;font-size:12px;font-weight:900}.member-detail-tabs button:last-child{border-right:0}.member-detail-tabs button.active{color:#fff;background:linear-gradient(180deg,rgba(255,23,72,.3),rgba(68,2,18,.2));box-shadow:inset 0 -3px #ff1748;text-shadow:0 0 10px #ff1748}
+.member-detail-panel{padding:12px 10px 18px}.member-detail-panel[hidden]{display:none}
+.member-detail-section-title{display:flex;align-items:center;justify-content:space-between;margin:2px 2px 10px;font-size:16px;font-weight:950}.member-detail-section-title small{color:#96a5b8;font-size:10px;font-weight:700}
+.member-use-list{display:flex;flex-direction:column;gap:9px}
+.member-use-card{--accent:#ff1748;display:grid;grid-template-columns:42px minmax(0,1fr) 118px;min-height:91px;border:1.5px solid var(--accent);border-radius:7px;overflow:hidden;background:linear-gradient(100deg,color-mix(in srgb,var(--accent) 20%,#070b12),#050a11 42%,#070b12);box-shadow:0 0 12px color-mix(in srgb,var(--accent) 17%,transparent)}
+.member-use-order{display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 70%,#222),color-mix(in srgb,var(--accent) 20%,#000));font:italic 900 31px/1 Impact,sans-serif;border-right:1px solid color-mix(in srgb,var(--accent) 55%,#111)}
+.member-use-visual{position:relative;overflow:hidden;min-width:0}.member-use-visual img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}.member-use-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 45%,rgba(3,7,12,.45) 80%,#050a11)}
+.member-use-name{position:absolute;z-index:2;left:11px;bottom:9px;font:italic 900 24px/1 Impact,"Arial Black",sans-serif;text-shadow:0 2px 4px #000}
+.member-use-controls{display:flex;flex-direction:column;justify-content:center;gap:7px;padding:8px 8px 8px 5px;border-left:1px solid rgba(255,255,255,.08)}
+.member-use-controls label{font-size:8px;color:#aeb8c5;font-weight:900;letter-spacing:.08em}.member-use-controls select{width:100%;height:30px;border:1px solid #42566b;border-radius:6px;background:#07101a;color:#fff;font-size:10px;font-weight:900;padding:0 5px}.member-use-combo{display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(255,255,255,.08);padding-top:5px}.member-use-combo span{font-size:8px;color:#aeb8c5;font-weight:800}.member-use-combo strong{font:900 24px/1 Impact,sans-serif;color:var(--accent)}
+.member-add-btn{width:100%;height:54px;margin-top:11px;border:1px solid #63a8d7;border-radius:7px;background:#06111c;color:#fff;font-weight:950;font-size:14px;box-shadow:inset 0 0 12px rgba(20,151,255,.06)}
+.member-empty-panel{margin:14px 4px;padding:28px 15px;border:1px solid #273b50;border-radius:8px;background:#07101a;color:#b8c4cf;text-align:center;font-size:12px;line-height:1.8}.member-empty-panel button{margin-top:12px;height:40px;padding:0 18px;border:1px solid #ff3154;border-radius:7px;background:#9e0923;color:#fff;font-weight:900}
+.member-detail-nav{position:fixed;z-index:40;left:50%;bottom:0;transform:translateX(-50%);width:min(920px,100%);height:76px;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(3,7,13,.97);border-top:1px solid #1f354c;padding-bottom:env(safe-area-inset-bottom)}
+.member-detail-nav button{border:0;background:none;color:#c4cad2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:900}.member-detail-nav .ico{font-size:24px;line-height:1}.member-detail-nav .active{color:#fff;background:linear-gradient(180deg,rgba(213,9,44,.42),rgba(75,0,16,.42));text-shadow:0 0 12px #ff2346}
+.member-modal-backdrop{position:fixed;z-index:100;inset:0;background:rgba(0,0,0,.72);display:none;align-items:flex-end;justify-content:center;padding:18px 12px calc(18px + env(safe-area-inset-bottom))}.member-modal-backdrop.show{display:flex}
+.member-modal{width:min(560px,100%);max-height:84svh;overflow:auto;border:1px solid #38526c;border-radius:14px;background:linear-gradient(180deg,#0a1420,#050a11);box-shadow:0 0 30px rgba(0,0,0,.65),0 0 20px rgba(255,23,72,.14)}
+.member-modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 15px;border-bottom:1px solid #26384c}.member-modal-head h3{margin:0;font-size:17px}.member-modal-close{width:34px;height:34px;border:1px solid #40566d;background:#07101a;color:#fff;border-radius:8px;font-size:20px}
+.member-modal-body{padding:14px 15px}.member-form-row{margin-bottom:13px}.member-form-row label{display:block;margin-bottom:5px;color:#aeb8c5;font-size:11px;font-weight:900}.member-form-row input,.member-form-row select{width:100%;height:44px;border:1px solid #42566b;border-radius:7px;background:#07101a;color:#fff;padding:0 10px;font-size:14px}.member-modal-save{width:100%;height:50px;border:0;border-radius:8px;color:#fff;background:linear-gradient(90deg,#d70b32,#ff1748,#b410dc);font-weight:950;font-size:15px;box-shadow:0 0 18px rgba(255,23,72,.2)}
+@media(max-width:520px){.member-profile-banner{min-height:185px}.member-profile-info{min-height:185px;padding-left:14px}.member-profile-name{font-size:27px}.member-use-card{grid-template-columns:38px minmax(0,1fr) 110px;min-height:84px}.member-use-name{font-size:21px}.member-use-controls{padding-right:6px}.member-use-controls select{font-size:9px}.member-use-combo strong{font-size:22px}}
+
 </style>
 </head>
 <body>
@@ -596,7 +636,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   <div class="site-shell">
     <header class="site-header">
       <img class="site-banner" src="assets/fgc-header.webp" alt="FGC COMBO ARCHIVE">
-      <span class="version-mark">v1.13</span>
+      <span class="version-mark">v1.14</span>
     </header>
 
     <div class="search-row">
@@ -699,7 +739,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
     
 <header class="site-header">
   <img class="site-banner" src="assets/fgc-header.webp" alt="FGC COMBO ARCHIVE">
-  <span class="version-mark">v1.13</span>
+  <span class="version-mark">v1.14</span>
   <nav class="top-tabs" aria-label="上部ナビゲーション">
     <button type="button" data-route="home">TOP</button>
     <button type="button" data-route="characters">CHARACTER</button>
@@ -778,7 +818,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
     </div>
     <main class="member-list" aria-label="登録メンバー一覧">
 
-      <article class="member-card" style="--accent:#ff1748">
+      <article class="member-card" style="--accent:#ff1748" data-member-id="takuya" role="button" tabindex="0" onclick="navigate('member/takuya')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/takuya')">
         <div class="member-no">1</div><div class="member-user"><div class="member-user-jp">たくや</div><div class="member-user-romaji">TAKUYA</div></div>
         <div class="member-char-list">
           <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ryu.webp?v=113" alt="RYU"></div><span class="member-char-name">RYU</span></div><div class="member-rank rank-master">MASTER</div><div class="member-combo">124</div></div>
@@ -787,7 +827,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
         </div>
       </article>
 
-      <article class="member-card" style="--accent:#098cff">
+      <article class="member-card" style="--accent:#098cff" data-member-id="yui" role="button" tabindex="0" onclick="navigate('member/yui')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/yui')">
         <div class="member-no">2</div><div class="member-user"><div class="member-user-jp">ゆい</div><div class="member-user-romaji">YUI</div></div>
         <div class="member-char-list">
           <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/aki.webp?v=113" alt="A.K.I."></div><span class="member-char-name">A.K.I.</span></div><div class="member-rank rank-diamond">DIAMOND</div><div class="member-combo">98</div></div>
@@ -796,7 +836,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
         </div>
       </article>
 
-      <article class="member-card" style="--accent:#00e6df">
+      <article class="member-card" style="--accent:#00e6df" data-member-id="shota" role="button" tabindex="0" onclick="navigate('member/shota')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/shota')">
         <div class="member-no">3</div><div class="member-user"><div class="member-user-jp">しょうた</div><div class="member-user-romaji">SHOTA</div></div>
         <div class="member-char-list">
           <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/luke.webp?v=113" alt="LUKE"></div><span class="member-char-name">LUKE</span></div><div class="member-rank rank-platinum">PLATINUM</div><div class="member-combo">76</div></div>
@@ -805,7 +845,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
         </div>
       </article>
 
-      <article class="member-card" style="--accent:#ffd21e">
+      <article class="member-card" style="--accent:#ffd21e" data-member-id="ayaka" role="button" tabindex="0" onclick="navigate('member/ayaka')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/ayaka')">
         <div class="member-no">4</div><div class="member-user"><div class="member-user-jp">あやか</div><div class="member-user-romaji">AYAKA</div></div>
         <div class="member-char-list">
           <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/chun-li.webp?v=113" alt="CHUN-LI"></div><span class="member-char-name">CHUN-LI</span></div><div class="member-rank rank-gold">GOLD</div><div class="member-combo">63</div></div>
@@ -814,7 +854,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
         </div>
       </article>
 
-      <article class="member-card" style="--accent:#bc32ff">
+      <article class="member-card" style="--accent:#bc32ff" data-member-id="kenta" role="button" tabindex="0" onclick="navigate('member/kenta')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/kenta')">
         <div class="member-no">5</div><div class="member-user"><div class="member-user-jp">けんた</div><div class="member-user-romaji">KENTA</div></div>
         <div class="member-char-list">
           <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/blanka.webp?v=113" alt="BLANKA"></div><span class="member-char-name">BLANKA</span></div><div class="member-rank rank-silver">SILVER</div><div class="member-combo">45</div></div>
@@ -823,7 +863,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
         </div>
       </article>
 
-      <article class="member-card" style="--accent:#9fb4d3">
+      <article class="member-card" style="--accent:#9fb4d3" data-member-id="rina" role="button" tabindex="0" onclick="navigate('member/rina')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/rina')">
         <div class="member-no">6</div><div class="member-user"><div class="member-user-jp">りな</div><div class="member-user-romaji">RINA</div></div>
         <div class="member-char-list">
           <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/elena.webp?v=113" alt="ELENA"></div><span class="member-char-name">ELENA</span></div><div class="member-rank rank-platinum">PLATINUM</div><div class="member-combo">71</div></div>
@@ -832,7 +872,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
         </div>
       </article>
 
-      <article class="member-card" style="--accent:#ff1748">
+      <article class="member-card" style="--accent:#ff1748" data-member-id="masato" role="button" tabindex="0" onclick="navigate('member/masato')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/masato')">
         <div class="member-no">7</div><div class="member-user"><div class="member-user-jp">まさと</div><div class="member-user-romaji">MASATO</div></div>
         <div class="member-char-list">
           <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/ehonda.webp?v=113" alt="E.HONDA"></div><span class="member-char-name">E.HONDA</span></div><div class="member-rank rank-diamond">DIAMOND</div><div class="member-combo">58</div></div>
@@ -841,7 +881,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
         </div>
       </article>
 
-      <article class="member-card" style="--accent:#09a6ff">
+      <article class="member-card" style="--accent:#09a6ff" data-member-id="haruki" role="button" tabindex="0" onclick="navigate('member/haruki')" onkeydown="if(event.key==='Enter'||event.key===' ')navigate('member/haruki')">
         <div class="member-no">8</div><div class="member-user"><div class="member-user-jp">はるき</div><div class="member-user-romaji">HARUKI</div></div>
         <div class="member-char-list">
           <div class="member-char-row"><div class="member-char"><div class="member-char-art-wrap"><img class="member-char-art" src="assets/member-icons/cammy.webp?v=113" alt="CAMMY"></div><span class="member-char-name">CAMMY</span></div><div class="member-rank rank-gold">GOLD</div><div class="member-combo">37</div></div>
@@ -859,12 +899,85 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   </div>
 </section>
 
+
+<section id="member-detail-screen" class="screen">
+  <div class="member-detail-shell">
+    <header class="member-detail-topbar">
+      <button type="button" aria-label="メンバー一覧へ戻る" onclick="navigate('members')">‹</button>
+      <div class="member-detail-brand">FGC <b>COMBO</b> ARCHIVE</div>
+      <button type="button" aria-label="メニュー" onclick="showToast('メニューは後続実装予定です')">☰</button>
+    </header>
+
+    <section id="memberProfileBanner" class="member-profile-banner">
+      <img id="memberBannerArt" class="banner-art" src="assets/roster/ken.webp" alt="">
+      <div class="member-profile-info">
+        <div id="memberProfileName" class="member-profile-name">たくや</div>
+        <div id="memberProfileRoman" class="member-profile-roman">TAKUYA</div>
+        <div id="memberProfileRank" class="member-profile-rank rank-diamond">DIAMOND</div>
+      </div>
+      <button id="memberProfileEdit" type="button" class="member-profile-edit" aria-label="プロフィールを編集">✎</button>
+    </section>
+
+    <nav class="member-detail-tabs" aria-label="メンバー詳細タブ">
+      <button type="button" class="active" data-member-tab="characters">使用キャラ</button>
+      <button type="button" data-member-tab="combos">投稿コンボ</button>
+      <button type="button" data-member-tab="favorites">お気に入り</button>
+    </nav>
+
+    <section id="memberTabCharacters" class="member-detail-panel">
+      <div class="member-detail-section-title"><span>使用キャラ</span><small>ランクは変更時に即時反映</small></div>
+      <div id="memberUseList" class="member-use-list"></div>
+      <button id="memberAddCharacter" type="button" class="member-add-btn">＋ キャラクターを追加</button>
+    </section>
+
+    <section id="memberTabCombos" class="member-detail-panel" hidden>
+      <div class="member-detail-section-title"><span>投稿コンボ</span><small id="memberComboSummary"></small></div>
+      <div class="member-empty-panel">このメンバーが作成したコンボをここに表示します。<br>コンボ作成ツールは次工程で接続します。<br><button type="button" onclick="showToast('コンボ作成ツールは次工程で実装します')">＋ コンボを作成</button></div>
+    </section>
+
+    <section id="memberTabFavorites" class="member-detail-panel" hidden>
+      <div class="member-detail-section-title"><span>お気に入り</span><small>保存したコンボ</small></div>
+      <div class="member-empty-panel">お気に入り登録したコンボをここに表示します。</div>
+    </section>
+
+    <nav class="member-detail-nav" aria-label="メンバー詳細ページ下部ナビゲーション">
+      <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
+      <button type="button" data-route="members" class="active"><span class="ico">♟</span><span>メンバー</span></button>
+      <button type="button" onclick="showToast('コンボページは後続実装予定です')"><span class="ico">⇄</span><span>コンボ</span></button>
+      <button type="button" onclick="showToast('設定ページは後続実装予定です')"><span class="ico">⚙</span><span>設定</span></button>
+    </nav>
+  </div>
+</section>
+
+<div id="memberEditModal" class="member-modal-backdrop" aria-hidden="true">
+  <div class="member-modal" role="dialog" aria-modal="true" aria-labelledby="memberEditTitle">
+    <div class="member-modal-head"><h3 id="memberEditTitle">プロフィール編集</h3><button class="member-modal-close" type="button" onclick="closeMemberModal('memberEditModal')">×</button></div>
+    <div class="member-modal-body">
+      <div class="member-form-row"><label for="memberEditName">ユーザー名</label><input id="memberEditName" maxlength="20"></div>
+      <div class="member-form-row"><label for="memberEditBannerChar">バナーキャラ（登録済みキャラから選択）</label><select id="memberEditBannerChar"></select></div>
+      <button id="memberEditSave" class="member-modal-save" type="button">設定を保存</button>
+    </div>
+  </div>
+</div>
+
+<div id="memberAddModal" class="member-modal-backdrop" aria-hidden="true">
+  <div class="member-modal" role="dialog" aria-modal="true" aria-labelledby="memberAddTitle">
+    <div class="member-modal-head"><h3 id="memberAddTitle">使用キャラを追加</h3><button class="member-modal-close" type="button" onclick="closeMemberModal('memberAddModal')">×</button></div>
+    <div class="member-modal-body">
+      <div class="member-form-row"><label for="memberAddChar">キャラクター</label><select id="memberAddChar"></select></div>
+      <div class="member-form-row"><label for="memberAddRank">ランク</label><select id="memberAddRank"></select></div>
+      <button id="memberAddSave" class="member-modal-save" type="button">設定を保存</button>
+    </div>
+  </div>
+</div>
+
+
 <section id="frame-screen" class="screen">
   <div class="site-shell">
     
 <header class="site-header">
   <img class="site-banner" src="assets/fgc-header.webp" alt="FGC COMBO ARCHIVE">
-  <span class="version-mark">v1.13</span>
+  <span class="version-mark">v1.14</span>
   <nav class="top-tabs" aria-label="上部ナビゲーション">
     <button type="button" data-route="home">TOP</button>
     <button type="button" data-route="characters">CHARACTER</button>
@@ -922,7 +1035,7 @@ const CHARS=[["ARJUN","arjun"],["YASMINE","yasmine"],["INGRID","ingrid"],["ALEX"
 function assetFor(slug){return `assets/chars/${slug}.webp`}
 function showToast(msg){let t=document.querySelector('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t)}t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 function goBack(){if(history.length>1)history.back();else location.href='index.html'}
-function renderCharacterGrid(){ /* v1.13: approved roster master image + transparent navigation hitmap; no dynamic portrait generation */ }
+function renderCharacterGrid(){ /* v1.14: approved roster master image + transparent navigation hitmap; no dynamic portrait generation */ }
 const RYU_DATA=[
 ["section","通常技"],["立ち弱P（ジャブ）","4","4-6","7","4","-1","weak"],["立ち弱K（ローキック）","5","5-7","11","2","-4","weak"],["立ち中P（鉤突き）","6","6-9","11","7","-1","mid"],["立ち中K（横蹴り）","9","9-11","18","4","-4","mid"],["立ち強P（正拳突き）","10","10-14","18","4","-2","strong"],["立ち強K（後ろ回し蹴り）","12","12-15","20","9","1","strong"],["しゃがみ弱P（ジャブ） ↓","4","4-5","9","4","-1","weak"],["しゃがみ弱K（キック） ↓","5","5-6","10","3","-1","weak"],["しゃがみ中P（ストレート） ↓","6","6-9","13","5","0","mid"],["しゃがみ中K（くるぶしキック） ↓","8","8-10","19","1","-6","mid"],["しゃがみ強P（突き上げアッパー） ↓","9","9-14","22","1","-7","strong"],["しゃがみ強K（回転足払い） ↓","9","9-11","23","D","-12","strong"],["ジャンプ弱P（肘落とし）","4","4-13","着地後3","","","weak"],["ジャンプ弱K（ひざ蹴り）","6","6-15","着地後3","","","weak"],["ジャンプ中P（すくい突き）","8","8-12","着地後3","","","mid"],["ジャンプ中K（飛び蹴り）","7","7-12","着地後3","","","mid"],["ジャンプ強P（ストレート）","9","9-14","着地後3","","","strong"],["ジャンプ強K（跳び前蹴り）","10","10-17","着地後3","","","strong"],
 ["section","特殊技"],["鎖骨割り  ➡ +","20","20-23","19","3","-3","mid"],["鳩尾砕き  ➡ +","20","20-24","16","6","3","strong"],["上げ突き  ⬅ +","7","7-10","26","1","-13","strong"],["かかと落とし  ⬅ +","10","10-23","21","0","-4","strong"],["旋風脚  ➡ +","16","16-19","20","2","-4","strong"],["上段二連撃","9","9-12","20","D","-8","strong"],["不破三連撃（2段目）","5","5-7","16","1","-4","weak"],["不破三連撃（3段目）","17","17-20","20","D","-8","strong"],
@@ -970,12 +1083,100 @@ function getCompare(){try{return JSON.parse(localStorage.getItem('fgcCompare')||
 function updateCompareButton(slug,name){const btn=document.getElementById('compareBtn');if(!btn)return;const list=getCompare();const exists=list.some(x=>x.slug===slug);btn.textContent=exists?`比較から外す − (${list.length}/2)`:`比較に追加 ＋ (${list.length}/2)`;btn.onclick=()=>{let l=getCompare();const i=l.findIndex(x=>x.slug===slug);if(i>=0){l.splice(i,1);showToast(`${name} を比較から外しました`)}else{if(l.length>=2){showToast('比較は2キャラまでです');return}l.push({slug,name});showToast(`${name} を比較に追加しました`)}localStorage.setItem('fgcCompare',JSON.stringify(l));updateCompareButton(slug,name)}}
 
 
+
+/* =========================================================
+   v1.14 Member detail controller
+========================================================= */
+const MEMBER_RANKS=['ROOKIE','IRON','BRONZE','SILVER','GOLD','PLATINUM','DIAMOND','MASTER'];
+const MEMBER_CHARACTERS=[
+  ['arjun','ARJUN'],['yasmine','YASMINE'],['ingrid','INGRID'],['alex','ALEX'],['cviper','C.VIPER'],['sagat','SAGAT'],['elena','ELENA'],['mai','MAI'],
+  ['terry','TERRY'],['vega','VEGA'],['gouki','GOUKI'],['ed','ED'],['aki','A.K.I.'],['rashid','RASHID'],['cammy','CAMMY'],['lily','LILY'],
+  ['zangief','ZANGIEF'],['jp','JP'],['marisa','MARISA'],['manon','MANON'],['dee-jay','DEE JAY'],['ehonda','E.HONDA'],['dhalsim','DHALSIM'],['blanka','BLANKA'],
+  ['ken','KEN'],['juri','JURI'],['kimberly','KIMBERLY'],['guile','GUILE'],['chun-li','CHUN-LI'],['jamie','JAMIE'],['luke','LUKE'],['ryu','RYU']
+];
+const MEMBER_ACCENTS=['#ff1748','#09a6ff','#00e6df','#ffd21e','#bc32ff','#9fb4d3'];
+const DEFAULT_MEMBER_PROFILES={
+  takuya:{name:'たくや',roman:'TAKUYA',bannerChar:'ken',chars:[{slug:'ryu',rank:'MASTER',combo:124},{slug:'ken',rank:'DIAMOND',combo:98},{slug:'juri',rank:'PLATINUM',combo:76}]},
+  yui:{name:'ゆい',roman:'YUI',bannerChar:'aki',chars:[{slug:'aki',rank:'DIAMOND',combo:98},{slug:'mai',rank:'PLATINUM',combo:71},{slug:'chun-li',rank:'GOLD',combo:42}]},
+  shota:{name:'しょうた',roman:'SHOTA',bannerChar:'luke',chars:[{slug:'luke',rank:'PLATINUM',combo:76},{slug:'ed',rank:'GOLD',combo:63},{slug:'cammy',rank:'SILVER',combo:28}]},
+  ayaka:{name:'あやか',roman:'AYAKA',bannerChar:'chun-li',chars:[{slug:'chun-li',rank:'GOLD',combo:63},{slug:'juri',rank:'SILVER',combo:41},{slug:'elena',rank:'PLATINUM',combo:71}]},
+  kenta:{name:'けんた',roman:'KENTA',bannerChar:'blanka',chars:[{slug:'blanka',rank:'SILVER',combo:45},{slug:'guile',rank:'PLATINUM',combo:68},{slug:'jp',rank:'GOLD',combo:32}]},
+  rina:{name:'りな',roman:'RINA',bannerChar:'elena',chars:[{slug:'elena',rank:'PLATINUM',combo:71},{slug:'jp',rank:'DIAMOND',combo:58},{slug:'mai',rank:'SILVER',combo:36}]},
+  masato:{name:'まさと',roman:'MASATO',bannerChar:'ehonda',chars:[{slug:'ehonda',rank:'DIAMOND',combo:58},{slug:'marisa',rank:'GOLD',combo:37},{slug:'ken',rank:'SILVER',combo:25}]},
+  haruki:{name:'はるき',roman:'HARUKI',bannerChar:'cammy',chars:[{slug:'cammy',rank:'GOLD',combo:37},{slug:'cviper',rank:'SILVER',combo:32},{slug:'ryu',rank:'PLATINUM',combo:26}]}
+};
+let currentMemberId='takuya';
+function cloneMemberProfiles(){return JSON.parse(JSON.stringify(DEFAULT_MEMBER_PROFILES))}
+function getMemberProfiles(){try{const saved=JSON.parse(localStorage.getItem('fgcMemberProfiles')||'null');return saved&&typeof saved==='object'?Object.assign(cloneMemberProfiles(),saved):cloneMemberProfiles()}catch(e){return cloneMemberProfiles()}}
+let memberProfiles=getMemberProfiles();
+function saveMemberProfiles(){try{localStorage.setItem('fgcMemberProfiles',JSON.stringify(memberProfiles))}catch(e){}}
+function memberCharName(slug){return (MEMBER_CHARACTERS.find(x=>x[0]===slug)||[slug,slug.toUpperCase()])[1]}
+function memberArt(slug){return `assets/roster/${slug}.webp?v=114`}
+function memberIcon(slug){return `assets/member-icons/${slug}.webp?v=114`}
+function rankClass(rank){return 'rank-'+String(rank||'').toLowerCase()}
+function romanizeMemberName(name,fallback){return fallback||String(name||'USER').toUpperCase()}
+function getMemberProfile(id){if(!memberProfiles[id]) memberProfiles[id]=JSON.parse(JSON.stringify(DEFAULT_MEMBER_PROFILES.takuya));return memberProfiles[id]}
+function renderMemberDetail(id){
+  currentMemberId=id&&memberProfiles[id]?id:'takuya';
+  const p=getMemberProfile(currentMemberId);
+  if(!p.chars.length){p.bannerChar='';}
+  if(p.bannerChar&&!p.chars.some(c=>c.slug===p.bannerChar)) p.bannerChar=p.chars[0]?.slug||'';
+  const bannerEntry=p.chars.find(c=>c.slug===p.bannerChar)||p.chars[0];
+  const banner=document.getElementById('memberProfileBanner');
+  const art=document.getElementById('memberBannerArt');
+  const name=document.getElementById('memberProfileName');
+  const roman=document.getElementById('memberProfileRoman');
+  const rank=document.getElementById('memberProfileRank');
+  name.textContent=p.name; roman.textContent=p.roman||romanizeMemberName(p.name);
+  if(bannerEntry){
+    art.src=memberArt(bannerEntry.slug); art.alt=memberCharName(bannerEntry.slug);
+    rank.textContent=bannerEntry.rank; rank.className='member-profile-rank '+rankClass(bannerEntry.rank);
+    const accent=MEMBER_ACCENTS[Math.max(0,p.chars.findIndex(c=>c.slug===bannerEntry.slug))%MEMBER_ACCENTS.length];banner.style.setProperty('--accent',accent);
+    art.style.display='block';rank.style.display='inline-flex';
+  }else{art.style.display='none';rank.style.display='none';}
+  const list=document.getElementById('memberUseList');list.innerHTML='';
+  p.chars.forEach((c,i)=>{
+    const card=document.createElement('article'); card.className='member-use-card'; card.style.setProperty('--accent',MEMBER_ACCENTS[i%MEMBER_ACCENTS.length]);
+    card.innerHTML=`<div class="member-use-order">${i+1}</div><div class="member-use-visual"><img src="${memberIcon(c.slug)}" alt="${memberCharName(c.slug)}"><div class="member-use-name">${memberCharName(c.slug)}</div></div><div class="member-use-controls"><label>RANK</label><select data-rank-index="${i}">${MEMBER_RANKS.map(r=>`<option ${r===c.rank?'selected':''}>${r}</option>`).join('')}</select><div class="member-use-combo"><span>コンボ数</span><strong>${c.combo||0}</strong></div></div>`;
+    list.appendChild(card);
+  });
+  list.querySelectorAll('select[data-rank-index]').forEach(sel=>sel.addEventListener('change',e=>{
+    const idx=Number(e.target.dataset.rankIndex);p.chars[idx].rank=e.target.value;saveMemberProfiles();syncMemberListCard(currentMemberId);renderMemberDetail(currentMemberId);showToast('ランクを更新しました');
+  }));
+  document.getElementById('memberComboSummary').textContent=`合計 ${p.chars.reduce((a,c)=>a+(Number(c.combo)||0),0)} コンボ`;
+  document.getElementById('memberAddCharacter').onclick=openMemberAddModal;
+  document.getElementById('memberProfileEdit').onclick=openMemberEditModal;
+  saveMemberProfiles();syncMemberListCard(currentMemberId);
+}
+function syncMemberListCard(id){
+  const card=document.querySelector(`.member-card[data-member-id="${id}"]`);if(!card)return;const p=getMemberProfile(id);const name=card.querySelector('.member-user-jp');const roman=card.querySelector('.member-user-romaji');if(name)name.textContent=p.name;if(roman)roman.textContent=p.roman||romanizeMemberName(p.name);
+  const rows=card.querySelectorAll('.member-char-row');rows.forEach((row,i)=>{const c=p.chars[i];if(!c){row.style.display='none';return}row.style.display='grid';const img=row.querySelector('.member-char-art');const nm=row.querySelector('.member-char-name');const rk=row.querySelector('.member-rank');const co=row.querySelector('.member-combo');if(img){img.src=memberIcon(c.slug);img.alt=memberCharName(c.slug)}if(nm)nm.textContent=memberCharName(c.slug);if(rk){rk.textContent=c.rank;rk.className='member-rank '+rankClass(c.rank)}if(co)co.textContent=c.combo||0;});
+}
+function openMemberEditModal(){
+  const p=getMemberProfile(currentMemberId);document.getElementById('memberEditName').value=p.name;const sel=document.getElementById('memberEditBannerChar');sel.innerHTML=p.chars.map(c=>`<option value="${c.slug}" ${c.slug===p.bannerChar?'selected':''}>${memberCharName(c.slug)}</option>`).join('');openMemberModal('memberEditModal');
+}
+function openMemberAddModal(){
+  const p=getMemberProfile(currentMemberId);const used=new Set(p.chars.map(c=>c.slug));const sel=document.getElementById('memberAddChar');sel.innerHTML=MEMBER_CHARACTERS.filter(x=>!used.has(x[0])).map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('')||'<option value="">追加できるキャラがありません</option>';document.getElementById('memberAddRank').innerHTML=MEMBER_RANKS.map(r=>`<option ${r==='ROOKIE'?'selected':''}>${r}</option>`).join('');openMemberModal('memberAddModal');
+}
+function openMemberModal(id){const el=document.getElementById(id);el.classList.add('show');el.setAttribute('aria-hidden','false')}
+function closeMemberModal(id){const el=document.getElementById(id);el.classList.remove('show');el.setAttribute('aria-hidden','true')}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('[data-member-tab]').forEach(btn=>btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-member-tab]').forEach(b=>b.classList.toggle('active',b===btn));
+    const t=btn.dataset.memberTab;document.getElementById('memberTabCharacters').hidden=t!=='characters';document.getElementById('memberTabCombos').hidden=t!=='combos';document.getElementById('memberTabFavorites').hidden=t!=='favorites';
+  }));
+  document.getElementById('memberEditSave')?.addEventListener('click',()=>{const p=getMemberProfile(currentMemberId);const nm=document.getElementById('memberEditName').value.trim();if(nm)p.name=nm;p.bannerChar=document.getElementById('memberEditBannerChar').value||p.bannerChar;saveMemberProfiles();closeMemberModal('memberEditModal');renderMemberDetail(currentMemberId);showToast('プロフィールを更新しました')});
+  document.getElementById('memberAddSave')?.addEventListener('click',()=>{const p=getMemberProfile(currentMemberId);const slug=document.getElementById('memberAddChar').value;if(!slug){showToast('追加できるキャラがありません');return}p.chars.push({slug,rank:document.getElementById('memberAddRank').value,combo:0});if(!p.bannerChar)p.bannerChar=slug;saveMemberProfiles();closeMemberModal('memberAddModal');renderMemberDetail(currentMemberId);showToast(`${memberCharName(slug)} を追加しました`)});
+  ['memberEditModal','memberAddModal'].forEach(id=>document.getElementById(id)?.addEventListener('click',e=>{if(e.target.id===id)closeMemberModal(id)}));
+});
+
 let currentRoute='home';
 
 function parseHash(){
   const raw=(location.hash||'#home').slice(1);
   if(raw==='characters') return 'characters';
   if(raw==='members') return 'members';
+  if(raw.startsWith('member/')) return raw;
   if(raw.startsWith('frame/')) return raw;
   return 'home';
 }
@@ -985,7 +1186,7 @@ function setActiveNav(route){
     const target=el.getAttribute('data-route');
     const active=(route==='home'&&target==='home') ||
                  (route==='characters'&&target==='characters') ||
-                 (route==='members'&&target==='members') ||
+                 ((route==='members'||route.startsWith('member/'))&&target==='members') ||
                  (route.startsWith('frame/')&&target==='frame/ryu');
     el.classList.toggle('active',active);
   });
@@ -1005,6 +1206,12 @@ function showRoute(route){
     document.body.classList.add('member-page');
     document.getElementById('member-screen').classList.add('active');
     document.title='メンバー | FGC COMBO ARCHIVE';
+  }else if(route.startsWith('member/')){
+    const memberId=route.split('/')[1]||'takuya';
+    document.body.classList.add('member-detail-page');
+    document.getElementById('member-detail-screen').classList.add('active');
+    renderMemberDetail(memberId);
+    document.title='メンバー詳細 | FGC COMBO ARCHIVE';
   }else if(route.startsWith('frame/')){
     const slug=route.split('/')[1]||'ryu';
     document.body.classList.add('frame-page');
@@ -1064,7 +1271,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 
 /* =========================================================
-   v1.13 Frame data controller
+   v1.14 Frame data controller
    ========================================================= */
 const FRAME_DATA_V101 = {"ryu":{"name":"RYU","jp":"リュウ","health":10000,"classic":[{"section":"通常技"},["立ち弱P（ジャブ）","弱P","4","4-6","7","4","-1","C","weak"],["立ち弱K（ローキック）","弱K","5","5-7","11","2","-4","C","weak"],["立ち中P（鉤突き）","中P","6","6-9","11","7","-1","C","mid"],["立ち中K（横蹴り）","中K","9","9-11","18","4","-4","","mid"],["立ち強P（正拳突き）","強P","10","10-14","18","4","-2","C","strong"],["立ち強K（後ろ回し蹴り）","強K","12","12-15","20","9","1","","strong"],["しゃがみ弱P（ジャブ）","↓ + 弱P","4","4-5","9","4","-1","C","weak"],["しゃがみ弱K（キック）","↓ + 弱K","5","5-6","10","3","-3","","weak"],["しゃがみ中P（ストレート）","↓ + 中P","6","6-9","13","5","0","C","mid"],["しゃがみ中K（くるぶしキック）","↓ + 中K","8","8-10","19","1","-6","C","mid"],["しゃがみ強P（突き上げアッパー）","↓ + 強P","9","9-14","22","1","-7","C","strong"],["しゃがみ強K（回転足払い）","↓ + 強K","9","9-11","23","D","-12","","strong"],["ジャンプ弱P（肘落とし）","（ジャンプ中）弱P","4","4-13","着地後3","","","","weak"],["ジャンプ弱K（ひざ蹴り）","（ジャンプ中）弱K","6","6-15","着地後3","","","","weak"],["ジャンプ中P（すくい突き）","（ジャンプ中）中P","8","8-12","着地後3","","","","mid"],["ジャンプ中K（飛び蹴り）","（ジャンプ中）中K","7","7-12","着地後3","","","","mid"],["ジャンプ強P（ストレート）","（ジャンプ中）強P","9","9-14","着地後3","","","","strong"],["ジャンプ強K（跳び前蹴り）","（ジャンプ中）強K","10","10-17","着地後3","","","","strong"],{"section":"特殊技"},["鎖骨割り","→ + 中P","20","20-23","19","2","-3","","mid"],["鳩尾砕き","→ + 強P","20","20-24","16","6","1","","strong"],["上げ突き","← + 強P","7","7-10","26","1","-13","C","strong"],["かかと落とし","← + 強K","10","10-23","21","0","-4","C","strong"],["旋風脚","→ + 強K","16","16-19","20","2","-4","※","strong"],["上段二連撃","強P → 強K","9","9-12","20","D","-8","※","strong"],["不破三連撃（2段目）","中P → 弱K","5","5-7","16","1","-4","","weak"],["不破三連撃（3段目）","中P → 弱K → 強K","17","17-20","20","D","-8","※","strong"],{"section":"必殺技"},["弱 波動拳","↓↘→ + 弱P","16","","全体47","2","-5","SA3","weak"],["中 波動拳","↓↘→ + 中P","14","","全体47","0","-7","SA3","mid"],["強 波動拳","↓↘→ + 強P","12","","全体47","-2","-9","SA3","strong"],["[電刃錬気] 波動拳","↓↘→ + P","12","","全体40","D","-1","SA3","neutral"],["OD 波動拳","↓↘→ + PP","12","","全体40","D","-1","SA2","neutral"],["[電刃錬気] OD 波動拳","↓↘→ + PP","12","","全体38","D","2","SA2","neutral"],["弱 昇龍拳","→↓↘ + 弱P","5","5-14","21+着地後12","D","-23","SA3","weak"],["中 昇龍拳","→↓↘ + 中P","6","6-15","30+着地後12","D","-32","SA3","mid"],["強 昇龍拳","→↓↘ + 強P","7","7-16","34+着地後12","D","-36","SA3","strong"],["OD 昇龍拳","→↓↘ + PP","6","6-15","37+着地後15","D","-40","","neutral"],["弱 竜巻旋風脚","↓↙← + 弱K","12","12-14","14+着地後18","D","-15","","weak"],["中 竜巻旋風脚","↓↙← + 中K","14","14-30","11+着地後20","D","-13","","mid"],["強 竜巻旋風脚","↓↙← + 強K","16","16-47","14+着地後17","D","-13","","strong"],["OD 竜巻旋風脚","↓↙← + KK","13","13-37","10+着地後13","D","-14","","neutral"],["空中竜巻旋風脚","（ジャンプ中）↓↙← + K","11","11-27","着地後16","D","","","neutral"],["OD 空中竜巻旋風脚","（ジャンプ中）↓↙← + KK","11","11-28","着地後16","D","","","neutral"],["弱 上段足刀蹴り","↓↘→ + 弱K","14","14-19","22","D","-11","SA3","weak"],["中 上段足刀蹴り","↓↘→ + 中K","18","18-26","19","D","-8","SA3","mid"],["強 上段足刀蹴り","↓↘→ + 強K","27","27-35","15","D","-3","SA3","strong"],["OD 上段足刀蹴り","↓↘→ + KK","17","17-21","33","D","-18","SA2","neutral"],["弱 波掌撃","↓↙← + 弱P","12","12-17","18","2","-3","SA3","weak"],["中 波掌撃","↓↙← + 中P","19","19-24","17","2","-6","SA3","mid"],["強 波掌撃","↓↙← + 強P","30","30-34,35","19","D","2","SA3","strong"],["[電刃錬気] 波掌撃","↓↙← + P","20","20-24,25","19","D","3","SA3","neutral"],["OD 波掌撃","↓↙← + PP","18","18-22","20","3","3","SA2","neutral"],["[電刃錬気] OD 波掌撃","↓↙← + PP","18","18-23","19","D","4","SA2","neutral"],["電刃錬気","↓↓ + P","","","全体52","","","","neutral"],{"section":"スーパーアーツ"},["SA1 真空波動拳","↓↘→↓↘→ + P","7","","全体86","D","-24","","neutral"],["[電刃錬気] SA1 真空波動拳","↓↘→↓↘→ + P","7","","全体89","D","-24","","neutral"],["SA2 真波掌撃（Lv1）","↓↙←↓↙← + P","12","12-17","39","D","-20","","neutral"],["SA2 真波掌撃（Lv2）","↓↙←↓↙← + P ホールド","20","20-25","39","D","-20","","neutral"],["SA2 真波掌撃（Lv3）","↓↙←↓↙← + P 最大ホールド","70","70-75","39","D","-20","","neutral"],["[電刃錬気] SA2 真波掌撃（Lv1）","↓↙←↓↙← + P","12","12-17","39","D","-20","","neutral"],["[電刃錬気] SA2 真波掌撃（Lv2）","↓↙←↓↙← + P ホールド","20","20-25","39","D","-20","","neutral"],["[電刃錬気] SA2 真波掌撃（Lv3）","↓↙←↓↙← + P 最大ホールド","70","70-75","39","D","-20","","neutral"],["SA3 真・昇龍拳","↓↘→↓↘→ + K","5","5-16","71","D","-52","","neutral"],["CA 真・昇龍拳（体力25%以下）","↓↘→↓↘→ + K","5","5-16","71","D","-52","","neutral"],{"section":"通常投げ"},["背負い投げ","（近距離で）N or → + 弱P弱K","5","5-7","23","D","","","neutral"],["巴投げ","（近距離で）← + 弱P弱K","5","5-7","23","D","","","neutral"],{"section":"共通システム"},["前方ステップ","→→","","","全体19","","","","neutral"],["後方ステップ","←←","","","全体23","","","","neutral"],["ドライブインパクト（震撃）","強P強K","26","26-27","35","D","-3","","strong"],["[ガード時] ドライブリバーサル","（ガード中 or パリィ成立中）→ + 強P強K","20","20-22","26","D","-6","","strong"],["[起き上がり時] ドライブリバーサル","（起き上がり時）→ + 強P強K","18","18-20","26","D","-6","","strong"],["ドライブパリィ","中P中K","1","[※2]1-12","33","","","※1","mid"],["ジャストパリィ（打撃）","ガード方向 + 中P中K","1","","1","","","","mid"],["ジャストパリィ（飛び道具）","中P中K","1","","10","","","","mid"],["パリィドライブラッシュ","（ドライブパリィ中に）→→","","","全体45","","","※","neutral"],["キャンセルドライブラッシュ","（必殺技キャンセル可能な攻撃ヒット中に）→→","","","全体46","","","※","neutral"]],"modern":[{"section":"通常技"},["立ち弱P（ジャブ）","弱","4","4-6","7","4","-1","C","weak"],["立ち弱K（ローキック）","AUTO + 弱","5","5-7","11","2","-4","C","weak"],["立ち中P（鉤突き）","中","6","6-9","11","7","-1","C","mid"],["立ち強P（正拳突き）","強","10","10-14","18","4","-2","C","strong"],["しゃがみ弱K（キック）","↓ + 弱K","5","5-6","10","3","-3","","weak"],["しゃがみ中P（ストレート）","↓ + 中P","6","6-9","13","5","0","C","mid"],["しゃがみ中K（くるぶしキック）","↓ + 中K","8","8-10","19","1","-6","C","mid"],["しゃがみ強P（突き上げアッパー）","↓ + 強P","9","9-14","22","1","-7","C","strong"],["しゃがみ強K（回転足払い）","↓ + 強K","9","9-11","23","D","-12","","strong"],["ジャンプ弱P（肘落とし）","（ジャンプ中）弱P","4","4-13","着地後3","","","","weak"],["ジャンプ弱K（ひざ蹴り）","（ジャンプ中）弱K","6","6-15","着地後3","","","","weak"],["ジャンプ中P（すくい突き）","（ジャンプ中）中P","8","8-12","着地後3","","","","mid"],["ジャンプ中K（飛び蹴り）","（ジャンプ中）中K","7","7-12","着地後3","","","","mid"],["ジャンプ強P（ストレート）","（ジャンプ中）強P","9","9-14","着地後3","","","","strong"],["ジャンプ強K（跳び前蹴り）","（ジャンプ中）強K","10","10-17","着地後3","","","","strong"],{"section":"特殊技"},["鎖骨割り","→ + 中","20","20-23","19","2","-3","","mid"],["鳩尾砕き","AUTO + 強","20","20-24","16","6","1","","strong"],["かかと落とし","← + 強","10","10-23","21","0","-4","C","strong"],["旋風脚","→ + 強K","16","16-19","20","2","-4","※","strong"],["上段二連撃","強P → 強K","9","9-12","20","D","-8","※","strong"],["不破三連撃（2段目）","中P → 弱K","5","5-7","16","1","-4","","weak"],["不破三連撃（3段目）","中P → 弱K → 強K","17","17-20","20","D","-8","※","strong"],{"section":"必殺技"},["弱 波動拳","↓↘→ + 弱P","16","","全体47","2","-5","SA3","weak"],["中 波動拳","↓↘→ + 中P","14","","全体47","0","-7","SA3","mid"],["強 波動拳","N + SP（↓↘→ + 強）","12","","全体47","-2","-9","SA3","strong"],["[電刃錬気] 波動拳","N + SP（↓↘→ + 攻撃）","12","","全体40","D","-1","SA3","neutral"],["OD 波動拳","AUTO + SP（↓↘→ + 攻撃2つ）","12","","全体40","D","-1","SA2","neutral"],["[電刃錬気] OD 波動拳","AUTO + SP（↓↘→ + 攻撃2つ）","12","","全体38","D","2","SA2","neutral"],["弱 昇龍拳","→↓↘ + 弱P","5","5-14","21+着地後12","D","-23","SA3","weak"],["中 昇龍拳","→↓↘ + 中P","6","6-15","30+着地後12","D","-32","SA3","mid"],["強 昇龍拳","→ + SP（→↓↘ + 強）","7","7-16","34+着地後12","D","-36","SA3","strong"],["OD 昇龍拳","→↓↘ + PP","6","6-15","37+着地後15","D","-40","","neutral"],["弱 竜巻旋風脚","↓↙← + 弱K","12","12-14","14+着地後18","D","-15","","weak"],["中 竜巻旋風脚","← + SP（↓↙← + 中）","14","14-30","11+着地後20","D","-13","","mid"],["強 竜巻旋風脚","↓↙← + 強K","16","16-47","14+着地後17","D","-13","","strong"],["OD 竜巻旋風脚","↓↙← + KK","13","13-37","10+着地後13","D","-14","","neutral"],["空中竜巻旋風脚","（ジャンプ中）SP（↓↙← + 攻撃）","11","11-27","着地後16","D","","","neutral"],["OD 空中竜巻旋風脚","（ジャンプ中）↓↙← + KK","11","11-28","着地後16","D","","","neutral"],["弱 上段足刀蹴り","↓↘→ + 弱K","14","14-19","22","D","-11","SA3","weak"],["中 上段足刀蹴り","↓ + SP（↓↘→ + 中）","18","18-26","19","D","-8","SA3","mid"],["強 上段足刀蹴り","↓↘→ + 強K","27","27-35","15","D","-3","SA3","strong"],["OD 上段足刀蹴り","↓↘→ + KK","17","17-21","33","D","-18","SA2","neutral"],["弱 波掌撃","↓↙← + 弱P","12","12-17","18","2","-3","SA3","weak"],["中 波掌撃","↓↙← + 中P","19","19-24","17","2","-6","SA3","mid"],["強 波掌撃","↓↙← + 強P","30","30-34,35","19","D","2","SA3","strong"],["[電刃錬気] 波掌撃","↓↙← + P","20","20-24,25","19","D","3","SA3","neutral"],["OD 波掌撃","↓↙← + PP","18","18-22","20","3","3","SA2","neutral"],["[電刃錬気] OD 波掌撃","↓↙← + PP","18","18-23","19","D","4","SA2","neutral"],["電刃錬気","↓↓ + P","","","全体52","","","","neutral"],{"section":"スーパーアーツ"},["SA1 真空波動拳","N or → + SP強","7","","全体86","D","-24","","neutral"],["[電刃錬気] SA1 真空波動拳","N or → + SP強","7","","全体89","D","-24","","neutral"],["SA2 真波掌撃（Lv1）","← + SP強","12","12-17","39","D","-20","","neutral"],["SA2 真波掌撃（Lv2）","← + SP強 ホールド","20","20-25","39","D","-20","","neutral"],["SA2 真波掌撃（Lv3）","← + SP強 最大ホールド","70","70-75","39","D","-20","","neutral"],["[電刃錬気] SA2 真波掌撃（Lv1）","↓↙←↓↙← + P","12","12-17","39","D","-20","","neutral"],["[電刃錬気] SA2 真波掌撃（Lv2）","↓↙←↓↙← + P ホールド","20","20-25","39","D","-20","","neutral"],["[電刃錬気] SA2 真波掌撃（Lv3）","↓↙←↓↙← + P 最大ホールド","70","70-75","39","D","-20","","neutral"],["SA3 真・昇龍拳","↓ + SP強","5","5-16","71","D","-52","","neutral"],["CA 真・昇龍拳（体力25%以下）","↓ + SP強","5","5-16","71","D","-52","","neutral"],{"section":"通常投げ"},["背負い投げ","（近距離で）N or → + 弱中","5","5-7","23","D","","","neutral"],["巴投げ","（近距離で）← + 弱中","5","5-7","23","D","","","neutral"],{"section":"共通システム"},["前方ステップ","→→","","","全体19","","","","neutral"],["後方ステップ","←←","","","全体23","","","","neutral"],["ドライブインパクト（震撃）","強","26","26-27","35","D","-3","","strong"],["[ガード時] ドライブリバーサル","（ガード中）→ + 強","20","20-22","26","D","-6","","strong"],["[起き上がり時] ドライブリバーサル","（起き上がり時）→ + 強","18","18-20","26","D","-6","","strong"],["ドライブパリィ","中","1","[※2]1-12","33","","","※1","mid"],["ジャストパリィ（打撃）","ガード方向 + 中","1","","1","","","","mid"],["ジャストパリィ（飛び道具）","中","1","","10","","","","mid"],["パリィドライブラッシュ","（ドライブパリィ中に）→→","","","全体45","","","※","neutral"],["キャンセルドライブラッシュ","（必殺技キャンセル可能な攻撃ヒット中に）→→","","","全体46","","","※","neutral"]]},"marisa":{"name":"MARISA","jp":"マリーザ","health":10500,"classic":[{"section":"通常技"},["立ち弱P（ライトパンチ）","弱P","6","6-8","11","0","-2","","weak"],["立ち弱K（ティビアブレイク）","弱K","6","6-7","14","0","-2","C","weak"],["立ち中P（ミドルパンチ）","中P","7","7-10","15","2","-1","","mid"],["立ち中K（スターナムブレイク）","中K","11","11-14","16","4","-2","","mid"],["立ち強P（ヘビィーパンチ）","強P","12","12-13","23","3","-3","","strong"],["立ち強P（ホールド）","強P ホールド","23","23-24","22","7","5","","strong"],["立ち強K（リブブレイク）","強K","15","15-16","25","1","-3","","strong"],["立ち強K（ホールド）","強K ホールド","24","24-25","25","D","1","","strong"],["しゃがみ弱P（アンダーライト）","↓ + 弱P","4","4-5","10","4","-1","C","weak"],["しゃがみ弱K（フットバッシュ）","↓ + 弱K","5","5-7","12","2","-3","","weak"],["しゃがみ中P（アンダーミドル）","↓ + 中P","8","8-10","16","3","-2","C","mid"],["しゃがみ中K（レッグバッシュ）","↓ + 中K","9","9-11","18","5","-2","","mid"],["しゃがみ強P（ハーフハート）","↓ + 強P","9","9-13","23","D","-6","","strong"],["しゃがみ強P（ホールド）","↓ + 強P ホールド","21","21-26","21","D","-3","SA","strong"],["しゃがみ強K（ガイアバッシュ）","↓ + 強K","11","11-13","26","D","-11","","strong"],["しゃがみ強K（ホールド）","↓ + 強K ホールド","20","20-22","23","D","-3","","strong"],["ジャンプ弱P","（ジャンプ中）弱P","4","4-10","着地後3","","","","weak"],["ジャンプ弱K","（ジャンプ中）弱K","5","5-14","着地後3","","","","weak"],["ジャンプ中P","（ジャンプ中）中P","7","7-10","着地後3","","","","mid"],["ジャンプ中K","（ジャンプ中）中K","8","8-15","着地後3","","","","mid"],["ジャンプ強P","（ジャンプ中）強P","10","10-16","着地後3","","","","strong"],["ジャンプ強P（ホールド）","（ジャンプ中）強P ホールド","28","28-33","着地後3","D","","","strong"],["ジャンプ強K","（ジャンプ中）強K","10","10-16","着地後3","","","","strong"],["ジャンプ強K（ホールド）","（ジャンプ中）強K ホールド","29","29-34","着地後3","D","","","strong"],{"section":"特殊技"},["ライトワンツー","弱P → 弱P","14","14-16","22","-3","-6","C","weak"],["ミドルワンツー","中P → 中P","14","14-15","23","-3","-8","C","mid"],["ヘビィーワンツー","強P → 強P","24","24-26","19","D","2","","strong"],["ヴォラーレコンボ","（ジャンプ中）中P → 中P","10","10-12","着地後3","","","","mid"],["カエルムアーク","（垂直ジャンプ中）↓ + 強P","9","9-17","着地後3","","","","strong"],["カエルムアーク（ホールド）","（垂直ジャンプ中）↓ + 強P ホールド","28","28-36","着地後3","","","","strong"],["マグナバンカー","← + 強P","8","8-9","21","3","-1","C","strong"],["マグナバンカー（ホールド）","← + 強P ホールド","20","20-21","24","13","4","C","strong"],["ノバキュラスワイプ／ノバキュラシュート（1段目）","→ + 中P","9","9-10","20","2","-3","","mid"],["ノバキュラスワイプ","→ + 中P → 中P","11","11-12","26","D","-12","","mid"],["ノバキュラシュート","→ + 中P → 強P","11","11-14","23","D","-10","SA","strong"],["マレウスビート（1段目）","↘ + 中P","21","21-22","21","0","-3","","mid"],["マレウスビート（1段目・ホールド）","↘ + 中P ホールド","28","28-29","19","5","2","","mid"],["マレウスビート（2段目）","↘ + 中P → ↘ + 中P","18","18-19","24","D","-12","","mid"],["ファルクスクラッシュ（1段目）","→ + 強K","14","14-17","20","4","-2","C","strong"],["ファルクスクラッシュ（1段目・ホールド）","→ + 強K ホールド","27","27-30","19","10","3","C","strong"],["ファルクスクラッシュ（2段目）","→ + 強K → 強K","16","16-20","25","D","-12","","strong"],{"section":"必殺技"},["弱 グラディウス","↓↘→ + 弱P","17","17-20","21","D","-5","SA3","weak"],["弱 グラディウス（ホールド）","↓↘→ + 弱P ホールド","30","30-33","20","D","4","SA3","weak"],["中 グラディウス","↓↘→ + 中P","19","19-22","21","D","-5","SA3","mid"],["中 グラディウス（ホールド）","↓↘→ + 中P ホールド","35","35-38","20","D","4","SA3","mid"],["強 グラディウス","↓↘→ + 強P","22","22-25","21","D","-5","SA3","strong"],["強 グラディウス（ホールド）","↓↘→ + 強P ホールド","41","41-44","20","D","4","SA3","strong"],["OD グラディウス","↓↘→ + PP","19","19-22","21","D","-2","SA2","neutral"],["OD グラディウス（ホールド）","↓↘→ + PP ホールド","35","35-38","20","D","4","SA2","neutral"],["弱 ディマカイルス（1段目）","↓↙← + 弱P","12","12-15","30","-3","-16","SA3","weak"],["弱 ディマカイルス（2段目）","↓↙← + 弱P → → + P","13","13-17","23","D","-13","","weak"],["中 ディマカイルス（1段目）","↓↙← + 中P","16","16-20","30","0","-16","SA3","mid"],["中 ディマカイルス（2段目）","↓↙← + 中P → → + P","13","13-17","24","D","-14","","mid"],["強 ディマカイルス（1段目）","↓↙← + 強P","22","22-25","30","D","-16","SA3","strong"],["強 ディマカイルス（2段目）","↓↙← + 強P → → + P","18","18-22","23","D","-13","","strong"],["OD ディマカイルス（1段目）","↓↙← + PP","16","16-19","26","D","-12","SA2","neutral"],["OD ディマカイルス（2段目）","↓↙← + PP → → + P","13","13-17","23","D","-13","","neutral"],["弱 ファランクス","→↓↘ + 弱P","25","25-30","15","D","3","","weak"],["中 ファランクス","→↓↘ + 中P","28","28-33","15","D","3","","mid"],["強 ファランクス","→↓↘ + 強P","32","32-37","15","D","3","","strong"],["OD ファランクス","→↓↘ + PP","28","28-33","15","D","4","","neutral"],["弱 クアドリガ","↓↘→ + 弱K","20","20-23","24","D","-6","SA3","weak"],["中 クアドリガ","↓↘→ + 中K","24","24-27","22","D","-3","SA3","mid"],["強 クアドリガ","↓↘→ + 強K","29","29-32","21","D","1","SA3","strong"],["OD クアドリガ","↓↘→ + KK","24","24-27","24","D","-6","SA2","neutral"],["スクトゥム","↓↙← + K","","","全体54","","","","neutral"],["スクトゥム（当身派生版）","（スクトゥム中に打撃を受ける）","7","7-10","20","-1","-3","","neutral"],["OD スクトゥム","↓↙← + KK","","","全体57","","","","neutral"],["OD スクトゥム（当身派生版）","（ODスクトゥム中に打撃を受ける）","7","7-10","20","-1","-3","","neutral"],["トニトルス（1段目）","（スクトゥム中）弱P","15","15-17","23","1","-3","","weak"],["トニトルス（2段目）","（スクトゥム中）弱P → P","19","19-22","35","D","-21","","neutral"],["プロケッラ","（スクトゥム中）中P","16","16-18","37","D","-24","","mid"],["エンフォルド","（スクトゥム中）弱K強K","5","5-7","54","D","","","neutral"],{"section":"スーパーアーツ"},["SA1 マリーザジャベリン","↓↘→↓↘→ + P","19","19-23","60","D","-43","","neutral"],["SA1 マリーザジャベリン（ホールド）","↓↘→↓↘→ + P ホールド","42","42-47","60","D","-42","","neutral"],["SA1 マリーザジャベリン（当身派生版）","（SA1ホールド中に当身成立）","7","7-9","54","D","-37","","neutral"],["SA2 メテオリティス","↓↙←↓↙← + P","9","9-51","59","D","-44","","neutral"],["SA3 アポロウーサ","↓↘→↓↘→ + K","13","13-19","60","D","-39","","neutral"],["CA アポロウーサ（体力25%以下）","↓↘→↓↘→ + K","13","13-19","60","D","-39","","neutral"],{"section":"通常投げ"},["マウントグレイズ","（近距離で）N or → + 弱P弱K","5","5-7","23","D","","","neutral"],["ミルヴィオブリッジ","（近距離で）← + 弱P弱K","5","5-7","23","D","","","neutral"],{"section":"共通システム"},["前方ステップ","→→","","","全体22","","","","neutral"],["後方ステップ","←←","","","全体25","","","","neutral"],["ドライブインパクト（セクトール）","強P強K","26","26-27","35","D","-3","","strong"],["[ガード時] ドライブリバーサル","（ガード中 or パリィ成立中）→ + 強P強K","20","20-22","26","D","-6","","strong"],["[起き上がり時] ドライブリバーサル","（起き上がり時）→ + 強P強K","18","18-20","26","D","-6","","strong"],["ドライブパリィ","中P中K","1","[※2]1-12","33","","","※1","mid"],["ジャストパリィ（打撃）","ガード方向 + 中P中K","1","","1","","","","mid"],["ジャストパリィ（飛び道具）","中P中K","1","","10","","","","mid"],["パリィドライブラッシュ","（ドライブパリィ中に）→→","","","全体45","","","※","neutral"],["キャンセルドライブラッシュ","（必殺技キャンセル可能な攻撃ヒット中に）→→","","","全体46","","","※","neutral"]],"modern":[{"section":"通常技"},["立ち弱P（ライトパンチ）","弱","6","6-8","11","0","-2","","weak"],["立ち中P（ミドルパンチ）","AUTO + 中","7","7-10","15","2","-1","","mid"],["立ち中K（スターナムブレイク）","中","11","11-14","16","4","-2","","mid"],["立ち強P（ヘビィーパンチ）","強","12","12-13","23","3","-3","","strong"],["立ち強P（ホールド）","強 ホールド","23","23-24","22","7","5","","strong"],["しゃがみ弱P（アンダーライト）","↓ + 弱P","4","4-5","10","4","-1","C","weak"],["しゃがみ弱K（フットバッシュ）","↓ + 弱K","5","5-7","12","2","-3","","weak"],["しゃがみ中P（アンダーミドル）","↓ + 中P","8","8-10","16","3","-2","C","mid"],["しゃがみ強P（ハーフハート）","↓ + 強P","9","9-13","23","D","-6","","strong"],["しゃがみ強P（ホールド）","↓ + 強P ホールド","21","21-26","21","D","-3","SA","strong"],["しゃがみ強K（ガイアバッシュ）","↓ + 強K","11","11-13","26","D","-11","","strong"],["しゃがみ強K（ホールド）","↓ + 強K ホールド","20","20-22","23","D","-3","","strong"],["ジャンプ弱P","（ジャンプ中）弱P","4","4-10","着地後3","","","","weak"],["ジャンプ弱K","（ジャンプ中）弱K","5","5-14","着地後3","","","","weak"],["ジャンプ中P","（ジャンプ中）中P","7","7-10","着地後3","","","","mid"],["ジャンプ中K","（ジャンプ中）中K","8","8-15","着地後3","","","","mid"],["ジャンプ強P","（ジャンプ中）強P","10","10-16","着地後3","","","","strong"],["ジャンプ強P（ホールド）","（ジャンプ中）強P ホールド","28","28-33","着地後3","D","","","strong"],["ジャンプ強K","（ジャンプ中）強K","10","10-16","着地後3","","","","strong"],["ジャンプ強K（ホールド）","（ジャンプ中）強K ホールド","29","29-34","着地後3","D","","","strong"],{"section":"特殊技"},["ライトワンツー","弱P → 弱P","14","14-16","22","-3","-6","C","weak"],["ミドルワンツー","中P → 中P","14","14-15","23","-3","-8","C","mid"],["ヘビィーワンツー","強P → 強P","24","24-26","19","D","2","","strong"],["ヴォラーレコンボ","（ジャンプ中）中P → 中P","10","10-12","着地後3","","","","mid"],["カエルムアーク","（垂直ジャンプ中）↓ + 強P","9","9-17","着地後3","","","","strong"],["カエルムアーク（ホールド）","（垂直ジャンプ中）↓ + 強P ホールド","28","28-36","着地後3","","","","strong"],["マグナバンカー","← + 強P","8","8-9","21","3","-1","C","strong"],["マグナバンカー（ホールド）","← + 強P ホールド","20","20-21","24","13","4","C","strong"],["ノバキュラスワイプ／ノバキュラシュート（1段目）","→ + 中P","9","9-10","20","2","-3","","mid"],["ノバキュラスワイプ","→ + 中P → 中P","11","11-12","26","D","-12","","mid"],["ノバキュラシュート","→ + 中P → 強P","11","11-14","23","D","-10","SA","strong"],["マレウスビート（1段目）","↘ + 中P","21","21-22","21","0","-3","","mid"],["マレウスビート（1段目・ホールド）","↘ + 中P ホールド","28","28-29","19","5","2","","mid"],["マレウスビート（2段目）","↘ + 中P → ↘ + 中P","18","18-19","24","D","-12","","mid"],["ファルクスクラッシュ（1段目）","→ + 強K","14","14-17","20","4","-2","C","strong"],["ファルクスクラッシュ（1段目・ホールド）","→ + 強K ホールド","27","27-30","19","10","3","C","strong"],["ファルクスクラッシュ（2段目）","→ + 強K → 強K","16","16-20","25","D","-12","","strong"],{"section":"必殺技"},["弱 グラディウス","↓↘→ + 弱P","17","17-20","21","D","-5","SA3","weak"],["弱 グラディウス（ホールド）","↓↘→ + 弱P ホールド","30","30-33","20","D","4","SA3","weak"],["中 グラディウス","↓↘→ + 中P","19","19-22","21","D","-5","SA3","mid"],["中 グラディウス（ホールド）","↓↘→ + 中P ホールド","35","35-38","20","D","4","SA3","mid"],["強 グラディウス","↓↘→ + 強P","22","22-25","21","D","-5","SA3","strong"],["強 グラディウス（ホールド）","↓↘→ + 強P ホールド","41","41-44","20","D","4","SA3","strong"],["OD グラディウス","↓↘→ + PP","19","19-22","21","D","-2","SA2","neutral"],["OD グラディウス（ホールド）","↓↘→ + PP ホールド","35","35-38","20","D","4","SA2","neutral"],["弱 ディマカイルス（1段目）","↓↙← + 弱P","12","12-15","30","-3","-16","SA3","weak"],["弱 ディマカイルス（2段目）","↓↙← + 弱P → → + P","13","13-17","23","D","-13","","weak"],["中 ディマカイルス（1段目）","↓↙← + 中P","16","16-20","30","0","-16","SA3","mid"],["中 ディマカイルス（2段目）","↓↙← + 中P → → + P","13","13-17","24","D","-14","","mid"],["強 ディマカイルス（1段目）","↓↙← + 強P","22","22-25","30","D","-16","SA3","strong"],["強 ディマカイルス（2段目）","↓↙← + 強P → → + P","18","18-22","23","D","-13","","strong"],["OD ディマカイルス（1段目）","← + AUTO + SP（↓↙← + 攻撃2つ）","16","16-19","26","D","-12","SA2","neutral"],["OD ディマカイルス（2段目）","← + AUTO + SP → → + 攻撃","13","13-17","23","D","-13","","neutral"],["弱 ファランクス","→↓↘ + 弱P","25","25-30","15","D","3","","weak"],["中 ファランクス","↓ + SP（→↓↘ + 中）","28","28-33","15","D","3","","mid"],["強 ファランクス","→↓↘ + 強P","32","32-37","15","D","3","","strong"],["OD ファランクス","↓ + AUTO + SP（→↓↘ + 攻撃2つ）","28","28-33","15","D","4","","neutral"],["弱 クアドリガ","↓↘→ + 弱","20","20-23","24","D","-6","SA3","weak"],["中 クアドリガ","↓↘→ + 中","24","24-27","22","D","-3","SA3","mid"],["強 クアドリガ","↓↘→ + 強","29","29-32","21","D","1","SA3","strong"],["OD クアドリガ","↓↘→ + 攻撃2つ","24","24-27","24","D","-6","SA2","neutral"],["スクトゥム","→ + SP","","","全体54","","","","neutral"],["スクトゥム（当身派生版）","（スクトゥム中に打撃を受ける）","7","7-10","20","-1","-3","","neutral"],["OD スクトゥム","→ + AUTO + SP","","","全体57","","","","neutral"],["OD スクトゥム（当身派生版）","（ODスクトゥム中に打撃を受ける）","7","7-10","20","-1","-3","","neutral"],["トニトルス（1段目）","（スクトゥム中）弱P","15","15-17","23","1","-3","","weak"],["トニトルス（2段目）","（スクトゥム中）弱P → P","19","19-22","35","D","-21","","neutral"],["プロケッラ","（スクトゥム中）中P","16","16-18","37","D","-24","","mid"],["エンフォルド","（スクトゥム中）弱K強K","5","5-7","54","D","","","neutral"],{"section":"スーパーアーツ"},["SA1 マリーザジャベリン","N or → + SP強","19","19-23","60","D","-43","","neutral"],["SA1 マリーザジャベリン（ホールド）","N or → + SP強 ホールド","42","42-47","60","D","-42","","neutral"],["SA1 マリーザジャベリン（当身派生版）","（SA1ホールド中に当身成立）","7","7-9","54","D","-37","","neutral"],["SA2 メテオリティス","← + SP強","9","9-51","59","D","-44","","neutral"],["SA3 アポロウーサ","↓ + SP強","13","13-19","60","D","-39","","neutral"],["CA アポロウーサ（体力25%以下）","↓ + SP強","13","13-19","60","D","-39","","neutral"],{"section":"通常投げ"},["マウントグレイズ","（近距離で）N or → + 弱中","5","5-7","23","D","","","neutral"],["ミルヴィオブリッジ","（近距離で）← + 弱中","5","5-7","23","D","","","neutral"],{"section":"共通システム"},["前方ステップ","→→","","","全体22","","","","neutral"],["後方ステップ","←←","","","全体25","","","","neutral"],["ドライブインパクト（セクトール）","強","26","26-27","35","D","-3","","strong"],["[ガード時] ドライブリバーサル","（ガード中 or パリィ成立中）→ + 強","20","20-22","26","D","-6","","strong"],["[起き上がり時] ドライブリバーサル","（起き上がり時）→ + 強","18","18-20","26","D","-6","","strong"],["ドライブパリィ","中","1","[※2]1-12","33","","","※1","mid"],["ジャストパリィ（打撃）","ガード方向 + 中P中K","1","","1","","","","mid"],["ジャストパリィ（飛び道具）","中P中K","1","","10","","","","mid"],["パリィドライブラッシュ","（ドライブパリィ中に）→→","","","全体45","","","※","neutral"],["キャンセルドライブラッシュ","（必殺技キャンセル可能な攻撃ヒット中に）→→","","","全体46","","","※","neutral"]]},"juri":{"name":"JURI","jp":"ジュリ","health":10000,"classic":[{"section":"通常技"},["立ち弱P（首甲殺）","弱P","4","4-7","7","5","-2","C","weak"],["[チェーンコンボ] 立ち弱P（首甲殺）","弱P","4","4-7","7","5","-2","C","weak"],["立ち弱K（微弄脚）","弱K","5","5-7","9","2","-3","C","weak"],["[チェーンコンボ] 立ち弱K（微弄脚）","弱K","5","5-7","9","2","-3","C","weak"],["立ち中P（胸破殺）","中P","6","6-9","12","7","2","C","mid"],["[チェーンコンボ] 立ち中P（胸破殺）","中P","6","6-9","12","7","2","C","mid"],["立ち中K","中K","5","5-10","17","3","-4","C","mid"],["[チェーンコンボ] 立ち中K","中K","5","5-10","17","3","-4","C","mid"],["立ち強P（蜘殺）","強P","10","10-12","24","-1","-5","C","strong"],["[チェーンコンボ] 立ち強P（蜘殺）","強P","10","10-12","24","D","-5","C","strong"],["立ち強K（空耀脚）","強K","17","17-20","19","2","-3","","strong"],["[チェーンコンボ] 立ち強K（空耀脚）","強K","17","17-20","19","D","-3","C","strong"],["しゃがみ弱P（狙腓打）","↓ + 弱P","4","4-6","8","4","-1","C","weak"],["[チェーンコンボ] しゃがみ弱P（狙腓打）","↓ + 弱P","4","4-6","8","4","-1","C","weak"],["しゃがみ弱K","↓ + 弱K","5","5-7","8","3","-1","","weak"],["[チェーンコンボ] しゃがみ弱K","↓ + 弱K","5","5-7","8","3","-1","C","weak"],["しゃがみ中P","↓ + 中P","6","6-9","14","5","-2","C","mid"],["[チェーンコンボ] しゃがみ中P","↓ + 中P","6","6-9","14","5","-2","C","mid"],["しゃがみ中K","↓ + 中K","8","8-10","19","1","-6","C","mid"],["[チェーンコンボ] しゃがみ中K","↓ + 中K","8","8-10","19","1","-6","C","mid"],["しゃがみ強P","↓ + 強P","8","8-11","23","3","-11","C","strong"],["[チェーンコンボ] しゃがみ強P","↓ + 強P","8","8-11","23","D","-11","C","strong"],["しゃがみ強K","↓ + 強K","10","10-12","23","D","-11","","strong"],["[チェーンコンボ] しゃがみ強K","↓ + 強K","10","10-12","23","D","-11","C","strong"],["ジャンプ弱P","（ジャンプ中）弱P","5","5-10","着地後3","","","","weak"],["[チェーンコンボ] ジャンプ弱P","（ジャンプ中）弱P","5","5-10","着地後3","","","C","weak"],["ジャンプ弱K","（ジャンプ中）弱K","4","4-9","着地後3","","","","weak"],["[チェーンコンボ] ジャンプ弱K","（ジャンプ中）弱K","4","4-9","着地後3","","","C","weak"],["ジャンプ中P","（ジャンプ中）中P","7","7-11","着地後3","","","C","mid"],["[チェーンコンボ] ジャンプ中P","（ジャンプ中）中P","7","7-11","着地後3","","","C","mid"],["ジャンプ中K","（ジャンプ中）中K","6","6-11","着地後3","","","","mid"],["[チェーンコンボ] ジャンプ中K","（ジャンプ中）中K","6","6-11","着地後3","","","C","mid"],["ジャンプ強P","（ジャンプ中）強P","12","12-17","着地後3","","","","strong"],["[チェーンコンボ] ジャンプ強P","（ジャンプ中）強P","12","12-17","着地後3","","","C","strong"],["ジャンプ強K","（ジャンプ中）強K","10","10-15","着地後3","","","","strong"],["[チェーンコンボ] ジャンプ強K","（ジャンプ中）強K","10","10-15","着地後3","","","C","strong"],["垂直ジャンプ強K","（垂直ジャンプ中）強K","10","10-13","着地後3","","","","strong"],["[チェーンコンボ] 垂直ジャンプ強K","（垂直ジャンプ中）強K","10","10-13","着地後3","","","C","strong"],{"section":"特殊技"},["狂背掌","→ + 中P","8","8-10","17","4","-3","C","mid"],["[チェーンコンボ] 狂背掌","→ + 中P","8","8-10","17","4","-3","C","mid"],["殲廻脚","→ + 中K","21","21-22","※23","2","-3","","mid"],["[チェーンコンボ] 殲廻脚","→ + 中K","21","21-22","※23","D","-3","C","mid"],["連剋脚","→ + 強P","15","15-25","※20","2","-4","C","strong"],["[チェーンコンボ] 連剋脚","→ + 強P","15","15-25","※20","D","-4","C","strong"],["鉤鎌斬","← + 強P","10","10-21","19","3","-6","C","strong"],["[チェーンコンボ] 鉤鎌斬","← + 強P","10","10-21","19","D","-6","C","strong"],["刈脚","↘ + 強K","10","10-12","23","D","-11","","strong"],["[チェーンコンボ] 刈脚","↘ + 強K","10","10-12","23","D","-11","C","strong"],["死紋蹴（2段目）","中P → ← + 中P","12","12-14","19","D","-3","","mid"],["死紋蹴（3段目）","中P → ← + 中P → 中P","17","17-19","27","D","-16","SA※","mid"],{"section":"必殺技"},["弱 風破刃","↓↙← + 弱K","10","10-13","※21","D","-4","SA3","weak"],["中 風破刃","↓↙← + 中K","13","13-16","21","D","-6","SA3","mid"],["強 風破刃","↓↙← + 強K","25","25-29","19","D","-8","SA3","strong"],["OD 風破刃","↓↙← + KK","12","12-17","21","D","-12","SA2","neutral"],["歳破衝","↓↘→ + 弱K","","","全体45","-2","-8","SA3","weak"],["[強化版] 歳破衝","↓↘→ + 弱K","","","全体45","1","-3","SA3※","weak"],["OD 歳破衝","↓↘→ + KK","11","","全体38","D","-2","SA2※","neutral"],["暗剣殺","↓↘→ + 中K","24","24-27","19","5","-8","SA3","mid"],["[強化版] 暗剣殺","↓↘→ + 中K","24","24-27","19","8","-8","SA3※","mid"],["OD 暗剣殺","↓↘→ + KK","24","24-27","19","9","-8","SA2※","neutral"],["五黄殺","↓↘→ + 強K","18","18-21","27","D","-11","SA3","strong"],["[強化版] 五黄殺","↓↘→ + 強K","18","18-36","27","D","-10","SA3※","strong"],["OD 五黄殺","↓↘→ + KK","18","18-69","28","D","-16","SA2※","neutral"],["弱 天穿輪","→↓↘ + 弱P","11","11-17","22","D","-8","SA3","weak"],["中 天穿輪","→↓↘ + 中P","5","5-24","着地後14","D","-37","","mid"],["強 天穿輪","→↓↘ + 強P","5","5-24","着地後14","D","-37","","strong"],["OD 天穿輪","→↓↘ + PP","6","6-24","着地後19","D","-48","","neutral"],["疾空閃","（ジャンプ中）↓↙← + K","18","18-着地","着地後18","","","","neutral"],["OD 疾空閃","（ジャンプ中）↓↙← + KK","16","16-着地","着地後18","","","","neutral"],["死連閃","（疾空閃中）K","6","6-38","着地後12","","","","neutral"],["OD 死連閃","（OD疾空閃中）K","6","","着地後7","","","","neutral"],{"section":"スーパーアーツ"},["SA1 殺界風破斬","↓↘→↓↘→ + K","7","","全体201","D","-32","","neutral"],["SA2 風水エンジン","↓↙←↓↙← + P","","","全体7","","","","neutral"],["SA2 風水エンジン（突進）","（風水エンジン中）→→","9","9-19","26","-4","-17","※","neutral"],["SA3 回旋断界落","↓↘→↓↘→ + P","10","10-13","52","D","-31","","neutral"],["CA 回旋断界落（体力25%以下）","↓↘→↓↘→ + P","10","10-13","52","D","-31","","neutral"],{"section":"通常投げ"},["蜘穿脚","（近距離で）N or → + 弱P弱K","5","5-7","23","D","","","neutral"],["苛影脚","（近距離で）← + 弱P弱K","5","5-7","23","D","","","neutral"],["斬架閃","（ジャンプ中・近距離で）弱P弱K","5","5-7","着地後3","D","","","neutral"],{"section":"共通システム"},["前方ステップ","→→","","","全体22","","","","neutral"],["後方ステップ","←←","","","全体23","","","","neutral"],["ドライブインパクト（殺環蹴）","強P強K","26","26-27","35","D","-3","","strong"],["[ガード時] ドライブリバーサル","（ガード中 or パリィ成立中）→ + 強P強K","20","20-22","26","D","-6","","strong"],["[起き上がり時] ドライブリバーサル","（起き上がり時）→ + 強P強K","18","18-20","26","D","-6","","strong"],["ドライブパリィ","中P中K","1","[※2]1-12","33","","","※1","mid"],["ジャストパリィ（打撃）","ガード方向 + 中P中K","1","","1","","","","mid"],["ジャストパリィ（飛び道具）","中P中K","1","","10","","","","mid"],["パリィドライブラッシュ","（ドライブパリィ中に）→→","","","全体45","","","※","neutral"],["キャンセルドライブラッシュ","（必殺技キャンセル可能な攻撃ヒット中に）→→","","","全体46","","","※","neutral"]],"modern":[{"section":"通常技"},["立ち弱P（首甲殺）","↓ + 弱 → 弱","4","4-7","7","5","-2","C","weak"],["[チェーンコンボ] 立ち弱P（首甲殺）","AUTO + 弱 → 弱","4","4-7","7","5","-2","C","weak"],["立ち弱K（微弄脚）","弱","5","5-7","9","2","-3","C","weak"],["[チェーンコンボ] 立ち弱K（微弄脚）","弱","5","5-7","9","2","-3","C","weak"],["立ち中P（胸破殺）","中","6","6-9","12","7","2","C","mid"],["[チェーンコンボ] 立ち中P（胸破殺）","中","6","6-9","12","7","2","C","mid"],["[チェーンコンボ] 立ち中K","中K","5","5-10","17","3","-4","C","mid"],["立ち強P（蜘殺）","AUTO + 強","10","10-12","24","-1","-5","C","strong"],["[チェーンコンボ] 立ち強P（蜘殺）","AUTO + 強","10","10-12","24","D","-5","C","strong"],["立ち強K（空耀脚）","強","17","17-20","19","2","-3","","strong"],["[チェーンコンボ] 立ち強K（空耀脚）","強","17","17-20","19","D","-3","C","strong"],["しゃがみ弱P（狙腓打）","↓ + 弱P","4","4-6","8","4","-1","C","weak"],["[チェーンコンボ] しゃがみ弱P（狙腓打）","↓ + 弱","4","4-6","8","4","-1","C","weak"],["しゃがみ弱K","↓ + 弱K","5","5-7","8","3","-1","","weak"],["[チェーンコンボ] しゃがみ弱K","↓ + 弱","5","5-7","8","3","-1","C","weak"],["しゃがみ中P","↓ + 中P","6","6-9","14","5","-2","C","mid"],["[チェーンコンボ] しゃがみ中P","↓ + 中","6","6-9","14","5","-2","C","mid"],["しゃがみ中K","↓ + 中K","8","8-10","19","1","-6","C","mid"],["[チェーンコンボ] しゃがみ中K","↓ + 中","8","8-10","19","1","-6","C","mid"],["しゃがみ強P","↓ + 強P","8","8-11","23","3","-11","C","strong"],["[チェーンコンボ] しゃがみ強P","↓ + 強P","8","8-11","23","D","-11","C","strong"],["しゃがみ強K","↓ + 強K","10","10-12","23","D","-11","","strong"],["[チェーンコンボ] しゃがみ強K","↓ + 強K","10","10-12","23","D","-11","C","strong"],["ジャンプ弱P","（ジャンプ中）弱P","5","5-10","着地後3","","","","weak"],["[チェーンコンボ] ジャンプ弱P","（ジャンプ中）弱P","5","5-10","着地後3","","","C","weak"],["ジャンプ弱K","（ジャンプ中）弱K","4","4-9","着地後3","","","","weak"],["[チェーンコンボ] ジャンプ弱K","（ジャンプ中）弱K","4","4-9","着地後3","","","C","weak"],["ジャンプ中P","（ジャンプ中）中P","7","7-11","着地後3","","","C","mid"],["[チェーンコンボ] ジャンプ中P","（ジャンプ中）中P","7","7-11","着地後3","","","C","mid"],["ジャンプ中K","（ジャンプ中）中K","6","6-11","着地後3","","","","mid"],["[チェーンコンボ] ジャンプ中K","（ジャンプ中）中K","6","6-11","着地後3","","","C","mid"],["ジャンプ強P","（ジャンプ中）強P","12","12-17","着地後3","","","","strong"],["[チェーンコンボ] ジャンプ強P","（ジャンプ中）強P","12","12-17","着地後3","","","C","strong"],["ジャンプ強K","（ジャンプ中）強K","10","10-15","着地後3","","","","strong"],["[チェーンコンボ] ジャンプ強K","（ジャンプ中）強K","10","10-15","着地後3","","","C","strong"],["垂直ジャンプ強K","（垂直ジャンプ中）強K","10","10-13","着地後3","","","","strong"],["[チェーンコンボ] 垂直ジャンプ強K","（垂直ジャンプ中）強K","10","10-13","着地後3","","","C","strong"],{"section":"特殊技"},["狂背掌","AUTO + 中","8","8-10","17","4","-3","C","mid"],["[チェーンコンボ] 狂背掌","AUTO + 中","8","8-10","17","4","-3","C","mid"],["殲廻脚","→ + 中","21","21-22","※23","2","-3","","mid"],["[チェーンコンボ] 殲廻脚","→ + 中","21","21-22","※23","D","-3","C","mid"],["連剋脚","→ + 強","15","15-25","※20","2","-4","C","strong"],["[チェーンコンボ] 連剋脚","→ + 強","15","15-25","※20","D","-4","C","strong"],["鉤鎌斬","← + 強","10","10-21","19","3","-6","C","strong"],["[チェーンコンボ] 鉤鎌斬","← + 強","10","10-21","19","D","-6","C","strong"],["刈脚","↘ + 強","10","10-12","23","D","-11","","strong"],["[チェーンコンボ] 刈脚","↘ + 強","10","10-12","23","D","-11","C","strong"],["死紋蹴（2段目）","中P → ← + 中P","12","12-14","19","D","-3","","mid"],["死紋蹴（3段目）","中P → ← + 中P → 中P","17","17-19","27","D","-16","SA※","mid"],{"section":"必殺技"},["弱 風破刃","↓↙← + 弱K","10","10-13","※21","D","-4","SA3","weak"],["中 風破刃","← + SP（↓↙← + 中）","13","13-16","21","D","-6","SA3","mid"],["強 風破刃","↓↙← + 強K","25","25-29","19","D","-8","SA3","strong"],["OD 風破刃","← + AUTO + SP（↓↙← + 攻撃2つ）","12","12-17","21","D","-12","SA2","neutral"],["歳破衝","↓↘→ + 弱K","","","全体45","-2","-8","SA3","weak"],["[強化版] 歳破衝","↓↘→ + 弱K","","","全体45","1","-3","SA3※","weak"],["OD 歳破衝","↓↘→ + KK","11","","全体38","D","-2","SA2※","neutral"],["暗剣殺","↓↘→ + 中K","24","24-27","19","5","-8","SA3","mid"],["[強化版] 暗剣殺","↓↘→ + 中K","24","24-27","19","8","-8","SA3※","mid"],["OD 暗剣殺","↓↘→ + KK","24","24-27","19","9","-8","SA2※","neutral"],["五黄殺","↓↘→ + 強K","18","18-21","27","D","-11","SA3","strong"],["[強化版] 五黄殺","↓↘→ + 強K","18","18-36","27","D","-10","SA3※","strong"],["OD 五黄殺","↓↘→ + KK","18","18-69","28","D","-16","SA2※","neutral"],["弱 天穿輪","→↓↘ + 弱P","11","11-17","22","D","-8","SA3","weak"],["中 天穿輪","→↓↘ + 中P","5","5-24","着地後14","D","-37","","mid"],["強 天穿輪","→↓↘ + 強P","5","5-24","着地後14","D","-37","","strong"],["OD 天穿輪","→↓↘ + PP","6","6-24","着地後19","D","-48","","neutral"],["疾空閃","（ジャンプ中）↓↙← + K","18","18-着地","着地後18","","","","neutral"],["OD 疾空閃","（ジャンプ中）↓↙← + KK","16","16-着地","着地後18","","","","neutral"],["死連閃","（疾空閃中）K","6","6-38","着地後12","","","","neutral"],["OD 死連閃","（OD疾空閃中）K","6","","着地後7","","","","neutral"],{"section":"スーパーアーツ"},["SA1 殺界風破斬","N or → + SP強","7","","全体201","D","-32","","neutral"],["SA2 風水エンジン","← + SP強","","","全体7","","","","neutral"],["SA2 風水エンジン（突進）","（風水エンジン中）→→","9","9-19","26","-4","-17","※","neutral"],["SA3 回旋断界落","↓ + SP強","10","10-13","52","D","-31","","neutral"],["CA 回旋断界落（体力25%以下）","↓ + SP強","10","10-13","52","D","-31","","neutral"],{"section":"通常投げ"},["蜘穿脚","（近距離で）N or → + 弱中","5","5-7","23","D","","","neutral"],["苛影脚","（近距離で）← + 弱中","5","5-7","23","D","","","neutral"],["斬架閃","（ジャンプ中・近距離で）弱中","5","5-7","着地後3","D","","","neutral"],{"section":"共通システム"},["前方ステップ","→→","","","全体22","","","","neutral"],["後方ステップ","←←","","","全体23","","","","neutral"],["ドライブインパクト（殺環蹴）","強","26","26-27","35","D","-3","","strong"],["[ガード時] ドライブリバーサル","（ガード中 or パリィ成立中）→ + 強","20","20-22","26","D","-6","","strong"],["[起き上がり時] ドライブリバーサル","（起き上がり時）→ + 強","18","18-20","26","D","-6","","strong"],["ドライブパリィ","中","1","[※2]1-12","33","","","※1","mid"],["ジャストパリィ（打撃）","ガード方向 + 中P中K","1","","1","","","","mid"],["ジャストパリィ（飛び道具）","中P中K","1","","10","","","","mid"],["パリィドライブラッシュ","（ドライブパリィ中に）→→","","","全体45","","","※","neutral"],["キャンセルドライブラッシュ","（必殺技キャンセル可能な攻撃ヒット中に）→→","","","全体46","","","※","neutral"]]},"cviper":{"name":"C.VIPER","jp":"C.ヴァイパー","health":10000,"classic":[{"section":"通常技"},["立ち弱P（スナップナックル）","弱P","4","4-6","8","4","-2","C","weak"],["立ち弱K（ヒールキック）","弱K","5","5-7","11","3","-2","C","weak"],["立ち中P（ハンマーフック）","中P","8","8-11","12","6","1","C","mid"],["立ち中K（フロントキック）","中K","8","8-10","18","5","-3","","mid"],["立ち強P（トマホークチョップ）","強P","12","12-14","21","3","-2","","strong"],["立ち強K（ヴァイパーブレード）","強K","10","10-13","20","4","-3","","strong"],["しゃがみ弱P（ジャブ）","↓ + 弱P","4","4-6","8","5","-1","C","weak"],["しゃがみ弱K（クラウチングヒールキック）","↓ + 弱K","5","5-6","9","4","-1","","weak"],["しゃがみ中P（ヴァイパーブロー）","↓ + 中P","6","6-9","16","5","-2","C","mid"],["しゃがみ中K（グランドキック）","↓ + 中K","8","8-10","17","5","-1","","mid"],["しゃがみ強P（ヴァイパースライサー）","↓ + 強P","9","9-11","20","2","-5","C","strong"],["しゃがみ強K（ヴァイパースイープ）","↓ + 強K","10","10-12","25","D","-11","","strong"],["ジャンプ弱P","（ジャンプ中）弱P","5","5-10","着地後3","","","","weak"],["ジャンプ弱K","（ジャンプ中）弱K","5","5-11","着地後3","","","","weak"],["ジャンプ中P","（ジャンプ中）中P","8","8-13","着地後3","","","C","mid"],["ジャンプ中K","（ジャンプ中）中K","7","7-12","着地後3","","","","mid"],["ジャンプ強P（エアリアルハンマー）","（ジャンプ中）強P","11","11-15","着地後3","","","","strong"],["ジャンプ強K（エアリアルクラッシュニー）","（ジャンプ中）強K","8","8-14","着地後3","","","C","strong"],["垂直ジャンプ強K（エアリアルジャベリン）","（垂直ジャンプ中）強K","10","10-16","着地後3","","","","strong"],{"section":"特殊技"},["ヴァイパーエルボー","→ + 中P","22","22-24","20","2","-3","","mid"],["ダブルキック","→ + 強K","11","11-31 / 11-13,29-31","16","4","-2","","strong"],["ハイジャンプ（前方）","↓↘→↗","","","46+着地後3","","","","neutral"],["ハイジャンプ（垂直）","↓↑","","","46+着地後3","","","","neutral"],{"section":"必殺技"},["弱 サンダースラップ","↓↙← + 弱P","17","17-20","23","2","-4","SA3","weak"],["中 サンダースラップ","↓↙← + 中P","16","16-19","22","1","-3","SA3","mid"],["強 サンダースラップ","↓↙← + 強P","7","7-16","37","D","-24","","strong"],["OD サンダースラップ","↓↙← + PP","18","18-41 / 18-21,38-41","21","D","-2","SA2","neutral"],["弱 トレースコンビネーション","（弱サンダースラップ中）→ + PP","15","15-17","28","D","-15","SA3","weak"],["中 トレースコンビネーション","（中サンダースラップ中）→ + PP","21","21-24","25","D","-13","SA3","mid"],["強 トレースコンビネーション","（強サンダースラップ中）→ + PP","17","17-20","37","D","—","","strong"],["[サンダースラップ] フェイント","（サンダースラップ攻撃前に）K","","","全体12","","","","neutral"],["弱 バーニングキック","↓↘→ + 弱K","23","23-27","20","D","-2","","weak"],["中 バーニングキック","↓↘→ + 中K","25","25-29","20","D","-2","","mid"],["強 バーニングキック","↓↘→ + 強K","27","27-31","20","D","-2","","strong"],["OD バーニングキック","↓↘→ + KK","8","8-35 / 8-10,32-35","21","D","-4","SA2","neutral"],["チェイスナックル","（バーニングキック中）→ + PP","12","12-15","34","D","-15","","neutral"],["ダブルバーン","（バーニングキック中）→ + KK","21","21-25","20","D","2","","neutral"],["弱 空中バーニングキック","（垂直 or 前ジャンプ中）↓↘→ + 弱K","22","22-28","着地後13","D","-3〜2","","weak"],["中 空中バーニングキック","（垂直 or 前ジャンプ中）↓↘→ + 中K","20","20-26","着地後13","D","-3〜3","","mid"],["強 空中バーニングキック","（垂直 or 前ジャンプ中）↓↘→ + 強K","18","18-24","着地後13","D","-4〜1","","strong"],["OD 空中バーニングキック","（垂直 or 前ジャンプ中）↓↘→ + KK","18","18-24","着地後13","D","1〜7","","neutral"],["弱 セイスモハンマー","→↓↘ + 弱P","24","24-31","26","D","-10","SA3","weak"],["中 セイスモハンマー","→↓↘ + 中P","24","24-31","26","D","-10","SA3","mid"],["強 セイスモハンマー","→↓↘ + 強P","24","24-31","26","D","-10","SA3","strong"],["OD セイスモハンマー","→↓↘ + PP","19","19-26","26","D","-6","SA2","neutral"],["[セイスモハンマー] フェイント","（セイスモハンマー攻撃前に）K","","","全体16","","","","neutral"],["セービングフォース（Lv1）","↓↙← + K","23","23-34 / 23-26,31-34","36","D","-16","","neutral"],["セービングフォース（Lv2）","↓↙← + K ホールド","30","30-41 / 30-33,38-41","36","D","-16","","neutral"],["セービングフォース（Lv3）","↓↙← + K 最大ホールド","69","69-80 / 69-72,77-80","36","D","-10","","neutral"],["OD セービングフォース（Lv1）","↓↙← + KK","20","20-31 / 20-23,28-31","36","D","-16","","neutral"],["OD セービングフォース（Lv2）","↓↙← + KK ホールド","30","30-41 / 30-33,38-41","36","D","-16","","neutral"],["OD セービングフォース（Lv3）","↓↙← + KK 最大ホールド","67","67-78 / 67-70,75-78","36","D","-10","","neutral"],["[セービングフォース] 前方ステップ","（セービングフォース中に）→→","","","全体21","","","","neutral"],{"section":"スーパーアーツ"},["SA1 バウンサーステップ","↓↘→↓↘→ + K","8","8-20","53","D","-34","","neutral"],["SA2 ミッションオーバー","↓↙←↓↙← + P","7","7-10","45","D","-29","","neutral"],["SA3 アンラックリジェクター","↓↙←↓↙← + K","10","10-13","54","D","-38","","neutral"],["CA アンラックリジェクター（体力25%以下）","↓↙←↓↙← + K","10","10-13","54","D","-38","","neutral"],{"section":"通常投げ"},["オーバーインパルス","（近距離で）N or → + 弱P弱K","5","5-7","23","D","","","neutral"],["サンダークレイドル","（近距離で）← + 弱P弱K","5","5-7","23","D","","","neutral"],{"section":"共通システム"},["前方ステップ","→→","","","全体21","","","","neutral"],["後方ステップ","←←","","","全体23","","","","neutral"],["ドライブインパクト（ヴァイパーキャノン）","強P強K","26","26-27","35","D","-3","","strong"],["[ガード時] ドライブリバーサル","（ガード中 or パリィ成立中）→ + 強P強K","20","20-22","26","D","-6","","strong"],["[起き上がり時] ドライブリバーサル","（起き上がり時）→ + 強P強K","18","18-20","26","D","-6","","strong"],["ドライブパリィ","中P中K","1","[※2]1-12","33","","","※1","mid"],["ジャストパリィ（打撃）","ガード方向 + 中P中K","1","","1","","","","mid"],["ジャストパリィ（飛び道具）","中P中K","1","","10","","","","mid"],["パリィドライブラッシュ","（ドライブパリィ中に）→→","","","全体45","","","※","neutral"],["キャンセルドライブラッシュ","（必殺技キャンセル可能な攻撃ヒット中に）→→","","","全体46","","","※","neutral"]],"modern":[{"section":"通常技"},["立ち弱P（スナップナックル）","弱P","4","4-6","8","4","-2","C","weak"],["立ち弱K（ヒールキック）","AUTO + 弱","5","5-7","11","3","-2","C","weak"],["立ち中K（フロントキック）","中K","8","8-10","18","5","-3","","mid"],["立ち強P（トマホークチョップ）","強P","12","12-14","21","3","-2","","strong"],["しゃがみ弱K（クラウチングヒールキック）","↓ + 弱K","5","5-6","9","4","-1","","weak"],["しゃがみ中P（ヴァイパーブロー）","AUTO + 中","6","6-9","16","5","-2","C","mid"],["しゃがみ中K（グランドキック）","↓ + 中K","8","8-10","17","5","-1","","mid"],["しゃがみ強P（ヴァイパースライサー）","AUTO + 強","9","9-11","20","2","-5","C","strong"],["しゃがみ強K（ヴァイパースイープ）","↓ + 強K","10","10-12","25","D","-11","","strong"],["ジャンプ弱P","（ジャンプ中）弱P","5","5-10","着地後3","","","","weak"],["ジャンプ弱K","（ジャンプ中）AUTO + 弱","5","5-11","着地後3","","","","weak"],["ジャンプ中P","（ジャンプ中）中P","8","8-13","着地後3","","","C","mid"],["ジャンプ中K","（ジャンプ中）AUTO + 中","7","7-12","着地後3","","","","mid"],["ジャンプ強P（エアリアルハンマー）","（ジャンプ中）強P","11","11-15","着地後3","","","","strong"],["ジャンプ強K（エアリアルクラッシュニー）","（ジャンプ中）AUTO + 強","8","8-14","着地後3","","","C","strong"],["垂直ジャンプ強K（エアリアルジャベリン）","（垂直ジャンプ中）強K","10","10-16","着地後3","","","","strong"],{"section":"特殊技"},["ヴァイパーエルボー","→ + 中P","22","22-24","20","2","-3","","mid"],["ダブルキック","→ + 強K","11","11-31 / 11-13,29-31","16","4","-2","","strong"],["ハイジャンプ（前方）","↓↘→↗","","","46+着地後3","","","","neutral"],["ハイジャンプ（垂直）","↓↑","","","46+着地後3","","","","neutral"],{"section":"必殺技"},["弱 サンダースラップ","↓↙← + 弱P","17","17-20","23","2","-4","SA3","weak"],["中 サンダースラップ","← + SP（↓↙← + 中）","16","16-19","22","1","-3","SA3","mid"],["強 サンダースラップ","→ + SP（↓↙← + 強）","7","7-16","37","D","-24","","strong"],["OD サンダースラップ","← + AUTO + SP（↓↙← + 攻撃2つ）","18","18-41 / 18-21,38-41","21","D","-2","SA2","neutral"],["弱 トレースコンビネーション","（弱サンダースラップ中）→ + PP","15","15-17","28","D","-15","SA3","weak"],["中 トレースコンビネーション","（中サンダースラップ中）→ + PP","21","21-24","25","D","-13","SA3","mid"],["強 トレースコンビネーション","（強サンダースラップ中）→ + PP","17","17-20","37","D","—","","strong"],["[サンダースラップ] フェイント","（サンダースラップ攻撃前に）K","","","全体12","","","","neutral"],["弱 バーニングキック","↓↘→ + 弱K","23","23-27","20","D","-2","","weak"],["中 バーニングキック","← + SP（空中時はSP）","25","25-29","20","D","-2","","mid"],["強 バーニングキック","↓↘→ + 強K","27","27-31","20","D","-2","","strong"],["OD バーニングキック","AUTO + SP（↓↘→ + 攻撃2つ）","8","8-35 / 8-10,32-35","21","D","-4","SA2","neutral"],["チェイスナックル","（バーニングキック中）→ + PP","12","12-15","34","D","-15","","neutral"],["ダブルバーン","（バーニングキック中）→ + KK","21","21-25","20","D","2","","neutral"],["弱 空中バーニングキック","（垂直 or 前ジャンプ中）↓↘→ + 弱K","22","22-28","着地後13","D","-3〜2","","weak"],["中 空中バーニングキック","（垂直 or 前ジャンプ中）↓↘→ + 中K","20","20-26","着地後13","D","-3〜3","","mid"],["強 空中バーニングキック","（垂直 or 前ジャンプ中）↓↘→ + 強K","18","18-24","着地後13","D","-4〜1","","strong"],["OD 空中バーニングキック","（垂直 or 前ジャンプ中）↓↘→ + KK","18","18-24","着地後13","D","1〜7","","neutral"],["弱 セイスモハンマー","↙ + SP（→↓↘ + 弱）","24","24-31","26","D","-10","SA3","weak"],["中 セイスモハンマー","↓ + SP（→↓↘ + 中）","24","24-31","26","D","-10","SA3","mid"],["強 セイスモハンマー","↘ + SP（→↓↘ + 強）","24","24-31","26","D","-10","SA3","strong"],["OD セイスモハンマー","→↓↘ + PP","19","19-26","26","D","-6","SA2","neutral"],["[セイスモハンマー] フェイント","（セイスモハンマー攻撃前に）K","","","全体16","","","","neutral"],["セービングフォース（Lv1）","N + SP（↓↙← + K）","23","23-34 / 23-26,31-34","36","D","-16","","neutral"],["セービングフォース（Lv2）","N + SP ホールド","30","30-41 / 30-33,38-41","36","D","-16","","neutral"],["セービングフォース（Lv3）","N + SP 最大ホールド","69","69-80 / 69-72,77-80","36","D","-10","","neutral"],["OD セービングフォース（Lv1）","AUTO + SP","20","20-31 / 20-23,28-31","36","D","-16","","neutral"],["OD セービングフォース（Lv2）","AUTO + SP ホールド","30","30-41 / 30-33,38-41","36","D","-16","","neutral"],["OD セービングフォース（Lv3）","AUTO + SP 最大ホールド","67","67-78 / 67-70,75-78","36","D","-10","","neutral"],["[セービングフォース] 前方ステップ","（セービングフォース中に）→→","","","全体21","","","","neutral"],{"section":"スーパーアーツ"},["SA1 バウンサーステップ","N or → + SP強","8","8-20","53","D","-34","","neutral"],["SA2 ミッションオーバー","← + SP強","7","7-10","45","D","-29","","neutral"],["SA3 アンラックリジェクター","↓ + SP強","10","10-13","54","D","-38","","neutral"],["CA アンラックリジェクター（体力25%以下）","↓ + SP強","10","10-13","54","D","-38","","neutral"],{"section":"通常投げ"},["オーバーインパルス","（近距離で）N or → + 弱中","5","5-7","23","D","","","neutral"],["サンダークレイドル","（近距離で）← + 弱中","5","5-7","23","D","","","neutral"],{"section":"共通システム"},["前方ステップ","→→","","","全体21","","","","neutral"],["後方ステップ","←←","","","全体23","","","","neutral"],["ドライブインパクト（ヴァイパーキャノン）","強","26","26-27","35","D","-3","","strong"],["[ガード時] ドライブリバーサル","（ガード中 or パリィ成立中）→ + 強","20","20-22","26","D","-6","","strong"],["[起き上がり時] ドライブリバーサル","（起き上がり時）→ + 強","18","18-20","26","D","-6","","strong"],["ドライブパリィ","中","1","[※2]1-12","33","","","※1","mid"],["ジャストパリィ（打撃）","ガード方向 + 中P中K","1","","1","","","","mid"],["ジャストパリィ（飛び道具）","中P中K","1","","10","","","","mid"],["パリィドライブラッシュ","（ドライブパリィ中に）→→","","","全体45","","","※","neutral"],["キャンセルドライブラッシュ","（必殺技キャンセル可能な攻撃ヒット中に）→→","","","全体46","","","※","neutral"]]}};
 let currentFrameSlug = 'ryu';
@@ -1198,7 +1405,7 @@ showRoute = function(route){
 
 
 /* =========================================================
-   v1.13 fixed frame-data column header
+   v1.14 fixed frame-data column header
    A fixed clone is used instead of CSS sticky because the table also needs
    horizontal overflow; this avoids iOS Safari's sticky/overflow limitation.
    ========================================================= */
