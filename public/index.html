@@ -963,7 +963,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .ar-card .ar-tags{margin-top:20px}
 </style>
 <style>
-/* v1.44: exact crops of user-approved artwork; no regenerated assets. */
+/* v1.45: exact crops of user-approved artwork; no regenerated assets. */
 #home-screen .home-v119{height:auto;min-height:100svh;overflow:visible;padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom));background:#030506}
 #home-screen .home-hero-v119{aspect-ratio:709/350;height:auto!important}
 #home-screen .home-hero-v119 .site-banner{position:static;top:auto;width:100%;height:100%;object-fit:fill}
@@ -991,7 +991,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .screen:not(#home-screen){padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom))}
 </style>
 <style>
-/* v1.44: selected bezel follows the artwork, not the button hit rectangle. */
+/* v1.45: selected bezel follows the artwork, not the button hit rectangle. */
 .bottom-nav.home-bottom-nav-v119{height:calc(min(920px,100vw)*180/709);padding:0;background-image:url('assets/arcade/nav-inactive.webp');background-size:100% 100%;isolation:isolate}
 .bottom-nav.home-bottom-nav-v119:has(button[data-route="home"].active){background-image:url('assets/arcade/nav.webp')}
 .bottom-nav.home-bottom-nav-v119::after{content:"";position:absolute;inset:0;pointer-events:none;background:center/100% 100% no-repeat;z-index:1}
@@ -1013,6 +1013,11 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 #home-screen .home-combo-info-v119{height:auto;aspect-ratio:292/216;grid-template-rows:12px 12px minmax(0,1fr) 10px 16px;gap:2px;padding:5px 7px;min-height:111px}
 #home-screen .home-combo-info-v119>strong{line-height:12px}
 #home-screen .home-combo-info-v119>.ar-card-author{line-height:12px}
+</style><style>
+/* v1.45: fit the approved home composition as a single proportional stage. */
+body.home-page{height:var(--home-viewport-height,100dvh);overflow:hidden;overscroll-behavior-y:none;background:#030506}
+#home-screen{position:relative;height:var(--home-viewport-height,100dvh);min-height:0;overflow:hidden;padding:0}
+#home-screen .home-v119{position:absolute;left:50%;top:0;margin:0;min-height:0;max-width:none;transform:translateX(-50%) scale(var(--home-fit-scale,1));transform-origin:top center;box-shadow:none}
 </style></head>
 <body>
 
@@ -1020,7 +1025,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
       <img class="site-banner" src="assets/arcade/hero.webp" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.44</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+      <span class="version-mark">v1.45</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
@@ -2269,7 +2274,7 @@ function arPreviewMarkup(p,command=false){const text=escapeHtml(arPreviewText(p,
 const arPreviewObserved=new WeakSet();
 const arPreviewResize=new ResizeObserver(entries=>entries.forEach(entry=>arFitPreview(entry.target)));
 function arFitPreview(el){
- const width=el.getBoundingClientRect().width;if(width<=0)return;
+ const width=el.clientWidth;if(width<=0)return;
  const full=el.dataset.comboText||'',style=getComputedStyle(el),line=parseFloat(style.lineHeight),maxLines=Number(el.dataset.previewLines)||2;
  const probe=el.cloneNode(false);probe.removeAttribute('aria-label');probe.style.cssText=`position:fixed;left:-10000px;top:0;visibility:hidden;width:${width}px;height:auto;min-height:0;max-height:none;margin:0;`;
  document.body.append(probe);
@@ -2340,6 +2345,38 @@ function renderFrameCompare(){
  body.innerHTML=rows.map(row=>`<tr class="fc-${row.side?'blue':'red'}" data-fc-char="${escapeHtml(row.slug)}" data-fc-section="${escapeHtml(row.section)}"><td><span class="fc-row-char">${escapeHtml(FRAME_DATA_V101[row.slug].name)} · ${row.control==='modern'?'M':'C'}</span><span class="fc-row-name">${escapeHtml(row.values[0])}</span><span class="fc-row-command">${escapeHtml(row.values[1]||'')}</span></td>${[2,3,4,5,6,7].map(i=>`<td>${escapeHtml(String(row.values[i]??''))}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="7" class="fc-empty">比較できる技データはまだありません。</td></tr>';
  head.querySelectorAll('th').forEach((th,i)=>{if(i>0&&i<6)th.title='数値の先頭値で並べ替え。空欄・数値のない表記は末尾に表示します。'});
 }
+</script>
+
+<script>
+let homeFitFrameV145=0;
+function queueHomeFitV145(){if(!homeFitFrameV145)homeFitFrameV145=requestAnimationFrame(fitHomeViewportV145)}
+function fitHomeViewportV145(){
+ homeFitFrameV145=0;
+ const screen=document.getElementById('home-screen'),stage=screen.querySelector('.home-v119');
+ if(!screen.classList.contains('active'))return;
+ const width=Math.min(920,document.documentElement.clientWidth),height=Math.floor(window.visualViewport?.height||window.innerHeight);
+ document.documentElement.style.setProperty('--home-viewport-height',height+'px');
+ stage.style.width=width+'px';stage.style.height='auto';stage.style.setProperty('--home-fit-scale','1');
+ const naturalHeight=Math.ceil(stage.offsetHeight);
+ const scale=Math.min(1,height/Math.max(1,naturalHeight));
+ stage.style.setProperty('--home-fit-scale',String(scale));
+ // The extra height on tall displays goes before the menu, as in the approved layout.
+ stage.style.height=(height/scale)+'px';
+ stage.dataset.fitScale=String(scale);stage.dataset.naturalHeight=String(naturalHeight);
+ arQueuePreviews();
+}
+const homeRouteV145=showRoute;showRoute=function(route){homeRouteV145(route);if(currentRoute==='home')queueHomeFitV145()};
+const homeRenderV145=arHome;arHome=function(){homeRenderV145();queueHomeFitV145()};
+window.addEventListener('resize',queueHomeFitV145);
+window.visualViewport?.addEventListener('resize',queueHomeFitV145);
+window.addEventListener('orientationchange',queueHomeFitV145);
+document.addEventListener('DOMContentLoaded',()=>{
+ const home=document.getElementById('home-screen');
+ new MutationObserver(queueHomeFitV145).observe(home,{subtree:true,childList:true,characterData:true});
+ home.addEventListener('load',queueHomeFitV145,true);
+ document.fonts?.addEventListener('loadingdone',queueHomeFitV145);
+ queueHomeFitV145();
+});
 </script>
 </body>
 </html>
