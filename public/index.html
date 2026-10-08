@@ -874,6 +874,28 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .screen{padding-bottom:calc(82px + env(safe-area-inset-bottom))}
 #login-screen{padding-bottom:calc(82px + env(safe-area-inset-bottom))}
 </style>
+<style>
+/* v1.29: uncropped masthead and compact, proportional character portraits. */
+#home-screen .home-hero-v119{height:auto!important;aspect-ratio:1672/840}
+#home-screen .home-hero-v119 .site-banner{position:absolute;left:0;top:-5.95%;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;object-position:center;max-height:none}
+#frame-screen .char-hero{height:200px;min-height:0}
+#frame-screen .char-hero #charHeroImg{height:100%;width:100%;object-fit:cover;filter:blur(12px);opacity:.36;transform:scale(1.08)}
+#frame-screen .char-face-v129{position:absolute;z-index:1;left:50%;top:0;transform:translateX(-50%);height:100%;width:var(--face-width);background-image:url('assets/roster/approved-roster-v111.jpeg?v=112');background-repeat:no-repeat;background-size:var(--sheet-size);background-position:var(--face-position);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+#frame-screen .char-hero:after{z-index:2;background:linear-gradient(90deg,rgba(0,0,0,.58),transparent 40%,rgba(0,0,0,.12))}
+#frame-screen .char-title{font-size:40px;left:12px;bottom:10px}
+#frame-screen .char-jp{font-size:14px;margin-top:3px}
+#frame-screen .compare-btn{font-size:10px;padding:6px 10px;top:7px;right:7px}
+#frame-screen .compare-note{font-size:9px;right:7px;top:38px}
+#frame-screen .frame-controls{display:grid;grid-template-columns:1fr 1fr;padding:8px 8px 6px;border:0}
+#frame-screen .health-box{grid-column:1;width:100%;max-width:none;min-width:0;margin:0 0 7px;padding:5px 0;background:none;border:0;text-align:center;font-size:18px;white-space:nowrap}
+#frame-screen .health-box strong{font-size:23px;margin-left:9px}
+#frame-screen .control-tabs{grid-column:1/-1;width:100%;max-width:none;margin:0;background:none;border:0}
+#frame-screen .control-tab{position:relative;border:0;background:none;box-shadow:none;min-height:50px;padding:6px 4px}
+#frame-screen .control-tab.active{background:none;box-shadow:none}
+#frame-screen .control-tab.active:after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:#e635ff}
+#frame-screen .control-tab:focus-visible{outline:2px solid #fff;outline-offset:-3px}
+@media(max-width:560px){#frame-screen .char-hero{height:163px}#frame-screen .char-title{font-size:34px}}
+</style>
 </head>
 <body>
 
@@ -881,7 +903,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
       <img class="site-banner" src="assets/home-banner-v128.webp" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.28</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+      <span class="version-mark">v1.29</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
@@ -977,8 +999,6 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   <div class="site-shell">
     
 <header class="site-header">
-  <img class="site-banner" src="assets/fgc-header.webp" alt="FGC COMBO ARCHIVE">
-  <span class="version-mark">v1.28</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
   <nav class="top-tabs" aria-label="上部ナビゲーション">
     <button type="button" data-route="home">TOP</button>
     <button type="button" data-route="characters">CHARACTER</button>
@@ -1261,8 +1281,6 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   <div class="site-shell">
     
 <header class="site-header">
-  <img class="site-banner" src="assets/fgc-header.webp" alt="FGC COMBO ARCHIVE">
-  <span class="version-mark">v1.28</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
   <nav class="top-tabs" aria-label="上部ナビゲーション">
     <button type="button" data-route="home">TOP</button>
     <button type="button" data-route="characters">CHARACTER</button>
@@ -1272,13 +1290,14 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 </header>
 
     <section class="char-hero">
-      <img id="charHeroImg" src="assets/member-icons/ryu.webp?v=119" alt="">
+      <div class="char-face-v129" aria-hidden="true"></div><img id="charHeroImg" src="assets/member-icons/ryu.webp?v=119" alt="">
       <div class="char-title"><span id="charName">RYU</span><span id="charJp" class="char-jp">リュウ</span></div>
       <button id="compareBtn" class="compare-btn">比較に追加 ＋ (0/2)</button>
       <div class="compare-note">2キャラ比較用に保存できます</div>
     </section>
 
     <section id="frameControls" class="frame-controls">
+      <div class="health-box">体力 <strong id="healthValue">10000</strong></div>
       <div class="control-tabs" role="tablist" aria-label="操作タイプ">
         <button id="classicTab" type="button" class="control-tab active" data-control-type="classic">
           <img class="ar-type" src="assets/combo/classic.svg" alt="CLASSIC">
@@ -1287,7 +1306,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
           <img class="ar-type" src="assets/combo/modern.svg" alt="MODERN">
         </button>
       </div>
-      <div class="health-box">体力 <strong id="healthValue">10000</strong></div>
+      
     </section>
 
     <nav id="archiveFrameTabs" class="archive-tabs" aria-label="キャラクター情報"><button type="button" class="active" data-ar-tab="frame">技／フレームデータ</button><button type="button" data-ar-tab="combos">コンボ一覧</button></nav><div id="frameComboPanel" hidden></div><h1 class="frame-title">技／フレームデータ</h1>
@@ -2168,6 +2187,23 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.querySelectorAll('.screen').forEach(screen=>{if(!screen.querySelector('.bottom-nav'))screen.append(template.cloneNode(true))});
  setActiveNav(currentRoute);
 });
+</script>
+<script>
+const FRAME_FACE_V129={
+arjun:[80,12,152,140],yasmine:[290,12,150,140],ingrid:[480,12,152,140],alex:[681,12,152,140],
+cviper:[80,201,152,140],sagat:[282,201,152,140],elena:[475,201,152,140],mai:[679,201,152,140],
+terry:[78,391,152,140],vega:[284,391,152,140],gouki:[478,391,152,140],ed:[678,391,152,140],
+aki:[78,581,152,140],rashid:[282,581,152,140],cammy:[478,581,152,140],lily:[679,581,152,140],
+zangief:[77,771,152,140],jp:[281,771,152,140],marisa:[476,771,152,140],manon:[678,771,152,140],
+'dee-jay':[79,960,152,140],ehonda:[282,960,152,140],dhalsim:[477,960,152,140],blanka:[678,960,152,140],
+ken:[78,1149,152,140],juri:[282,1149,152,140],kimberly:[478,1149,152,140],guile:[678,1149,152,140],
+'chun-li':[78,1339,152,140],jamie:[281,1339,152,140],luke:[478,1339,152,140],ryu:[678,1339,152,140]
+};
+function fitFrameFaceV129(){const box=document.querySelector('#frame-screen .char-hero'),face=box.querySelector('.char-face-v129'),rect=FRAME_FACE_V129[currentFrameSlug]||FRAME_FACE_V129.ryu,[x,y,width,height]=rect;const scale=(box.clientHeight||163)/height;face.style.setProperty('--face-width',`${width*scale}px`);face.style.setProperty('--sheet-size',`${864*scale}px ${1536*scale}px`);face.style.setProperty('--face-position',`${-x*scale}px ${-y*scale}px`)}
+const frameRenderBeforeV129=renderFrameData;
+renderFrameData=function(slug,type){frameRenderBeforeV129(slug,type);fitFrameFaceV129()};
+window.addEventListener('resize',fitFrameFaceV129);
+document.addEventListener('DOMContentLoaded',()=>{new ResizeObserver(fitFrameFaceV129).observe(document.querySelector('#frame-screen .char-hero'));fitFrameFaceV129()});
 </script>
 </body>
 </html>
