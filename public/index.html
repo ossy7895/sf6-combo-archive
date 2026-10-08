@@ -846,14 +846,26 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 <style>#login-screen{background:#030a12;color:#fff;min-height:100svh;padding-bottom:30px}.login-panel{margin-top:25px;padding:18px}.login-panel h2{font-size:22px}.login-panel p{font-size:12px;line-height:1.7;color:#b8c8dc}.login-panel form>label:not(.login-remember){display:block;font-size:13px;font-weight:800;margin:15px 0 6px}.login-panel select,.login-panel input[type=password],.login-panel input[type=text]{width:100%;min-width:0;height:43px;border:1px solid #506880;border-radius:7px;background:#07121f;color:#fff;padding:0 10px;font:700 16px system-ui}.login-password-wrap{display:flex;gap:7px}.login-password-wrap input{flex:1}.login-password-wrap button{border:1px solid #506880;border-radius:7px;background:#081421;color:white;width:52px;flex-shrink:0}.login-remember{display:flex;align-items:center;gap:6px;font-size:12px;margin-top:13px}.login-panel #fgcLoginSubmit{width:100%;background:#88082d;border-color:#ff2256;padding:12px}.login-panel #fgcLoginSubmit:disabled{opacity:.5}.login-panel #fgcLoginStatus{min-height:22px}.login-panel #fgcLoginStatus.error{color:#ff9db6}.login-help{margin:20px 0 0;font-size:11px!important}.home-hero-v119{position:relative}.fgc-account-entry{position:absolute;top:8px;right:8px;max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#080e1ee6;border:1px solid #63718c;border-radius:6px;color:#fff;font-weight:700;font-size:11px;padding:7px 9px}.login-panel [hidden]{display:none!important}
 #login-screen .combo-head{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:6px}#login-screen .combo-head span{font-size:clamp(10px,3.3vw,14px);white-space:nowrap;letter-spacing:0}#login-screen .combo-head h1{font-size:17px;white-space:nowrap}
 </style>
-<style>.login-panel>label[for="fgcLoginMember"]{display:block;font-size:13px;font-weight:800;margin:15px 0 6px}</style><style>#svLoginStatus,#svShareStatus{overflow-wrap:anywhere}#svMigrateCombos{margin-top:9px;width:100%}#arRegister:disabled{opacity:.5;cursor:wait}</style></head>
+<style>.login-panel>label[for="fgcLoginMember"]{display:block;font-size:13px;font-weight:800;margin:15px 0 6px}</style><style>#svLoginStatus,#svShareStatus{overflow-wrap:anywhere}#svMigrateCombos{margin-top:9px;width:100%}#arRegister:disabled{opacity:.5;cursor:wait}</style><style>
+/* v1.27 approved member sizing and reorder control. */
+#member-screen .member-count{min-width:0;width:76px;padding:5px 6px 4px;font-size:10px}
+#member-screen .member-count strong{font-size:22px;margin-top:2px}
+#member-screen .member-list-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:6px 8px 0}
+#member-screen .member-list-tools button{padding:9px 3px;min-width:0;font-size:10px;white-space:nowrap}
+#member-screen #memberListReorderBtn{border-color:#b46bff;color:#efdfff}
+.member-modal-actions{display:flex;gap:8px;margin-top:14px}.member-modal-actions>button{flex:1;border:1px solid #536a86;border-radius:7px;background:#0b1928;color:#fff;padding:10px;font-weight:800}.member-modal-actions .member-modal-save{margin:0}.member-reorder-row{display:grid;grid-template-columns:24px minmax(0,1fr) 36px 36px;gap:6px;align-items:center;padding:9px 0;border-bottom:1px solid #26384c}
+.member-reorder-row .name{overflow-wrap:anywhere;font-weight:800}
+.member-reorder-row button{height:34px;border:1px solid #536a86;border-radius:6px;background:#0b1928;color:#fff;font-size:20px}
+.member-reorder-row button:disabled{opacity:.3}
+#memberReorderStatus{font-size:12px;line-height:1.6;color:#bacadb}
+</style></head>
 <body>
 
 <section id="home-screen" class="screen">
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
       <img class="site-banner" src="assets/home-banner-v119.png" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.26</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+      <span class="version-mark">v1.27</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
@@ -942,7 +954,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
     
 <header class="site-header">
   <img class="site-banner" src="assets/fgc-header.webp" alt="FGC COMBO ARCHIVE">
-  <span class="version-mark">v1.26</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+  <span class="version-mark">v1.27</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
   <nav class="top-tabs" aria-label="上部ナビゲーション">
     <button type="button" data-route="home">TOP</button>
     <button type="button" data-route="characters">CHARACTER</button>
@@ -1097,6 +1109,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
     <div class="member-list-tools" aria-label="メンバー管理">
       <button id="memberListAddBtn" type="button">＋ メンバー追加</button>
       <button id="memberListDeleteBtn" type="button" class="danger">－ メンバー削除</button>
+      <button id="memberListReorderBtn" type="button">↕ メンバー並び替え</button>
     </div>
     <nav class="member-bottom-nav" aria-label="メンバーページ下部ナビゲーション">
       <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
@@ -1223,7 +1236,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
     
 <header class="site-header">
   <img class="site-banner" src="assets/fgc-header.webp" alt="FGC COMBO ARCHIVE">
-  <span class="version-mark">v1.26</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+  <span class="version-mark">v1.27</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
   <nav class="top-tabs" aria-label="上部ナビゲーション">
     <button type="button" data-route="home">TOP</button>
     <button type="button" data-route="characters">CHARACTER</button>
@@ -1389,7 +1402,7 @@ function fitMemberName(el){
   // Use virtually the full username cell. Shrink only when the natural text width actually exceeds it.
   const available=Math.max(0,parent.clientWidth-(parseFloat(ps.paddingLeft)||0)-(parseFloat(ps.paddingRight)||0)-1);
   if(!available)return;
-  const base=window.matchMedia('(max-width:420px)').matches?24:28;
+  let base=window.matchMedia('(max-width:420px)').matches?24:28;
   const min=9;
   let size=base;
   const oldWidth=el.style.width, oldMax=el.style.maxWidth, oldOverflow=el.style.overflow;
@@ -1403,6 +1416,15 @@ function fitMemberName(el){
     el.style.overflow=oldOverflow;
     return w;
   };
+  el.style.fontSize=base+'px';
+  const originalText=el.textContent;
+  el.textContent='小淵沢報瀬';
+  const referenceWidth=naturalWidth();
+  base=Math.min(base,Math.floor(base*available/Math.max(1,referenceWidth)*10)/10);
+  el.style.fontSize=base+'px';
+  while(naturalWidth()>available&&base>min){base=Math.max(min,base-.25);el.style.fontSize=base+'px'}
+  el.textContent=originalText;
+  size=base;
   el.style.fontSize=size+'px';
   let required=naturalWidth();
   if(required<=available){ el.dataset.fit='full'; return; }
@@ -1929,7 +1951,7 @@ window.addEventListener('hashchange',()=>{if(document.getElementById('cbLinkModa
 <section id="archive-list-screen" class="screen"><div class="archive-detail"><header class="combo-head"><button type="button" onclick="appBack()" aria-label="戻る">‹</button><span>FGC COMBO ARCHIVE</span><h1>新着コンボ</h1></header><div id="archiveGlobal"></div></div></section>
 <section id="archive-detail-screen" class="screen"><div class="archive-detail"><header class="combo-head"><button type="button" onclick="appBack()" aria-label="戻る">‹</button><span>FGC COMBO ARCHIVE</span><h1>コンボ詳細</h1></header><main id="archiveDetail"></main></div></section>
 
-<script>/* v1.26: one combo record powers character, author, home and detail views.
+<script>/* v1.27: one combo record powers character, author, home and detail views.
    This release uses a browser-local repository, not a public shared database. */
 const AR_KEY='fgcComboArchiveV1';
 let arRecords=[];let arSamples=false;let arDetailCommand=false;let arLastSubmission='';
@@ -1996,7 +2018,7 @@ const fgcParseBefore=parseHash;parseHash=function(){return location.hash==='#log
 const fgcRouteBefore=showRoute;showRoute=function(route){if(route==='login'){currentRoute='login';document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('login-screen').classList.add('active');document.body.className='login-page';document.title='ログイン | FGC COMBO ARCHIVE';fgcAccountUI();window.scrollTo(0,0);return}if(route==='combo-create'&&!fgcSelectedMember()){fgcReturnRoute=route;navigate('login');return}fgcRouteBefore(route)};
 const fgcRegisterBefore=arRegister;arRegister=function(){if(fgcNeedLogin('combo-create'))fgcRegisterBefore()};
 const fgcEditorBefore=arSetupEditor;arSetupEditor=function(){fgcEditorBefore();if(fgcSession){const sel=document.getElementById('arLocalAuthor');if(memberProfiles[fgcSession.memberId])sel.value=fgcSession.memberId}};
-const fgcMutations='#memberProfileEdit,#memberAddCharacter,#memberListAddBtn,#memberListDeleteBtn,#memberEditSave,#memberManageSave,#memberManageAddBtn,#memberListAddSave,#memberListDeleteSave,[data-rank-index],[data-up],[data-down],[data-remove]';
+const fgcMutations='#memberProfileEdit,#memberAddCharacter,#memberListAddBtn,#memberListDeleteBtn,#memberListReorderBtn,#memberReorderSave,#memberEditSave,#memberManageSave,#memberManageAddBtn,#memberListAddSave,#memberListDeleteSave,[data-rank-index],[data-up],[data-down],[data-remove]';
 document.addEventListener('click',e=>{if(e.target.closest(fgcMutations)&&!fgcSession){e.preventDefault();e.stopImmediatePropagation();fgcNeedLogin(currentRoute)}},true);
 document.addEventListener('change',e=>{if(e.target.matches('[data-rank-index]')&&!fgcSession){e.preventDefault();e.stopImmediatePropagation();fgcNeedLogin(currentRoute)}},true);
 document.addEventListener('DOMContentLoaded',()=>{document.getElementById('fgcLoginForm').addEventListener('submit',fgcLogin);document.getElementById('fgcLoginMember').onchange=e=>{if(fgcSession){fgcSession.memberId=memberProfiles[e.target.value]?e.target.value:null;fgcSaveSelection();fgcAccountUI()}};document.getElementById('fgcShowPassword').onclick=()=>{const input=document.getElementById('fgcLoginPassword'),show=input.type==='password';input.type=show?'text':'password';document.getElementById('fgcShowPassword').textContent=show?'隠す':'表示';document.getElementById('fgcShowPassword').setAttribute('aria-pressed',String(show))};document.getElementById('fgcLogout').onclick=async()=>{if(!fgcAuthApi)return;try{await fgcAuthApi.signOut(fgcAuth);fgcSession=null;fgcClearSelection();fgcClearPassword();fgcAccountUI();showToast('ログアウトしました');navigate('login')}catch(e){fgcStatus('ログアウトできませんでした。通信を確認してください。',true)}};document.getElementById('fgcLoginContinue').onclick=()=>navigate(fgcReturnRoute||'home');fgcAccountUI();fgcStartAuth()});
@@ -2010,7 +2032,7 @@ let svRosterBusy=false,svWriteBusy=false,svError='',svModalVersion=null,svExpect
 const svMigratedIds=new Set();let svResumeDraft=location.hash==='#combo-create';
 arRecords=[];arSamples=false;
 function svString(v){return JSON.stringify(v,(_,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.keys(x).sort().map(k=>[k,x[k]])):x)}
-function svNormalizeRoster(raw){if(!raw||typeof raw!=='object'||Array.isArray(raw)||Object.keys(raw).length>100)throw Error('メンバー数またはデータ形式が不正です');const out={};for(const [id,p] of Object.entries(raw)){if(!/^[a-zA-Z0-9_-]{1,100}$/.test(id)||!p||typeof p.name!=='string'||!p.name.trim()||p.name.length>40||!Array.isArray(p.chars)||p.chars.length>32)throw Error('メンバーデータを確認してください');const seen=new Set();const chars=p.chars.map(c=>{if(!c||!MEMBER_CHARACTERS.some(x=>x[0]===c.slug)||!MEMBER_RANKS.includes(c.rank)||seen.has(c.slug))throw Error('使用キャラまたはランクが不正です');seen.add(c.slug);return {slug:c.slug,rank:c.rank,combo:0}});out[id]={name:p.name,roman:typeof p.roman==='string'?p.roman.slice(0,80):'',bannerChar:chars.some(c=>c.slug===p.bannerChar)?p.bannerChar:(chars[0]?.slug||''),chars}}return out}
+function svNormalizeRoster(raw){if(!raw||typeof raw!=='object'||Array.isArray(raw)||Object.keys(raw).length>100)throw Error('メンバー数またはデータ形式が不正です');const out={};for(const [id,p] of Object.entries(raw)){if(!/^[a-zA-Z0-9_-]{1,100}$/.test(id)||!p||typeof p.name!=='string'||!p.name.trim()||p.name.length>40||!Array.isArray(p.chars)||p.chars.length>32)throw Error('メンバーデータを確認してください');const seen=new Set();const chars=p.chars.map(c=>{if(!c||!MEMBER_CHARACTERS.some(x=>x[0]===c.slug)||!MEMBER_RANKS.includes(c.rank)||seen.has(c.slug))throw Error('使用キャラまたはランクが不正です');seen.add(c.slug);return {slug:c.slug,rank:c.rank,combo:0}});out[id]={listOrder:Number.isInteger(p.listOrder)&&p.listOrder>=0&&p.listOrder<10000?p.listOrder:10000,name:p.name,roman:typeof p.roman==='string'?p.roman.slice(0,80):'',bannerChar:chars.some(c=>c.slug===p.bannerChar)?p.bannerChar:(chars[0]?.slug||''),chars}}return Object.fromEntries(Object.entries(out).sort((a,b)=>a[1].listOrder-b[1].listOrder))}
 function svStatus(){if(!fgcSession)return '共有コンボを見るには共用アカウントでログインしてください。';if(svError)return svError;if(!svRosterReady)return '共有データに接続しています…';if(!svRosterVersion)return '初回設定：ログイン画面から、この端末のメンバー一覧を共有へ登録してください。';if(svRosterBusy||svWriteBusy)return '共有データを保存しています…';if(!svRosterLive||!svComboLive)return '共有データの同期を確認中です。保存は接続完了後に行えます。';return `共有コンボ ${arRecords.length}件 ／ ログインした友人全員で共有`}
 function svErrorText(e){if(e?.code==='permission-denied')return '共有データへのアクセスが拒否されました。Firestoreのルールと共用アカウントを確認してください。';if(e?.code==='unavailable'||e?.code==='failed-precondition')return '共有データに接続できません。通信とFirestoreの作成状況を確認してください。';return e?.message||'共有保存に失敗しました。入力内容は保持しています。'}
 function svRemainingLocal(){return svLocalCombos.filter(p=>!svMigratedIds.has(p.id)&&!arRecords.some(c=>c.id===p.id))}
@@ -2037,6 +2059,61 @@ document.addEventListener('DOMContentLoaded',()=>{document.getElementById('svSee
 window.addEventListener('beforeunload',e=>{if(svWriteBusy||svRosterBusy){e.preventDefault();e.returnValue=''}});
 
 function svAuthorMarkup(p,prefix='投稿者：'){const text=escapeHtml(prefix+arAuthor(p));return memberProfiles[p.authorId]?`<a class="ar-author" href="#member/${escapeHtml(p.authorId)}" data-route="member/${escapeHtml(p.authorId)}">${text}</a>`:`<span class="ar-author">${text}（登録解除）</span>`}
+</script>
+<div id="memberReorderModal" class="member-modal-backdrop" aria-hidden="true">
+  <div class="member-modal" role="dialog" aria-modal="true" aria-labelledby="memberReorderTitle">
+    <div class="member-modal-head"><h3 id="memberReorderTitle">メンバー並び替え</h3><button class="member-modal-close" type="button" onclick="closeMemberModal('memberReorderModal')">×</button></div>
+    <div class="member-modal-body"><p id="memberReorderStatus">↑ ↓ で順序を変更してください。保存すると全員に反映されます。</p>
+    <div id="memberReorderList"></div>
+    <div class="member-modal-actions"><button type="button" onclick="closeMemberModal('memberReorderModal')">キャンセル</button><button id="memberReorderSave" class="member-modal-save" type="button">保存</button></div></div>
+  </div>
+</div>
+
+<script>
+/* Shared display order, separate from member identity and combo authorship. */
+let memberReorderDraft=[],memberReorderVersion=0,memberReorderBusy=false;
+function renderMemberReorder(){
+  const box=document.getElementById('memberReorderList');
+  box.innerHTML=memberReorderDraft.map((id,i)=>`<div class="member-reorder-row"><span>${i+1}</span><span class="name">${escapeHtml(memberProfiles[id]?.name||id)}</span><button type="button" data-reorder-index="${i}" data-reorder-direction="-1" aria-label="${escapeHtml(memberProfiles[id]?.name||id)}を上へ" ${i===0||memberReorderBusy?'disabled':''}>↑</button><button type="button" data-reorder-index="${i}" data-reorder-direction="1" aria-label="${escapeHtml(memberProfiles[id]?.name||id)}を下へ" ${i===memberReorderDraft.length-1||memberReorderBusy?'disabled':''}>↓</button></div>`).join('');
+  document.getElementById('memberReorderSave').disabled=memberReorderBusy||!svCanWrite()||svRosterBusy||!memberReorderDraft.length;
+}
+function openMemberReorder(){
+  if(!fgcSession){fgcNeedLogin('members');return}
+  if(!svCanWrite()||svRosterBusy){showToast('共有データへの接続完了後に並び替えてください。');return}
+  memberReorderDraft=Object.keys(memberProfiles);memberReorderVersion=svRosterVersion;
+  document.getElementById('memberReorderStatus').textContent='↑ ↓ で順序を変更してください。保存すると全員に反映されます。';
+  renderMemberReorder();openMemberModal('memberReorderModal');
+}
+async function saveMemberReorder(){
+  if(memberReorderBusy)return;
+  const status=document.getElementById('memberReorderStatus');
+  if(!svCanWrite()||svRosterBusy){status.textContent='共有データへの接続完了後に保存してください。';return}
+  if(svRosterVersion!==memberReorderVersion){memberReorderDraft=Object.keys(memberProfiles);memberReorderVersion=svRosterVersion;status.textContent='他の人がメンバー設定を更新しました。最新の一覧で並び替えをやり直してください。';renderMemberReorder();return}
+  const ids=Object.keys(memberProfiles);
+  if(ids.length!==memberReorderDraft.length||memberReorderDraft.some(id=>!memberProfiles[id])){status.textContent='メンバー一覧が変更されました。一度閉じて、やり直してください。';return}
+  const candidate=JSON.parse(JSON.stringify(memberProfiles));
+  memberReorderDraft.forEach((id,i)=>candidate[id].listOrder=i);
+  memberReorderBusy=true;status.textContent='順序を共有へ保存しています…';renderMemberReorder();
+  try{
+    await svSaveRoster(candidate,memberReorderVersion);
+    if(svString(svNormalizeRoster(candidate))===svString(svCanonicalRoster)){closeMemberModal('memberReorderModal')}
+    else {status.textContent='保存できませんでした。最新の一覧を確認して並び替えをやり直してください。';memberReorderDraft=Object.keys(memberProfiles);memberReorderVersion=svRosterVersion}
+  }catch(e){status.textContent=svErrorText(e)}
+  finally{memberReorderBusy=false;renderMemberReorder()}
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('memberListReorderBtn').addEventListener('click',openMemberReorder);
+  document.getElementById('memberReorderSave').addEventListener('click',saveMemberReorder);
+  document.getElementById('memberReorderList').addEventListener('click',e=>{
+    const b=e.target.closest('[data-reorder-index]');if(!b||memberReorderBusy)return;
+    const i=Number(b.dataset.reorderIndex),j=i+Number(b.dataset.reorderDirection);
+    if(j<0||j>=memberReorderDraft.length)return;
+    [memberReorderDraft[i],memberReorderDraft[j]]=[memberReorderDraft[j],memberReorderDraft[i]];
+    renderMemberReorder();
+    document.querySelector(`#memberReorderList [data-reorder-index="${j}"][data-reorder-direction="${b.dataset.reorderDirection}"]`)?.focus();
+  });
+});
+
 </script>
 </body>
 </html>
