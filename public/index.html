@@ -963,7 +963,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .ar-card .ar-tags{margin-top:20px}
 </style>
 <style>
-/* v1.45: exact crops of user-approved artwork; no regenerated assets. */
+/* v1.46: exact crops of user-approved artwork; no regenerated assets. */
 #home-screen .home-v119{height:auto;min-height:100svh;overflow:visible;padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom));background:#030506}
 #home-screen .home-hero-v119{aspect-ratio:709/350;height:auto!important}
 #home-screen .home-hero-v119 .site-banner{position:static;top:auto;width:100%;height:100%;object-fit:fill}
@@ -991,7 +991,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .screen:not(#home-screen){padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom))}
 </style>
 <style>
-/* v1.45: selected bezel follows the artwork, not the button hit rectangle. */
+/* v1.46: selected bezel follows the artwork, not the button hit rectangle. */
 .bottom-nav.home-bottom-nav-v119{height:calc(min(920px,100vw)*180/709);padding:0;background-image:url('assets/arcade/nav-inactive.webp');background-size:100% 100%;isolation:isolate}
 .bottom-nav.home-bottom-nav-v119:has(button[data-route="home"].active){background-image:url('assets/arcade/nav.webp')}
 .bottom-nav.home-bottom-nav-v119::after{content:"";position:absolute;inset:0;pointer-events:none;background:center/100% 100% no-repeat;z-index:1}
@@ -1014,10 +1014,35 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 #home-screen .home-combo-info-v119>strong{line-height:12px}
 #home-screen .home-combo-info-v119>.ar-card-author{line-height:12px}
 </style><style>
-/* v1.45: fit the approved home composition as a single proportional stage. */
+/* v1.46: fit the approved home composition as a single proportional stage. */
 body.home-page{height:var(--home-viewport-height,100dvh);overflow:hidden;overscroll-behavior-y:none;background:#030506}
 #home-screen{position:relative;height:var(--home-viewport-height,100dvh);min-height:0;overflow:hidden;padding:0}
 #home-screen .home-v119{position:absolute;left:50%;top:0;margin:0;min-height:0;max-width:none;transform:translateX(-50%) scale(var(--home-fit-scale,1));transform-origin:top center;box-shadow:none}
+</style><style>
+/* Full available width; row allocation responds to viewport height. */
+#home-screen .home-v119{transform:translateX(-50%);display:grid;grid-template-rows:minmax(0,1fr) minmax(30px,5.8%) minmax(0,19%) minmax(0,28%) minmax(0,16%) calc(min(920px,100vw)*135/709);overflow:hidden}
+#home-screen .home-v119>*{min-height:0;min-width:0;overflow:hidden}
+#home-screen .home-hero-v119{aspect-ratio:auto;height:100%!important}
+#home-screen .home-hero-v119 .site-banner{height:100%;object-fit:cover;object-position:center}
+#home-screen .home-hero-v119 .fgc-account-entry{height:27px;top:2px}
+#home-screen .home-search-v119{aspect-ratio:auto;height:100%;padding:4px 2.8%}
+#home-screen .home-shortcuts-v119{aspect-ratio:auto;height:100%;background-size:100% auto;background-position:center bottom}
+#home-screen .home-block-v119:not(.home-focus-v119){display:flex;flex-direction:column;padding-bottom:3px}
+#home-screen .home-heading-v119{flex-shrink:0;font-size:15px;line-height:20px;margin:2px 0 4px}
+#home-screen .home-combo-strip-v119{flex:1;min-height:0;align-items:stretch;overflow-y:hidden}
+#home-screen .home-combo-card-v119{display:flex;flex-direction:column;aspect-ratio:auto;height:100%}
+#home-screen .home-combo-image-v119{flex:1;min-height:20px;aspect-ratio:auto}
+#home-screen .home-combo-image-v119 img{object-fit:cover}
+#home-screen .home-combo-info-v119{flex:0 0 111px;aspect-ratio:auto;height:111px;min-height:111px}
+#home-screen .home-focus-v119{display:flex;flex-direction:column}
+#home-screen .home-focus-grid-v119{flex:1;min-height:0;aspect-ratio:auto;background-size:100% auto;background-position:center bottom}
+#home-screen .bottom-nav.home-bottom-nav-v119{height:100%;margin:0;background-size:100% auto;background-position:top center}
+#home-screen .bottom-nav.home-bottom-nav-v119::after{background-size:100% auto;background-position:top center}
+</style><style>
+#home-screen .home-shortcuts-v119,#home-screen .home-focus-grid-v119{position:relative}
+#home-screen .home-shortcuts-v119::before,#home-screen .home-focus-grid-v119::before{content:"";position:absolute;top:0;left:0;right:0;height:calc(min(920px,100vw)*16/709);background:center/100% 100% no-repeat;pointer-events:none}
+#home-screen .home-shortcuts-v119::before{background-image:url('assets/arcade/shortcuts-top.webp')}
+#home-screen .home-focus-grid-v119::before{background-image:url('assets/arcade/focus-top.webp')}
 </style></head>
 <body>
 
@@ -1025,7 +1050,7 @@ body.home-page{height:var(--home-viewport-height,100dvh);overflow:hidden;overscr
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
       <img class="site-banner" src="assets/arcade/hero.webp" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.45</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+      <span class="version-mark">v1.46</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
@@ -2356,13 +2381,8 @@ function fitHomeViewportV145(){
  if(!screen.classList.contains('active'))return;
  const width=Math.min(920,document.documentElement.clientWidth),height=Math.floor(window.visualViewport?.height||window.innerHeight);
  document.documentElement.style.setProperty('--home-viewport-height',height+'px');
- stage.style.width=width+'px';stage.style.height='auto';stage.style.setProperty('--home-fit-scale','1');
- const naturalHeight=Math.ceil(stage.offsetHeight);
- const scale=Math.min(1,height/Math.max(1,naturalHeight));
- stage.style.setProperty('--home-fit-scale',String(scale));
- // The extra height on tall displays goes before the menu, as in the approved layout.
- stage.style.height=(height/scale)+'px';
- stage.dataset.fitScale=String(scale);stage.dataset.naturalHeight=String(naturalHeight);
+ stage.style.width=width+'px';stage.style.height=height+'px';stage.style.setProperty('--home-fit-scale','1');
+ stage.dataset.fitScale='1';
  arQueuePreviews();
 }
 const homeRouteV145=showRoute;showRoute=function(route){homeRouteV145(route);if(currentRoute==='home')queueHomeFitV145()};
