@@ -918,6 +918,39 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .bottom-nav button>span:last-child{white-space:nowrap}
 @media(max-width:360px){.ar-card-footer{grid-template-columns:minmax(0,1fr) 80px;gap:5px}.ar-card .ar-stats{gap:5px;font-size:8px}.ar-card .ar-damage{font-size:20px}.ar-card .ar-gauge{gap:1px}.ar-card .ar-gauge i{width:5px;height:10px}.ar-card-controls .ar-type,.ar-command-toggle{width:80px}.ar-command-toggle{font-size:9px}.bottom-nav button{font-size:10px}}
 </style>
+<style>
+/* v1.37: keep existing home card dimensions, reorder content, allow three preview lines. */
+.home-combo-info-v119{height:133px;grid-template-rows:14px 15px minmax(0,1fr) 11px 18px;gap:3px}
+.home-combo-info-v119>strong{line-height:14px;min-width:0}
+.home-combo-info-v119>.ar-card-author{font:400 11px/15px system-ui,sans-serif;color:#45d7e3;text-align:left;margin:0;min-width:0}
+.home-combo-info-v119>.ar-combo-preview{height:42.75px;min-height:42.75px;margin:0;align-self:start}
+.home-combo-info-v119>small{line-height:11px}
+.home-combo-info-v119>.ar-home-footer{display:flex;align-items:center;justify-content:flex-start;gap:4px;margin:0;min-width:0;font-size:7px;white-space:nowrap}
+.ar-home-footer>span{display:inline-flex;align-items:center;gap:2px;min-width:0}
+.ar-home-footer .ar-home-damage{gap:2px}
+.ar-home-footer .ar-home-damage em{font-size:14px}
+.ar-home-footer .ar-home-damage i{font-size:6px;margin:0}
+.ar-home-footer .ar-gauge{gap:.8px;margin:0}
+.ar-home-footer .ar-gauge i{width:3px;height:8px;margin:0;flex:0 0 3px;border-radius:1px}
+.ar-home-footer .ar-type-badge{width:16px;height:16px;object-fit:contain;flex:0 0 16px;margin-left:auto}
+</style>
+<style>
+#frame-compare-screen .utility-placeholder-shell{background:radial-gradient(circle at 50% 0,rgba(28,55,82,.2),transparent 32rem),#05080d}
+#frame-compare-screen .fc-main{padding:16px 10px 28px}
+.fc-brand{font-family:Impact,'Arial Narrow',sans-serif!important;font-size:17px!important;font-style:italic}.fc-brand em{color:#ff204c}
+.fc-main h1{text-align:center;font-size:28px;margin:0 0 16px;font-weight:900}
+.fc-selectors{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px}
+.fc-selector{--fc-color:#ff304f;border:1px solid var(--fc-color);border-left:4px solid var(--fc-color);border-radius:7px;padding:9px 7px;min-width:0;background:#08111a}.fc-selector.fc-blue{--fc-color:#16b8ff}
+.fc-selector label{display:block;font-weight:800;font-size:13px;color:var(--fc-color);margin-bottom:7px}
+.fc-selector select{width:100%;min-width:0;font-size:14px;font-weight:800;color:#fff;background:#08121e;border:1px solid #44617a;border-radius:5px;padding:11px 5px}
+.fc-types{display:flex;gap:5px;margin-top:7px}.fc-types button{flex:1;min-width:0;background:transparent;border:0;border-bottom:3px solid transparent;color:#9eafc7;font:700 12px/1.5 Impact,'Arial Narrow',sans-serif;padding:5px 0}.fc-types button.active{color:#fff;border-bottom-color:var(--fc-color)}
+.fc-guide{text-align:center;font-size:12px;color:#bac9dc;line-height:1.8;margin:13px 0}.fc-status{color:#bac9dc;font-size:12px;margin:9px 0;line-height:1.6}.fc-status:empty{display:none}
+.fc-table-scroll{overflow:auto;max-height:65svh;border:1px solid #36506d;border-radius:6px;overscroll-behavior:contain}
+.fc-table{width:100%;min-width:760px;border-collapse:separate;border-spacing:0;table-layout:fixed;color:#fff;font-size:13px;background:#07101b}.fc-table th:first-child{width:240px}.fc-table th{position:sticky;top:0;z-index:2;background:#0d1a29;border-right:1px solid #29415c;border-bottom:1px solid #36506d;padding:0;font-size:12px}.fc-table th button{width:100%;background:none;border:0;color:#c2d0e5;font-size:12px;font-weight:800;min-height:44px;padding:6px 2px;white-space:nowrap}.fc-table th[aria-sort=ascending],.fc-table th[aria-sort=descending]{background:#163e71}.fc-table th[aria-sort=ascending] button,.fc-table th[aria-sort=descending] button{color:#fff}
+.fc-table td{border-right:1px solid #29415c;border-bottom:1px solid #29415c;text-align:center;padding:12px 6px;overflow-wrap:anywhere;vertical-align:middle;white-space:pre-line}.fc-table td:first-child{text-align:left;border-left:4px solid #ff304f;padding-left:10px}.fc-table tr.fc-red{background:linear-gradient(90deg,#24101a,#120d16)}.fc-table tr.fc-blue{background:linear-gradient(90deg,#092337,#071220)}.fc-table tr.fc-blue td:first-child{border-left-color:#16b8ff}.fc-row-char{display:block;font-size:11px;font-weight:900;color:#ff405c;margin-bottom:3px}.fc-blue .fc-row-char{color:#18bfff}.fc-row-name{font-size:13px;font-weight:800;line-height:1.5}.fc-row-command{display:block;color:#bbc8da;font-size:11px;line-height:1.5;margin-top:3px}.fc-empty{text-align:center!important;border-left:0!important;padding:26px 14px!important;color:#bdcadc}
+.fc-scroll-note,.fc-note{font-size:11px;color:#aabbd0;margin:7px 0}.fc-scroll-note{text-align:right}
+@media(min-width:650px){.fc-selector select{font-size:20px}.fc-selector label{font-size:16px}.fc-types button{font-size:17px}.fc-table{font-size:15px}.fc-table th button{font-size:14px}.fc-row-name{font-size:16px}}
+</style>
 </head>
 <body>
 
@@ -925,7 +958,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
       <img class="site-banner" src="assets/home-banner-v128.webp" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.36</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+      <span class="version-mark">v1.38</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
@@ -1005,8 +1038,8 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 
 <section id="frame-compare-screen" class="screen utility-placeholder-screen">
   <div class="site-shell utility-placeholder-shell">
-    <header class="utility-placeholder-head"><button type="button" onclick="appBack()">‹</button><strong>フレーム比較</strong><span></span></header>
-    <main><div class="utility-placeholder-card"><div class="utility-placeholder-icon">▤</div><h1>フレーム比較ページ</h1><p>このページは次工程で、2キャラクターのフレームデータを比較する画面として実装します。</p></div></main>
+    <header class="utility-placeholder-head"><button type="button" onclick="appBack()">‹</button><strong class="fc-brand">FGC <em>COMBO</em> ARCHIVE</strong><span></span></header>
+    <main class="fc-main"><h1>フレーム比較</h1><div id="fcSelectors" class="fc-selectors"></div><p class="fc-guide">キャラを2体選択して比較<br>見出しをタップで昇順・降順を切替</p><div id="fcStatus" class="fc-status" role="status"></div><div class="fc-table-scroll" tabindex="0" aria-label="比較表。左右にスクロールできます"><table class="fc-table"><thead id="fcHead"></thead><tbody id="fcBody"></tbody></table></div><p class="fc-scroll-note">左右にスクロールで全項目を表示</p><p class="fc-note">通常投げ・共通システムは除外</p></main>
     <nav class="bottom-nav home-bottom-nav-v119" aria-label="下部ナビゲーション">
 <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
 <button type="button" data-route="members"><span class="ico">♟</span><span>メンバー</span></button>
@@ -1641,6 +1674,7 @@ function showRoute(route){
     document.body.classList.add('frame-compare-page');
     document.getElementById('frame-compare-screen').classList.add('active');
     document.title='フレーム比較 | FGC COMBO ARCHIVE';
+    queueMicrotask(initFrameCompare);
   }else if(route.startsWith('frame/')){
     const slug=route.split('/')[1]||'ryu';
     document.body.classList.add('frame-page');
@@ -2052,7 +2086,7 @@ function arPanel(host,scope,base,heading,withChar){if(!host)return;const f=arFil
 }
 function arFrame(){arPanel(document.getElementById('frameComboPanel'),'frame',arAll().filter(p=>p.char===currentFrameSlug),memberCharName(currentFrameSlug)+' コンボ一覧',false)}
 function arMember(){arPanel(document.getElementById('memberArchive'),'member',arAll().filter(p=>p.authorId===currentMemberId),'投稿コンボ',true);const n=arRecords.filter(p=>p.authorId===currentMemberId).length;document.getElementById('memberComboSummary').textContent=`共有 ${n}件`}
-function arHome(){const strip=document.querySelector('.home-combo-strip-v119');strip.innerHTML=arAll().sort((a,b)=>b.createdAt-a.createdAt).slice(0,4).map(p=>`<a class="home-combo-card-v119 ar-card-link" href="#combo/${escapeHtml(p.id)}" data-route="combo/${escapeHtml(p.id)}" aria-label="${escapeHtml(p.title)}の詳細"><div class="home-combo-image-v119"><img src="${memberIcon(p.char)}" alt="${escapeHtml(memberCharName(p.char))}"><b>${p.sample?'SAMPLE':'NEW'}</b></div><div class="home-combo-info-v119"><strong>${escapeHtml(p.title)}</strong><span>${escapeHtml(memberCharName(p.char))}</span>${arLogo(p.type)}${arPreviewMarkup(p)}<small>${p.sample?'表示例':new Date(p.createdAt).toLocaleDateString('ja-JP')}</small><div class="ar-home-footer"><div class="ar-home-stats"><em>${p.damage}</em><i>DMG</i><em class="drive">${p.drive}</em><i>DR</i><em class="sa">${p.sa}</em><i>SA</i></div><span class="ar-card-author">${escapeHtml(arAuthor(p))}</span></div></div></a>`).join('')||'<p class="ar-home-empty">コンボはまだありません。</p>';document.getElementById('archiveHomeNotice').textContent=svStatus();arQueuePreviews();}
+function arHome(){const strip=document.querySelector('.home-combo-strip-v119');strip.innerHTML=arAll().sort((a,b)=>b.createdAt-a.createdAt).slice(0,4).map(p=>`<a class="home-combo-card-v119 ar-card-link" href="#combo/${escapeHtml(p.id)}" data-route="combo/${escapeHtml(p.id)}" aria-label="${escapeHtml(p.title)}の詳細"><div class="home-combo-image-v119"><img src="${memberIcon(p.char)}" alt="${escapeHtml(memberCharName(p.char))}"><b>${p.sample?'SAMPLE':'NEW'}</b></div><div class="home-combo-info-v119"><strong>${escapeHtml(p.title)}</strong><span class="ar-card-author">${escapeHtml(arAuthor(p))}</span>${arPreviewMarkup(p).replace('data-combo-text=', 'data-preview-lines="3" data-combo-text=')}<small>${p.sample?'表示例':new Date(p.createdAt).toLocaleDateString('ja-JP')}</small><div class="ar-home-footer"><span class="ar-home-damage"><em>${p.damage}</em><i>DMG</i></span><span class="ar-home-meter">${arGauge(p.drive,6)}<span>${p.drive}/6</span></span><span class="ar-home-meter">${arGauge(p.sa,3,true)}<span>${p.sa}/3</span></span><img class="ar-type-badge" src="assets/combo/${p.type==='modern'?'modern':'classic'}-badge.svg" alt="${p.type==='modern'?'MODERN':'CLASSIC'}"></div></div></a>`).join('')||'<p class="ar-home-empty">コンボはまだありません。</p>';document.getElementById('archiveHomeNotice').textContent=svStatus();arQueuePreviews();}
 
 function arDetail(id){const host=document.getElementById('archiveDetail'),p=[...arRecords,...AR_DEMOS].find(p=>p.id===id);if(!p){host.innerHTML='<p class="ar-empty">このコンボは見つかりません。ログインと共有データへの接続を確認してください。</p><button class="ar-button" data-route="combos">コンボ一覧へ</button>';return}document.title=p.title+' | FGC COMBO ARCHIVE';host.innerHTML=`<section class="cb-panel"><div class="ar-detail-char"><img src="${memberIcon(p.char)}" alt="${escapeHtml(memberCharName(p.char))}"><b>${escapeHtml(memberCharName(p.char))}</b>${arLogo(p.type)}</div><h1>${escapeHtml(p.title)}</h1>${svAuthorMarkup(p)}<div class="ar-detail-meta">${p.sample?'サンプル：技順・ダメージは表示例です。':'ログインした友人全員で共有しています。'}</div>${arTags(p)}</section><section class="cb-panel"><h2 class="cb-title">コンボ概要</h2><div class="cb-setting"><span>ダメージ</span><b class="ar-damage">${p.damage}</b></div><div class="cb-setting"><span>ドライブゲージ使用</span><span class="ar-setting-gauge">${arGauge(p.drive,6)}<span class="ar-count">${p.drive} / 6</span></span></div><div class="cb-setting"><span>SAゲージ使用</span><span class="ar-setting-gauge">${arGauge(p.sa,3,true)}<span class="ar-count">${p.sa} / 3</span></span></div></section><section class="cb-panel"><div class="ar-detail-title"><h2>コンボ手順 <small>${arDetailCommand?'コマンド':'技名'}表示</small></h2><button class="cb-toggle" id="arDetailToggle">⇄ ${arDetailCommand?'技名':'コマンド'}表示</button></div>${p.steps.map((s,i)=>`<div class="cb-row ar-read-row ${s.kind}"><span class="cb-step-num">${i+1}</span><span class="ar-step-text">${escapeHtml(arDetailCommand?s.command:s.name)}</span></div><div class="${s.link==='終了'?'cb-end':'cb-link-wrap'}"><span class="cb-link">${escapeHtml(s.link)}</span></div>`).join('')}</section><button class="ar-button" data-route="combos/${p.char}">${escapeHtml(memberCharName(p.char))}のコンボ一覧へ</button>`;document.getElementById('arDetailToggle').onclick=()=>{arDetailCommand=!arDetailCommand;arDetail(id)}}
 function arRefresh(){arHome();if(currentRoute.startsWith('frame/')||currentRoute.startsWith('combos/'))arFrame();if(currentRoute.startsWith('member/'))arMember();if(currentRoute==='combos')arPanel(document.getElementById('archiveGlobal'),'global',arAll(),'新着コンボ',true)}
@@ -2195,10 +2229,10 @@ const arPreviewObserved=new WeakSet();
 const arPreviewResize=new ResizeObserver(entries=>entries.forEach(entry=>arFitPreview(entry.target)));
 function arFitPreview(el){
  const width=el.getBoundingClientRect().width;if(width<=0)return;
- const full=el.dataset.comboText||'',style=getComputedStyle(el),line=parseFloat(style.lineHeight);
+ const full=el.dataset.comboText||'',style=getComputedStyle(el),line=parseFloat(style.lineHeight),maxLines=Number(el.dataset.previewLines)||2;
  const probe=el.cloneNode(false);probe.removeAttribute('aria-label');probe.style.cssText=`position:fixed;left:-10000px;top:0;visibility:hidden;width:${width}px;height:auto;min-height:0;max-height:none;margin:0;`;
  document.body.append(probe);
- const fits=text=>{probe.textContent=text;return probe.getBoundingClientRect().height<=line*2+.5};
+ const fits=text=>{probe.textContent=text;return probe.getBoundingClientRect().height<=line*maxLines+.5};
  let result=full;
  if(!fits(full)){const chars=Array.from(full);let lo=0,hi=chars.length;while(lo<hi){const mid=Math.ceil((lo+hi)/2);if(fits(chars.slice(0,mid).join('')+'･･'))lo=mid;else hi=mid-1}result=chars.slice(0,lo).join('')+'･･'}
  probe.remove();if(el.textContent!==result)el.textContent=result;
@@ -2238,6 +2272,33 @@ document.addEventListener('click',e=>{
  document.querySelectorAll('[data-ar-command]').forEach(b=>{if(b.dataset.arCommand!==id)return;b.setAttribute('aria-pressed',String(command));const preview=b.closest('.ar-card').querySelector('.ar-combo-preview');const text=arPreviewText(post,command);preview.dataset.comboText=text;preview.setAttribute('aria-label',text);preview.textContent=text;arFitPreview(preview)});
 },true);
 document.addEventListener('keydown',e=>{const card=e.target;if(!card.matches('.ar-card[role=link]'))return;if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click()}});
+</script>
+<script>
+// Frame comparison uses the existing, separate Classic / Modern source arrays.
+const fcState={slots:[{slug:'',control:'classic'},{slug:'',control:'classic'}],column:2,direction:1};
+const fcColumns=[{label:'技名',index:0},{label:'発生',index:2},{label:'持続',index:3},{label:'硬直',index:4},{label:'ヒット',index:5},{label:'ガード',index:6},{label:'キャンセル',index:7}];
+function fcSave(){localStorage.setItem('fgcCompareV101',JSON.stringify(fcState.slots.filter(x=>x.slug).map(x=>({...x,name:FRAME_DATA_V101[x.slug]?.name||x.slug}))))}
+function initFrameCompare(){
+ const saved=getCompare();fcState.slots=[0,1].map(i=>({slug:MEMBER_CHARACTERS.some(x=>x[0]===saved[i]?.slug)?saved[i].slug:'',control:saved[i]?.control==='modern'?'modern':'classic'}));
+ document.getElementById('fcSelectors').innerHTML=fcState.slots.map((slot,i)=>`<div class="fc-selector ${i?'fc-blue':''}"><label for="fcChar${i}">キャラ${i?'②':'①'}</label><select id="fcChar${i}" data-fc-slot="${i}"><option value="">キャラを選択</option>${MEMBER_CHARACTERS.map(([slug,name])=>`<option value="${escapeHtml(slug)}" ${slug===slot.slug?'selected':''}>${escapeHtml(name)}${FRAME_DATA_V101[slug]?.jp?' / '+escapeHtml(FRAME_DATA_V101[slug].jp):''}</option>`).join('')}</select><div class="fc-types" aria-label="キャラ${i+1}の操作タイプ">${['classic','modern'].map(type=>`<button type="button" data-fc-type="${type}" data-fc-slot="${i}" class="${slot.control===type?'active':''}" aria-pressed="${slot.control===type}">${type.toUpperCase()}</button>`).join('')}</div></div>`).join('');
+ document.querySelectorAll('select[data-fc-slot]').forEach(select=>select.onchange=()=>{fcState.slots[Number(select.dataset.fcSlot)].slug=select.value;fcSave();renderFrameCompare()});
+ document.querySelectorAll('[data-fc-type]').forEach(button=>button.onclick=()=>{const i=Number(button.dataset.fcSlot);fcState.slots[i].control=button.dataset.fcType;fcSave();document.querySelectorAll(`[data-fc-type][data-fc-slot="${i}"]`).forEach(b=>{const active=b.dataset.fcType===fcState.slots[i].control;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});renderFrameCompare()});
+ renderFrameCompare();
+}
+function fcRows(){const result=[];fcState.slots.forEach((slot,side)=>{let section='';for(const row of FRAME_DATA_V101[slot.slug]?.[slot.control]||[]){if(!Array.isArray(row)){section=row.section||'';continue}if(/通常投げ|共通システム/.test(section))continue;result.push({values:row,side,slug:slot.slug,control:slot.control,section,order:result.length})}});return result}
+function fcNumeric(value){const match=String(value??'').normalize('NFKC').replace(/[−–]/g,'-').match(/[+-]?\d+(?:\.\d+)?/);return match?Number(match[0]):null}
+function fcSorted(rows){return [...rows].sort((a,b)=>{const index=fcState.column,av=String(a.values[index]??''),bv=String(b.values[index]??'');let cmp;if(index===0||index===7){if(!av.trim()||!bv.trim())return !av.trim()&&!bv.trim()?a.order-b.order:!av.trim()?1:-1;cmp=av.localeCompare(bv,'ja',{numeric:true})}else{const an=fcNumeric(av),bn=fcNumeric(bv);if(an===null||bn===null){if(an===null&&bn===null)return av.localeCompare(bv,'ja',{numeric:true})||a.order-b.order;return an===null?1:-1}cmp=an-bn}return cmp*fcState.direction||a.order-b.order})}
+function renderFrameCompare(){
+ const head=document.getElementById('fcHead'),body=document.getElementById('fcBody'),status=document.getElementById('fcStatus');
+ head.innerHTML='<tr>'+fcColumns.map(col=>`<th scope="col" aria-sort="${col.index===fcState.column?(fcState.direction===1?'ascending':'descending'):'none'}"><button type="button" data-fc-sort="${col.index}" aria-label="${col.label}を${col.index===fcState.column&&fcState.direction===1?'降順':'昇順'}に並べ替え">${col.label} ${col.index===fcState.column?(fcState.direction===1?'↑':'↓'):'↕'}</button></th>`).join('')+'</tr>';
+ head.querySelectorAll('[data-fc-sort]').forEach(b=>b.onclick=()=>{const col=Number(b.dataset.fcSort);fcState.direction=fcState.column===col?-fcState.direction:1;fcState.column=col;renderFrameCompare()});
+ if(fcState.slots.some(x=>!x.slug)){status.textContent='';body.innerHTML='<tr><td colspan="7" class="fc-empty">キャラを2体選択してください。</td></tr>';return}
+ const missing=fcState.slots.filter(x=>!FRAME_DATA_V101[x.slug]?.[x.control]?.length);
+ status.textContent=missing.length?missing.map(x=>`${FRAME_DATA_V101[x.slug]?.name||memberCharName(x.slug)} の${x.control.toUpperCase()}データは準備中です。`).join(' '):'';
+ const rows=fcSorted(fcRows());
+ body.innerHTML=rows.map(row=>`<tr class="fc-${row.side?'blue':'red'}" data-fc-char="${escapeHtml(row.slug)}" data-fc-section="${escapeHtml(row.section)}"><td><span class="fc-row-char">${escapeHtml(FRAME_DATA_V101[row.slug].name)} · ${row.control==='modern'?'M':'C'}</span><span class="fc-row-name">${escapeHtml(row.values[0])}</span><span class="fc-row-command">${escapeHtml(row.values[1]||'')}</span></td>${[2,3,4,5,6,7].map(i=>`<td>${escapeHtml(String(row.values[i]??''))}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="7" class="fc-empty">比較できる技データはまだありません。</td></tr>';
+ head.querySelectorAll('th').forEach((th,i)=>{if(i>0&&i<6)th.title='数値の先頭値で並べ替え。空欄・数値のない表記は末尾に表示します。'});
+}
 </script>
 </body>
 </html>
