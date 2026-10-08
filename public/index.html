@@ -951,14 +951,53 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .fc-scroll-note,.fc-note{font-size:11px;color:#aabbd0;margin:7px 0}.fc-scroll-note{text-align:right}
 @media(min-width:650px){.fc-selector select{font-size:20px}.fc-selector label{font-size:16px}.fc-types button{font-size:17px}.fc-table{font-size:15px}.fc-table th button{font-size:14px}.fc-row-name{font-size:16px}}
 </style>
-</head>
+<style>
+/* v1.40: requested navigation cleanup, readable steps and home spacing. */
+#memberManageAddBtn,#memberManageSave{font:800 16px/1.4 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:normal}
+.member-step-number{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;flex:0 0 22px;border:2px solid currentColor;border-radius:50%;font:700 15px/1 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.home-shortcuts-v119{padding-bottom:18px}
+</style>
+<style>
+/* v1.41: three lines across combo cards, tags below the preview. */
+.ar-card .ar-combo-preview{height:55.8px;min-height:55.8px}
+.ar-card .ar-tags{margin-top:20px}
+</style>
+<style>
+/* v1.43: exact crops of user-approved artwork; no regenerated assets. */
+#home-screen .home-v119{height:auto;min-height:100svh;overflow:visible;padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom));background:#030506}
+#home-screen .home-hero-v119{aspect-ratio:709/350;height:auto!important}
+#home-screen .home-hero-v119 .site-banner{position:static;top:auto;width:100%;height:100%;object-fit:fill}
+#home-screen .home-hero-v119 .fgc-account-entry{top:1%;left:.7%;width:24.8%;max-width:none;height:13.5%;padding:0 4px;font-size:clamp(10px,2.35vw,18px);background:#080e1e;border:1px solid #63718c;z-index:2}
+#home-screen .home-hero-v119 .version-mark{left:0;bottom:0;background:#202024;border-radius:9px;font-size:clamp(9px,2.2vw,16px);padding:3px 8px;z-index:2}
+#home-screen .home-search-v119{margin:0;padding:1.5% 2.8%;aspect-ratio:709/81;grid-template-columns:minmax(0,1fr) 21%;background:url('assets/arcade/search.webp') center/100% 100% no-repeat;gap:0}
+#home-screen .home-search-v119 input{height:100%;padding:0 10px;border:0;border-radius:0;background:#090e13;font-size:clamp(10px,2.45vw,20px)}
+#home-screen .home-search-v119 button{height:100%;color:transparent!important;border:0;background:transparent!important;border-radius:0}
+#home-screen .home-shortcuts-v119{padding:0;gap:0;aspect-ratio:709/262;background:url('assets/arcade/shortcuts.webp') center/100% 100% no-repeat;margin:0}
+#home-screen .home-shortcuts-v119 button{height:100%;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;color:transparent}
+#home-screen .home-shortcuts-v119 button span{opacity:0}
+#home-screen .home-block-v119{padding:0 2.5% 5px}
+#home-screen .home-heading-v119{font-size:clamp(16px,3.3vw,25px);margin:4px 0 6px}
+#home-screen .home-combo-card-v119{flex-basis:43%;min-width:0;background:#050a0e}
+#home-screen .home-focus-v119{padding:0}
+#home-screen .home-focus-v119 .home-heading-v119{padding:0 2.5%}
+#home-screen .home-focus-grid-v119{aspect-ratio:709/182;background:url('assets/arcade/focus.webp') center/100% 100% no-repeat;gap:0}
+#home-screen .home-focus-grid-v119 button{height:100%;border:0;border-radius:0;background:transparent;color:transparent;box-shadow:none}
+#home-screen .home-focus-grid-v119 button>*{opacity:0}
+.bottom-nav.home-bottom-nav-v119{width:min(920px,100%);height:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom));padding:0 0 env(safe-area-inset-bottom);border:0;background:#030506 url('assets/arcade/nav.webp') top center/100% auto no-repeat;gap:0}
+.bottom-nav.home-bottom-nav-v119 button{color:transparent!important;background:transparent!important;box-shadow:none;text-shadow:none;border:0;padding:0;margin:0}
+.bottom-nav.home-bottom-nav-v119 button span{opacity:0}
+.bottom-nav.home-bottom-nav-v119 button.active:not([data-route=home]){box-shadow:inset 0 0 0 2px #ff3156, inset 0 0 15px #ff315680;border-radius:9px}
+.bottom-nav.home-bottom-nav-v119 button:focus-visible,.home-shortcuts-v119 button:focus-visible,.home-focus-grid-v119 button:focus-visible{outline:2px solid #fff;outline-offset:-3px}
+.screen:not(#home-screen){padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom))}
+</style>
+<style>.bottom-nav button[data-route="home"]:not(.active){backdrop-filter:grayscale(1)}</style></head>
 <body>
 
 <section id="home-screen" class="screen">
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
-      <img class="site-banner" src="assets/home-banner-v128.webp" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.38</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+      <img class="site-banner" src="assets/arcade/hero.webp" alt="SF6 COMBO ARCHIVE">
+      <span class="version-mark">v1.43</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
@@ -1053,14 +1092,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 <section id="character-screen" class="screen">
   <div class="site-shell">
     
-<header class="site-header">
-  <nav class="top-tabs" aria-label="上部ナビゲーション">
-    <button type="button" data-route="home">TOP</button>
-    <button type="button" data-route="characters">CHARACTER</button>
-    <button type="button" data-route="frame/ryu">FRAME DATA</button>
-    <button type="button" onclick="showToast('コスチュームページは後続実装予定です')">COSTUME</button>
-  </nav>
-</header>
+
 
     <section class="character-heading">
       <h1 class="brush-title">キャラクター</h1>
@@ -1262,12 +1294,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
       <div class="member-empty-panel">お気に入り登録したコンボをここに表示します。</div>
     </section>
 
-    <nav class="member-detail-nav" aria-label="メンバー詳細ページ下部ナビゲーション">
-      <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
-      <button type="button" data-route="members" class="active"><span class="ico">♟</span><span>メンバー</span></button>
-      <button type="button" data-route="combo-create"><span class="ico">⇄</span><span>コンボ作成</span></button>
-      <button type="button" onclick="showToast('設定ページは後続実装予定です')"><span class="ico">⚙</span><span>設定</span></button>
-    </nav>
+    
   </div>
 </section>
 
@@ -1323,10 +1350,10 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
       <div class="member-manage-add">
         <div class="member-form-row"><label for="memberManageAddChar">キャラクターを追加</label><select id="memberManageAddChar"></select></div>
         <div class="member-form-row"><label for="memberManageAddRank">初期ランク</label><select id="memberManageAddRank"></select></div>
-        <button id="memberManageAddBtn" class="member-manage-add-btn" type="button">①＋リストに追加</button>
+        <button id="memberManageAddBtn" class="member-manage-add-btn" type="button"><span class="member-step-number" aria-hidden="true">1</span> <span>＋ リストに追加</span></button>
       </div>
       <p class="member-modal-note">一覧ページには上から3体まで表示されます。並び替えで表示キャラを変更できます。</p>
-      <button id="memberManageSave" class="member-modal-save" type="button">②設定を保存</button>
+      <button id="memberManageSave" class="member-modal-save" type="button"><span class="member-step-number" aria-hidden="true">2</span> <span>設定を保存</span></button>
     </div>
   </div>
 </div>
@@ -1335,20 +1362,11 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 <section id="frame-screen" class="screen">
   <div class="site-shell">
     
-<header class="site-header">
-  <nav class="top-tabs" aria-label="上部ナビゲーション">
-    <button type="button" data-route="home">TOP</button>
-    <button type="button" data-route="characters">CHARACTER</button>
-    <button type="button" data-route="frame/ryu">FRAME DATA</button>
-    <button type="button" onclick="showToast('コスチュームページは後続実装予定です')">COSTUME</button>
-  </nav>
-</header>
+
 
     <section class="char-hero">
       <div class="char-face-v129" aria-hidden="true"></div><img id="charHeroImg" src="assets/member-icons/ryu.webp?v=119" alt="">
       <div class="char-title"><span id="charName">RYU</span><span id="charJp" class="char-jp">リュウ</span></div>
-      <button id="compareBtn" class="compare-btn">比較に追加 ＋ (0/2)</button>
-      <div class="compare-note">2キャラ比較用に保存できます</div>
     </section>
 
     <section id="frameControls" class="frame-controls">
@@ -2086,7 +2104,7 @@ function arPanel(host,scope,base,heading,withChar){if(!host)return;const f=arFil
 }
 function arFrame(){arPanel(document.getElementById('frameComboPanel'),'frame',arAll().filter(p=>p.char===currentFrameSlug),memberCharName(currentFrameSlug)+' コンボ一覧',false)}
 function arMember(){arPanel(document.getElementById('memberArchive'),'member',arAll().filter(p=>p.authorId===currentMemberId),'投稿コンボ',true);const n=arRecords.filter(p=>p.authorId===currentMemberId).length;document.getElementById('memberComboSummary').textContent=`共有 ${n}件`}
-function arHome(){const strip=document.querySelector('.home-combo-strip-v119');strip.innerHTML=arAll().sort((a,b)=>b.createdAt-a.createdAt).slice(0,4).map(p=>`<a class="home-combo-card-v119 ar-card-link" href="#combo/${escapeHtml(p.id)}" data-route="combo/${escapeHtml(p.id)}" aria-label="${escapeHtml(p.title)}の詳細"><div class="home-combo-image-v119"><img src="${memberIcon(p.char)}" alt="${escapeHtml(memberCharName(p.char))}"><b>${p.sample?'SAMPLE':'NEW'}</b></div><div class="home-combo-info-v119"><strong>${escapeHtml(p.title)}</strong><span class="ar-card-author">${escapeHtml(arAuthor(p))}</span>${arPreviewMarkup(p).replace('data-combo-text=', 'data-preview-lines="3" data-combo-text=')}<small>${p.sample?'表示例':new Date(p.createdAt).toLocaleDateString('ja-JP')}</small><div class="ar-home-footer"><span class="ar-home-damage"><em>${p.damage}</em><i>DMG</i></span><span class="ar-home-meter">${arGauge(p.drive,6)}<span>${p.drive}/6</span></span><span class="ar-home-meter">${arGauge(p.sa,3,true)}<span>${p.sa}/3</span></span><img class="ar-type-badge" src="assets/combo/${p.type==='modern'?'modern':'classic'}-badge.svg" alt="${p.type==='modern'?'MODERN':'CLASSIC'}"></div></div></a>`).join('')||'<p class="ar-home-empty">コンボはまだありません。</p>';document.getElementById('archiveHomeNotice').textContent=svStatus();arQueuePreviews();}
+function arHome(){const strip=document.querySelector('.home-combo-strip-v119');strip.innerHTML=arAll().sort((a,b)=>b.createdAt-a.createdAt).slice(0,4).map(p=>`<a class="home-combo-card-v119 ar-card-link" href="#combo/${escapeHtml(p.id)}" data-route="combo/${escapeHtml(p.id)}" aria-label="${escapeHtml(p.title)}の詳細"><div class="home-combo-image-v119"><img src="${memberIcon(p.char)}" alt="${escapeHtml(memberCharName(p.char))}"><b>${p.sample?'SAMPLE':'NEW'}</b></div><div class="home-combo-info-v119"><strong>${escapeHtml(p.title)}</strong><span class="ar-card-author">${escapeHtml(arAuthor(p))}</span>${arPreviewMarkup(p)}<small>${p.sample?'表示例':new Date(p.createdAt).toLocaleDateString('ja-JP')}</small><div class="ar-home-footer"><span class="ar-home-damage"><em>${p.damage}</em><i>DMG</i></span><span class="ar-home-meter">${arGauge(p.drive,6)}<span>${p.drive}/6</span></span><span class="ar-home-meter">${arGauge(p.sa,3,true)}<span>${p.sa}/3</span></span><img class="ar-type-badge" src="assets/combo/${p.type==='modern'?'modern':'classic'}-badge.svg" alt="${p.type==='modern'?'MODERN':'CLASSIC'}"></div></div></a>`).join('')||'<p class="ar-home-empty">コンボはまだありません。</p>';document.getElementById('archiveHomeNotice').textContent=svStatus();arQueuePreviews();}
 
 function arDetail(id){const host=document.getElementById('archiveDetail'),p=[...arRecords,...AR_DEMOS].find(p=>p.id===id);if(!p){host.innerHTML='<p class="ar-empty">このコンボは見つかりません。ログインと共有データへの接続を確認してください。</p><button class="ar-button" data-route="combos">コンボ一覧へ</button>';return}document.title=p.title+' | FGC COMBO ARCHIVE';host.innerHTML=`<section class="cb-panel"><div class="ar-detail-char"><img src="${memberIcon(p.char)}" alt="${escapeHtml(memberCharName(p.char))}"><b>${escapeHtml(memberCharName(p.char))}</b>${arLogo(p.type)}</div><h1>${escapeHtml(p.title)}</h1>${svAuthorMarkup(p)}<div class="ar-detail-meta">${p.sample?'サンプル：技順・ダメージは表示例です。':'ログインした友人全員で共有しています。'}</div>${arTags(p)}</section><section class="cb-panel"><h2 class="cb-title">コンボ概要</h2><div class="cb-setting"><span>ダメージ</span><b class="ar-damage">${p.damage}</b></div><div class="cb-setting"><span>ドライブゲージ使用</span><span class="ar-setting-gauge">${arGauge(p.drive,6)}<span class="ar-count">${p.drive} / 6</span></span></div><div class="cb-setting"><span>SAゲージ使用</span><span class="ar-setting-gauge">${arGauge(p.sa,3,true)}<span class="ar-count">${p.sa} / 3</span></span></div></section><section class="cb-panel"><div class="ar-detail-title"><h2>コンボ手順 <small>${arDetailCommand?'コマンド':'技名'}表示</small></h2><button class="cb-toggle" id="arDetailToggle">⇄ ${arDetailCommand?'技名':'コマンド'}表示</button></div>${p.steps.map((s,i)=>`<div class="cb-row ar-read-row ${s.kind}"><span class="cb-step-num">${i+1}</span><span class="ar-step-text">${escapeHtml(arDetailCommand?s.command:s.name)}</span></div><div class="${s.link==='終了'?'cb-end':'cb-link-wrap'}"><span class="cb-link">${escapeHtml(s.link)}</span></div>`).join('')}</section><button class="ar-button" data-route="combos/${p.char}">${escapeHtml(memberCharName(p.char))}のコンボ一覧へ</button>`;document.getElementById('arDetailToggle').onclick=()=>{arDetailCommand=!arDetailCommand;arDetail(id)}}
 function arRefresh(){arHome();if(currentRoute.startsWith('frame/')||currentRoute.startsWith('combos/'))arFrame();if(currentRoute.startsWith('member/'))arMember();if(currentRoute==='combos')arPanel(document.getElementById('archiveGlobal'),'global',arAll(),'新着コンボ',true)}
@@ -2224,7 +2242,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 <script>
 // Names only: connection instructions stay in the full detail view.
 function arPreviewText(p,command=false){return (p.steps||[]).map(step=>String((command?step.command||step.name:step.name)||'').trim()).filter(Boolean).join('〉')}
-function arPreviewMarkup(p,command=false){const text=escapeHtml(arPreviewText(p,command));return `<p class="ar-combo-preview" data-combo-text="${text}" aria-label="${text}">${text}</p>`}
+function arPreviewMarkup(p,command=false){const text=escapeHtml(arPreviewText(p,command));return `<p class="ar-combo-preview" data-preview-lines="3" data-combo-text="${text}" aria-label="${text}">${text}</p>`}
 const arPreviewObserved=new WeakSet();
 const arPreviewResize=new ResizeObserver(entries=>entries.forEach(entry=>arFitPreview(entry.target)));
 function arFitPreview(el){
