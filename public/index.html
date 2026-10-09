@@ -963,7 +963,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .ar-card .ar-tags{margin-top:20px}
 </style>
 <style>
-/* v1.49: exact crops of user-approved artwork; no regenerated assets. */
+/* v1.51: exact crops of user-approved artwork; no regenerated assets. */
 #home-screen .home-v119{height:auto;min-height:100svh;overflow:visible;padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom));background:#030506}
 #home-screen .home-hero-v119{aspect-ratio:852/394;height:auto!important}
 #home-screen .home-hero-v119 .site-banner{position:static;top:auto;width:100%;height:100%;object-fit:fill}
@@ -991,7 +991,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .screen:not(#home-screen){padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom))}
 </style>
 <style>
-/* v1.49: selected bezel follows the artwork, not the button hit rectangle. */
+/* v1.51: selected bezel follows the artwork, not the button hit rectangle. */
 .bottom-nav.home-bottom-nav-v119{height:calc(min(920px,100vw)*180/709);padding:0;background-image:url('assets/arcade/nav-inactive.webp');background-size:100% 100%;isolation:isolate}
 .bottom-nav.home-bottom-nav-v119:has(button[data-route="home"].active){background-image:url('assets/arcade/nav.webp')}
 .bottom-nav.home-bottom-nav-v119::after{content:"";position:absolute;inset:0;pointer-events:none;background:center/100% 100% no-repeat;z-index:1}
@@ -1014,11 +1014,23 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 #home-screen .home-combo-info-v119>strong{line-height:12px}
 #home-screen .home-combo-info-v119>.ar-card-author{line-height:12px}
 </style><style>
-/* v1.49: the menu stays at viewport bottom; only overflowing content scrolls. */
+/* v1.51: the menu stays at viewport bottom; only overflowing content scrolls. */
 body.home-page{height:100svh;height:100dvh;overflow:hidden}
 #home-screen{height:calc(100svh - min(920px,100vw)*180/709);height:calc(100dvh - min(920px,100vw)*180/709);overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
 #home-screen .home-v119{height:auto!important;min-height:100%;overflow:visible!important;padding-bottom:0}
 #home-screen .bottom-nav.home-bottom-nav-v119{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(920px,100%);margin:0;z-index:30}
+</style><style>
+/* v1.51: menu art is a real image outside the scrollable content. */
+#home-screen{height:100svh;height:100dvh;overflow:visible}
+#home-screen .home-v119{height:calc(100svh - min(920px,100vw)*180/709)!important;height:calc(100dvh - min(920px,100vw)*180/709)!important;min-height:0;overflow-x:hidden!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch}
+#home-screen .bottom-nav.home-bottom-nav-v119{isolation:auto;transform:none;left:0;right:0;margin:0 auto;background-color:#030506}
+#home-screen .nav-art-v151{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:fill;pointer-events:none;z-index:0}
+#home-screen .bottom-nav button{position:relative;z-index:2}
+</style><style>
+/* v1.51: one identical menu layout and real artwork on every page. */
+.bottom-nav.home-bottom-nav-v119,#home-screen .bottom-nav.home-bottom-nav-v119{position:fixed;left:0;right:0;bottom:0;transform:none;width:min(920px,100%);height:calc(min(920px,100vw)*180/709);margin:0 auto;padding:0;border:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;isolation:auto;z-index:30}
+.bottom-nav.home-bottom-nav-v119 .nav-art-v151{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:fill;pointer-events:none;z-index:0}
+.bottom-nav.home-bottom-nav-v119 button{position:relative;z-index:2;min-width:0;min-height:0}
 </style></head>
 <body>
 
@@ -1026,7 +1038,7 @@ body.home-page{height:100svh;height:100dvh;overflow:hidden}
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
       <img class="site-banner" src="assets/arcade/hero.webp" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.49</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+      <span class="version-mark">v1.51</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
@@ -1072,14 +1084,17 @@ body.home-page{height:100svh;height:100dvh;overflow:hidden}
       </div>
     </section>
 
+
+  </div>
     <nav class="bottom-nav home-bottom-nav-v119" aria-label="下部ナビゲーション">
+<img class="nav-art-v151" src="assets/arcade/nav-inactive.webp?v=151" alt="" aria-hidden="true">
+
 <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
 <button type="button" data-route="members"><span class="ico">♟</span><span>メンバー</span></button>
 <button type="button" data-route="characters"><span class="ico">♞</span><span>キャラ</span></button>
 <button type="button" data-route="combo-create"><span class="ico">⇄</span><span>コンボ作成</span></button>
 <button type="button" data-route="frame-compare"><span class="ico">▤</span><span>フレーム比較</span></button>
 </nav>
-  </div>
 </section>
 
 <section id="combo-create-screen" class="screen">
@@ -1094,6 +1109,7 @@ body.home-page{height:100svh;height:100dvh;overflow:hidden}
  <section class="ar-registration"><label for="arLocalAuthor">コンボの登録ユーザー</label><select id="arLocalAuthor" aria-label="登録先のユーザー"></select><p class="ar-notice">下書きはこの端末に保存し、登録したコンボはログインした友人全員で共有します。</p><p id="svShareStatus" class="ar-notice" role="status" aria-live="polite"></p><div class="ar-actions"><button id="arSaveDraft" class="ar-button" type="button">下書き保存</button><button id="arRegister" class="ar-button" type="button">コンボを共有へ登録</button></div><button id="svMigrateCombos" class="ar-button" type="button" hidden>端末内のコンボを共有へ移す</button></section>
  </main></div>
  <nav class="bottom-nav home-bottom-nav-v119" aria-label="下部ナビゲーション">
+<img class="nav-art-v151" src="assets/arcade/nav-inactive.webp?v=151" alt="" aria-hidden="true">
 <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
 <button type="button" data-route="members"><span class="ico">♟</span><span>メンバー</span></button>
 <button type="button" data-route="characters"><span class="ico">♞</span><span>キャラ</span></button>
@@ -1109,6 +1125,7 @@ body.home-page{height:100svh;height:100dvh;overflow:hidden}
     <header class="utility-placeholder-head"><button type="button" onclick="appBack()">‹</button><strong class="fc-brand">FGC <em>COMBO</em> ARCHIVE</strong><span></span></header>
     <main class="fc-main"><h1>フレーム比較</h1><div id="fcSelectors" class="fc-selectors"></div><p class="fc-guide">キャラを2体選択して比較<br>見出しをタップで昇順・降順を切替</p><div id="fcStatus" class="fc-status" role="status"></div><div class="fc-table-scroll" tabindex="0" aria-label="比較表。左右にスクロールできます"><table class="fc-table"><thead id="fcHead"></thead><tbody id="fcBody"></tbody></table></div><p class="fc-scroll-note">左右にスクロールで全項目を表示</p><p class="fc-note">通常投げ・共通システムは除外</p></main>
     <nav class="bottom-nav home-bottom-nav-v119" aria-label="下部ナビゲーション">
+<img class="nav-art-v151" src="assets/arcade/nav-inactive.webp?v=151" alt="" aria-hidden="true">
 <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
 <button type="button" data-route="members"><span class="ico">♟</span><span>メンバー</span></button>
 <button type="button" data-route="characters"><span class="ico">♞</span><span>キャラ</span></button>
@@ -1168,6 +1185,7 @@ body.home-page{height:100svh;height:100dvh;overflow:hidden}
     </main>
     
 <nav class="bottom-nav home-bottom-nav-v119" aria-label="下部ナビゲーション">
+<img class="nav-art-v151" src="assets/arcade/nav-inactive.webp?v=151" alt="" aria-hidden="true">
 <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
 <button type="button" data-route="members"><span class="ico">♟</span><span>メンバー</span></button>
 <button type="button" data-route="characters"><span class="ico">♞</span><span>キャラ</span></button>
@@ -1273,6 +1291,7 @@ body.home-page{height:100svh;height:100dvh;overflow:hidden}
       <button id="memberListReorderBtn" type="button">↕ メンバー並び替え</button>
     </div>
     <nav class="bottom-nav home-bottom-nav-v119" aria-label="下部ナビゲーション">
+<img class="nav-art-v151" src="assets/arcade/nav-inactive.webp?v=151" alt="" aria-hidden="true">
 <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
 <button type="button" data-route="members"><span class="ico">♟</span><span>メンバー</span></button>
 <button type="button" data-route="characters"><span class="ico">♞</span><span>キャラ</span></button>
@@ -1428,6 +1447,7 @@ body.home-page{height:100svh;height:100dvh;overflow:hidden}
     </div>
     
 <nav class="bottom-nav home-bottom-nav-v119" aria-label="下部ナビゲーション">
+<img class="nav-art-v151" src="assets/arcade/nav-inactive.webp?v=151" alt="" aria-hidden="true">
 <button type="button" data-route="home"><span class="ico">⌂</span><span>ホーム</span></button>
 <button type="button" data-route="members"><span class="ico">♟</span><span>メンバー</span></button>
 <button type="button" data-route="characters"><span class="ico">♞</span><span>キャラ</span></button>
@@ -2286,10 +2306,10 @@ function arFitPreview(el){
 }
 function arQueuePreviews(){requestAnimationFrame(()=>document.querySelectorAll('.ar-combo-preview').forEach(el=>{arFitPreview(el);if(!arPreviewObserved.has(el)){arPreviewObserved.add(el);arPreviewResize.observe(el)}}))}
 const arNavBefore=setActiveNav;
-setActiveNav=function(route){arNavBefore(route);const target=route==='home'?'home':route==='members'||route.startsWith('member/')?'members':route==='characters'?'characters':route==='frame-compare'||route.startsWith('frame/')?'frame-compare':route==='combo-create'||route==='combos'||route.startsWith('combo/')||route.startsWith('combos/')?'combo-create':'';document.querySelectorAll('.bottom-nav [data-route]').forEach(el=>{const active=el.dataset.route===target;el.classList.toggle('active',active);if(active)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current')});arQueuePreviews()};
+setActiveNav=function(route){arNavBefore(route);const target=route==='home'?'home':route==='members'||route.startsWith('member/')?'members':route==='characters'?'characters':route==='frame-compare'||route.startsWith('frame/')?'frame-compare':route==='combo-create'||route==='combos'||route.startsWith('combo/')||route.startsWith('combos/')?'combo-create':'';document.querySelectorAll('.bottom-nav [data-route]').forEach(el=>{const active=el.dataset.route===target;el.classList.toggle('active',active);if(active)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current')});document.querySelectorAll('.nav-art-v151').forEach(img=>{img.src=target==='home'?'assets/arcade/nav.webp?v=151':'assets/arcade/nav-inactive.webp?v=151'});arQueuePreviews()};
 document.addEventListener('DOMContentLoaded',()=>{
  const template=document.querySelector('#home-screen .bottom-nav');
- document.querySelectorAll('.screen').forEach(screen=>{if(!screen.querySelector('.bottom-nav'))screen.append(template.cloneNode(true))});
+ document.querySelectorAll('.screen').forEach(screen=>{if(!screen.querySelector('.bottom-nav')){const nav=template.cloneNode(true);screen.append(nav)}});
  setActiveNav(currentRoute);
 });
 </script>
