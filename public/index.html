@@ -963,7 +963,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .ar-card .ar-tags{margin-top:20px}
 </style>
 <style>
-/* v1.48: exact crops of user-approved artwork; no regenerated assets. */
+/* v1.49: exact crops of user-approved artwork; no regenerated assets. */
 #home-screen .home-v119{height:auto;min-height:100svh;overflow:visible;padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom));background:#030506}
 #home-screen .home-hero-v119{aspect-ratio:852/394;height:auto!important}
 #home-screen .home-hero-v119 .site-banner{position:static;top:auto;width:100%;height:100%;object-fit:fill}
@@ -991,7 +991,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .screen:not(#home-screen){padding-bottom:calc(min(920px,100vw)*180/709 + env(safe-area-inset-bottom))}
 </style>
 <style>
-/* v1.48: selected bezel follows the artwork, not the button hit rectangle. */
+/* v1.49: selected bezel follows the artwork, not the button hit rectangle. */
 .bottom-nav.home-bottom-nav-v119{height:calc(min(920px,100vw)*180/709);padding:0;background-image:url('assets/arcade/nav-inactive.webp');background-size:100% 100%;isolation:isolate}
 .bottom-nav.home-bottom-nav-v119:has(button[data-route="home"].active){background-image:url('assets/arcade/nav.webp')}
 .bottom-nav.home-bottom-nav-v119::after{content:"";position:absolute;inset:0;pointer-events:none;background:center/100% 100% no-repeat;z-index:1}
@@ -1013,6 +1013,12 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 #home-screen .home-combo-info-v119{height:auto;aspect-ratio:292/216;grid-template-rows:12px 12px minmax(0,1fr) 10px 16px;gap:2px;padding:5px 7px;min-height:111px}
 #home-screen .home-combo-info-v119>strong{line-height:12px}
 #home-screen .home-combo-info-v119>.ar-card-author{line-height:12px}
+</style><style>
+/* v1.49: the menu stays at viewport bottom; only overflowing content scrolls. */
+body.home-page{height:100svh;height:100dvh;overflow:hidden}
+#home-screen{height:calc(100svh - min(920px,100vw)*180/709);height:calc(100dvh - min(920px,100vw)*180/709);overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#home-screen .home-v119{height:auto!important;min-height:100%;overflow:visible!important;padding-bottom:0}
+#home-screen .bottom-nav.home-bottom-nav-v119{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(920px,100%);margin:0;z-index:30}
 </style></head>
 <body>
 
@@ -1020,7 +1026,7 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
       <img class="site-banner" src="assets/arcade/hero.webp" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.48</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+      <span class="version-mark">v1.49</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
