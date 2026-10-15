@@ -603,7 +603,6 @@ body.home-page #home-screen .site-shell{height:100svh;overflow:hidden}
 .member-profile-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,8,.94) 0%,rgba(8,7,11,.68) 35%,rgba(8,8,12,.12) 72%,rgba(7,7,10,.22)),linear-gradient(0deg,rgba(2,5,10,.88),transparent 56%)}
 .member-profile-info{position:relative;z-index:2;min-height:210px;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 64px 18px 18px}
 .member-profile-name{font-family:"Arial Black","Noto Sans JP",sans-serif;font-style:italic;font-size:30px;font-weight:950;line-height:1;text-shadow:0 2px 0 #000,0 0 14px rgba(255,255,255,.1)}
-.member-profile-roman{margin-top:5px;color:var(--accent);font:italic 900 11px/1 Arial,sans-serif;letter-spacing:.18em}
 .member-profile-rank{margin-top:13px;display:inline-flex;align-items:center;gap:8px;width:max-content;max-width:100%;padding:8px 13px;border:1px solid color-mix(in srgb,var(--accent) 60%,#496);background:rgba(3,8,15,.78);font:900 14px/1 "Arial Black",sans-serif;box-shadow:0 0 15px color-mix(in srgb,var(--accent) 22%,transparent)}
 .member-profile-rank:before{content:"◆";font-size:18px;filter:drop-shadow(0 0 5px currentColor)}
 .member-profile-edit{position:absolute;z-index:4;right:15px;bottom:18px;width:42px;height:42px;border-radius:10px;border:1px solid #6a7d91;background:rgba(4,10,18,.84);color:#fff;font-size:20px;font-weight:900}
@@ -1128,7 +1127,7 @@ body.guide-page{height:100svh;height:100dvh;overflow:hidden}
   <div class="site-shell home-v119">
     <header class="site-header home-hero-v119">
       <img class="site-banner" src="assets/arcade/hero.webp?fgc_asset=166" alt="SF6 COMBO ARCHIVE">
-      <span class="version-mark">v1.67</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
+      <span class="version-mark">v1.68</span><button id="fgcAccountEntry" class="fgc-account-entry" type="button" data-route="login">ログイン</button>
     </header>
 
     <div class="search-row home-search-v119">
@@ -1453,7 +1452,6 @@ body.guide-page{height:100svh;height:100dvh;overflow:hidden}
       <img id="memberBannerArt" class="banner-art" src="assets/member-icons/ken.webp?fgc_asset=166" alt="">
       <div class="member-profile-info">
         <div id="memberProfileName" class="member-profile-name">たくや</div>
-        <div id="memberProfileRoman" class="member-profile-roman">TAKUYA</div>
         <div id="memberProfileRank" class="member-profile-rank rank-diamond">DIAMOND</div>
       </div>
       <button id="memberProfileEdit" type="button" class="member-profile-edit" aria-label="プロフィールを編集">✎</button>
@@ -1772,8 +1770,8 @@ function renderMemberDetail(id){
   if(!p.chars.length)p.bannerChar='';
   if(p.bannerChar&&!p.chars.some(c=>c.slug===p.bannerChar))p.bannerChar=p.chars[0]?.slug||'';
   const bannerEntry=p.chars.find(c=>c.slug===p.bannerChar)||p.chars[0];
-  const banner=document.getElementById('memberProfileBanner');const art=document.getElementById('memberBannerArt');const name=document.getElementById('memberProfileName');const roman=document.getElementById('memberProfileRoman');const rank=document.getElementById('memberProfileRank');
-  name.textContent=p.name;roman.textContent=p.roman||romanizeMemberName(p.name);
+  const banner=document.getElementById('memberProfileBanner');const art=document.getElementById('memberBannerArt');const name=document.getElementById('memberProfileName');const rank=document.getElementById('memberProfileRank');
+  name.textContent=p.name;
   if(bannerEntry){art.src=memberArt(bannerEntry.slug);art.alt=memberCharName(bannerEntry.slug);rank.innerHTML=memberRankImage(bannerEntry.rank);rank.className='member-profile-rank '+rankClass(bannerEntry.rank);const accent=MEMBER_ACCENTS[Math.max(0,p.chars.findIndex(c=>c.slug===bannerEntry.slug))%MEMBER_ACCENTS.length];banner.style.setProperty('--accent',accent);art.style.display='block';rank.style.display='inline-flex'}else{art.style.display='none';rank.style.display='none'}
   const list=document.getElementById('memberUseList');list.innerHTML='';
   p.chars.forEach((c,i)=>{const card=document.createElement('article');card.className='member-use-card';card.style.setProperty('--accent',MEMBER_ACCENTS[i%MEMBER_ACCENTS.length]);card.innerHTML=`<div class="member-use-order">${i+1}</div><div class="member-use-visual"><img src="${memberIcon(c.slug)}" alt="${escapeHtml(memberCharName(c.slug))}"><div class="member-use-name">${escapeHtml(memberCharName(c.slug))}</div></div><div class="member-use-controls"><label>RANK</label><select data-rank-index="${i}">${MEMBER_RANKS.map(r=>`<option ${r===c.rank?'selected':''}>${r}</option>`).join('')}</select><div class="member-use-combo"><span>コンボ数</span><strong>${arRegisteredCount(currentMemberId,c.slug)}</strong></div></div>`;list.appendChild(card)});
@@ -2614,7 +2612,7 @@ document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.tar
 <script>
 /* Version checks never delete login data or drafts, and only reload on change. */
 (()=>{
- const BUILD='1.67',KEY='fgcUpdateResumeV1';let checking=false,reloading=false,lastCheck=0,pending='',retry=0;
+ const BUILD='1.68',KEY='fgcUpdateResumeV1';let checking=false,reloading=false,lastCheck=0,pending='',retry=0;
  const safeRead=()=>{try{return JSON.parse(sessionStorage.getItem(KEY)||'null')}catch(_){return null}};
  window.fgcRestoreUpdatePage=()=>{
   const saved=safeRead();if(!saved||Date.now()-saved.at>300000)return;
